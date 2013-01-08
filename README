@@ -1,0 +1,7 @@
+Zadify
+
+Capstone Project for Zach Durtschi
+
+The project plan is included in the repository. The final product will be a gamification Android application.
+
+This project is written in Visual C#. It also uses Mono for Android, NUnit, and Apache log4net. Commits are made with Github for Windows.
