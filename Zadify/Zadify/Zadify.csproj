@@ -51,16 +51,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activity1.cs" />
+    <Compile Include="CompetitionsMenu.cs" />
+    <Compile Include="CompletedGoalsMenu.cs" />
+    <Compile Include="CreateCustomGoalForm.cs" />
+    <Compile Include="CreateGoalMenu.cs" />
+    <Compile Include="CreatePredefinedGoalForm.cs" />
+    <Compile Include="CreateRewardForm.cs" />
+    <Compile Include="CustomRewardsDetailsScreen.cs" />
+    <Compile Include="CustomRewardsMenu.cs" />
+    <Compile Include="DeleteGoalForm.cs" />
+    <Compile Include="GoalDetailsScreen.cs" />
+    <Compile Include="GoalsMenu.cs" />
+    <Compile Include="MainMenu.cs" />
+    <Compile Include="NewsFeedScreen.cs" />
+    <Compile Include="RankDetailsScreen.cs" />
+    <Compile Include="RanksMenu.cs" />
+    <Compile Include="UnlockedItemsScreen.cs" />
+    <Compile Include="UpdateGoalForm.cs" />
+    <Compile Include="ZadifyRewardsMenu.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RewardsMenu.cs" />
+    <Compile Include="SettingsMenu.cs" />
+    <Compile Include="SocialMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\Layout\GoalsMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Layout\Main.axml" />
+    <AndroidResource Include="Resources\Layout\MainMenu.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
