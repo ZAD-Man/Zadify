@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -20,6 +19,15 @@ namespace Zadify
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.GoalsMenu);
+
+            var createGoalButton = FindViewById<Button>(Resource.Id.CreateGoalButton);
+            createGoalButton.Click += delegate { StartActivity(typeof (CreateGoalMenu)); };
+
+            var goalsList = FindViewById<ListView>(Resource.Id.GoalsList);
+            //TODO: Presumably add a button for each goal using .AddView()
+
+            var completedGoalsButton = FindViewById<Button>(Resource.Id.CompletedGoalsButton);
+            completedGoalsButton.Click += delegate { StartActivity(typeof (CompletedGoalsMenu)); };
         }
     }
 }

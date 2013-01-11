@@ -12,20 +12,20 @@ using Android.Widget;
 
 namespace Zadify
 {
-    [Activity(Label = "Create Goal")]
-    public class CreateCustomGoalForm : Activity
+    [Activity(Label = "My Activity")]
+    public class CreateCompetitionForm : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            SetContentView(Resource.Layout.CreateCustomGoalForm);
+            SetContentView(Resource.Layout.CreateCompetitionForm);
 
-            var customGoalForm = FindViewById<TextView>(Resource.Id.CustomGoalForm);
+            var competitionForm = FindViewById<TextView>(Resource.Id.CompetitionForm);
             //TODO: Change to a RelativeLayout
 
-            var submitCustomGoalButton = FindViewById<Button>(Resource.Id.SubmitCustomGoalButton);
-            submitCustomGoalButton.Click += delegate
+            var submitCompetitionButton = FindViewById<Button>(Resource.Id.SubmitCompetitionButton);
+            submitCompetitionButton.Click += delegate
             {
                 //TODO: Go back to Goals Menu. Look into FinishActivity().
             };

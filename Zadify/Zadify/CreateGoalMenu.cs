@@ -12,14 +12,23 @@ using Android.Widget;
 
 namespace Zadify
 {
-    [Activity(Label = "My Activity")]
+    [Activity(Label = "Create Goal")]
     public class CreateGoalMenu : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.CreateGoalMenu);
+
+            var createPredefinedGoalButton = FindViewById<Button>(Resource.Id.CreateGoalButton);
+            createPredefinedGoalButton.Click += delegate { StartActivity(typeof(CreatePredefinedGoalForm)); };
+
+            var createCustomGoalButton = FindViewById<Button>(Resource.Id.CreateGoalButton);
+            createCustomGoalButton.Click += delegate { StartActivity(typeof(CreateCustomGoalForm)); };
+            
+            var createCompetitionButton = FindViewById<Button>(Resource.Id.CreateCompetitionButton);
+            createCompetitionButton.Click += delegate { StartActivity(typeof(CreateCompetitionForm)); };
         }
     }
 }

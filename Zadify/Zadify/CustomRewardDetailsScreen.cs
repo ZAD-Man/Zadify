@@ -12,14 +12,14 @@ using Android.Widget;
 
 namespace Zadify
 {
-    [Activity(Label = "My Activity")]
-    public class CustomRewardsDetailsScreen : Activity
+    [Activity(Label = "Custom Reward Details")] //TODO: Replace with name of selected goal, or similar
+    public class CustomRewardDetailsScreen : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.CustomRewardDetailsScreen);
         }
     }
 }

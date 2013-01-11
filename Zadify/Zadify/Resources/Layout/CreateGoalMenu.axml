@@ -4,17 +4,18 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <Button
-        android:id="@+id/CreateGoalButton"
+        android:id="@+id/CreatePredefinedGoalButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Create Goal" />
-    <ListView
-        android:id="@+id/GoalsList"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:text="Create Predefined Goal" />
     <Button
-        android:id="@+id/CompletedGoalsButton"
+        android:id="@+id/CreateCustomGoalButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Completed Goals" />
+        android:text="Create Custom Goal" />
+    <Button
+        android:id="@+id/CreateCompetitionButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Competition Goal" />
 </LinearLayout>

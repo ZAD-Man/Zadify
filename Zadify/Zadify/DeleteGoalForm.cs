@@ -12,14 +12,17 @@ using Android.Widget;
 
 namespace Zadify
 {
-    [Activity(Label = "My Activity")]
+    [Activity(Label = "Delete Goal")]
     public class DeleteGoalForm : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.DeleteGoalForm);
+
+            var confirmDeleteButton = FindViewById<Button>(Resource.Id.ConfirmDeleteGoalButton);
+            //TODO: Make this into a pop-up confirmation instead
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Zadify
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.SocialMenu);
         }
     }
 }

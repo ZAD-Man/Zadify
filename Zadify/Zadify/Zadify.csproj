@@ -53,11 +53,12 @@
   <ItemGroup>
     <Compile Include="CompetitionsMenu.cs" />
     <Compile Include="CompletedGoalsMenu.cs" />
+    <Compile Include="CreateCompetitionForm.cs" />
     <Compile Include="CreateCustomGoalForm.cs" />
     <Compile Include="CreateGoalMenu.cs" />
     <Compile Include="CreatePredefinedGoalForm.cs" />
     <Compile Include="CreateRewardForm.cs" />
-    <Compile Include="CustomRewardsDetailsScreen.cs" />
+    <Compile Include="CustomRewardDetailsScreen.cs" />
     <Compile Include="CustomRewardsMenu.cs" />
     <Compile Include="DeleteGoalForm.cs" />
     <Compile Include="GoalDetailsScreen.cs" />
@@ -79,6 +80,66 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\Layout\GoalsMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CompetitionsMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CompletedGoalsMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CreateCustomGoalForm.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CreateGoalMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CreatePredefinedGoalForm.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CreateRewardForm.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CustomRewardDetailsScreen.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CustomRewardsMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\DeleteGoalForm.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\GoalDetailsScreen.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\NewsFeedScreen.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\RankDetailsScreen.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\RanksMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\RewardsMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\SettingsMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\SocialMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\UnlockedItemsScreen.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\ZadifyRewardsMenu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\UpdateGoalForm.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\CreateCompetitionForm.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

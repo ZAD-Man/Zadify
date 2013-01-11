@@ -12,14 +12,14 @@ using Android.Widget;
 
 namespace Zadify
 {
-    [Activity(Label = "My Activity")]
+    [Activity(Label = "Newsfeed")]
     public class NewsFeedScreen : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.NewsFeedScreen);
         }
     }
 }

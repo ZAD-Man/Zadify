@@ -12,14 +12,23 @@ using Android.Widget;
 
 namespace Zadify
 {
-    [Activity(Label = "My Activity")]
+    [Activity(Label = "Create Goal")]
     public class CreatePredefinedGoalForm : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.CreatePredefinedGoalForm);
+
+            var predefinedGoalForm = FindViewById<TextView>(Resource.Id.PredefinedGoalForm);
+                //TODO: Change to a RelativeLayout
+
+            var submitPredefinedGoalButton = FindViewById<Button>(Resource.Id.SubmitPredefinedGoalButton);
+            submitPredefinedGoalButton.Click += delegate
+                {
+                    //TODO: Go back to Goals Menu. Look into FinishActivity().
+                };
         }
     }
 }

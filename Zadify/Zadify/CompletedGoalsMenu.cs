@@ -12,14 +12,17 @@ using Android.Widget;
 
 namespace Zadify
 {
-    [Activity(Label = "My Activity")]
+    [Activity(Label = "Completed Goals")]
     public class CompletedGoalsMenu : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.CompletedGoalsMenu);
+
+            var completedGoalsList = FindViewById<ListView>(Resource.Id.CompletedGoalsList);
+            //TODO: Presumably add a button for each goal using .AddView()
         }
     }
 }

@@ -12,14 +12,14 @@ using Android.Widget;
 
 namespace Zadify.Resources.Layout
 {
-    [Activity(Label = "My Activity")]
+    [Activity(Label = "Zadify Rewards")]
     public class ZadifyRewardsMenu : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.ZadifyRewardsMenu);
         }
     }
 }

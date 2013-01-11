@@ -12,14 +12,23 @@ using Android.Widget;
 
 namespace Zadify
 {
-    [Activity(Label = "My Activity")]
+    [Activity(Label = "Update Goal")]
     public class UpdateGoalForm : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Create your application here
+            SetContentView(Resource.Layout.UpdateGoalForm);
+
+            var updateGoalForm = FindViewById<TextView>(Resource.Id.UpdateGoalForm);
+            //TODO: Change to a RelativeLayout, populate
+
+            var updateGoalSubmitButton = FindViewById<Button>(Resource.Id.UpdateGoalSubmitButton);
+            updateGoalSubmitButton.Click += delegate
+                {
+                    //TODO: Edit content and go back. Look into FinishActivity().
+                };
         }
     }
 }
