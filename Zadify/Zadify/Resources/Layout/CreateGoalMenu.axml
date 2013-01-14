@@ -17,5 +17,5 @@
         android:id="@+id/CreateCompetitionButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Create Competition Goal" />
+        android:text="Create Competition" />
 </LinearLayout>

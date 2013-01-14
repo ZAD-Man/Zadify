@@ -20,6 +20,9 @@ namespace Zadify
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.UnlockedItemsScreen);
+
+            var UnlockedItemsList = FindViewById<ListView>(Resource.Id.UnlockedItemsList);
+            //TODO: Fill with buttons for each rank
         }
     }
 }

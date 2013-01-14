@@ -20,6 +20,9 @@ namespace Zadify
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.CompetitionsMenu);
+
+            var newCompetitionButton = FindViewById<Button>(Resource.Id.NewCompetitionButton);
+            newCompetitionButton.Click += delegate { StartActivity(typeof(CreateCompetitionForm)); };
         }
     }
 }

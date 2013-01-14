@@ -20,6 +20,12 @@ namespace Zadify
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.RewardsMenu);
+
+            var zadifyRewardsButton = FindViewById<Button>(Resource.Id.ZadifyRewardsButton);
+            zadifyRewardsButton.Click += delegate { StartActivity(typeof(ZadifyRewardsMenu)); };
+
+            var customRewardsButton = FindViewById<Button>(Resource.Id.CustomRewardsButton);
+            customRewardsButton.Click += delegate { StartActivity(typeof(CustomRewardsMenu)); };
         }
     }
 }

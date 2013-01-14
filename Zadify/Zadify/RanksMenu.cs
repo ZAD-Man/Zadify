@@ -20,6 +20,9 @@ namespace Zadify
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.RanksMenu);
+
+            var RanksList = FindViewById<ListView>(Resource.Id.RanksList);
+            //TODO: Fill with buttons for each rank
         }
     }
 }

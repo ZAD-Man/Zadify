@@ -20,6 +20,15 @@ namespace Zadify
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.CreateRewardForm);
+
+            var customRewardForm = FindViewById<TextView>(Resource.Id.CustomRewardForm);
+            //TODO: Change to a RelativeLayout
+
+            var submitCustomRewardButton = FindViewById<Button>(Resource.Id.SubmitCustomRewardButton);
+            submitCustomRewardButton.Click += delegate
+            {
+                //TODO: Go back to Custom Rewards Menu. Look into FinishActivity().
+            };
         }
     }
 }

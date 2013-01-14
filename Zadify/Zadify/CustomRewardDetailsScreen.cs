@@ -20,6 +20,15 @@ namespace Zadify
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.CustomRewardDetailsScreen);
+
+            var customRewardDetails = FindViewById<TextView>(Resource.Id.CustomRewardDetails);
+            //TODO: Change to a RelativeLayout
+
+            var deleteCustomRewardButton = FindViewById<Button>(Resource.Id.DeleteCustomRewardButton);
+            deleteCustomRewardButton.Click += delegate
+                {
+                    //TODO: Make pop-up confirmation dialog
+                };
         }
     }
 }

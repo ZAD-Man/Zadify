@@ -21,10 +21,10 @@ namespace Zadify
 
             SetContentView(Resource.Layout.CreateGoalMenu);
 
-            var createPredefinedGoalButton = FindViewById<Button>(Resource.Id.CreateGoalButton);
+            var createPredefinedGoalButton = FindViewById<Button>(Resource.Id.CreatePredefinedGoalButton);
             createPredefinedGoalButton.Click += delegate { StartActivity(typeof(CreatePredefinedGoalForm)); };
 
-            var createCustomGoalButton = FindViewById<Button>(Resource.Id.CreateGoalButton);
+            var createCustomGoalButton = FindViewById<Button>(Resource.Id.CreateCustomGoalButton);
             createCustomGoalButton.Click += delegate { StartActivity(typeof(CreateCustomGoalForm)); };
             
             var createCompetitionButton = FindViewById<Button>(Resource.Id.CreateCompetitionButton);

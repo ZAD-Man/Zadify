@@ -20,6 +20,8 @@ namespace Zadify
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.SettingsMenu);
+
+            var settings = FindViewById<TextView>(Resource.Id.Settings);
         }
     }
 }

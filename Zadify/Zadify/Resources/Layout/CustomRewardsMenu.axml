@@ -3,5 +3,13 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-
+    <Button
+        android:id="@+id/CreateRewardButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Reward" />
+    <ListView
+        android:id="@+id/CustomRewardsList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

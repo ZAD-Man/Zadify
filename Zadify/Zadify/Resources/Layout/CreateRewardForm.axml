@@ -3,5 +3,14 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-
+    <TextView
+        android:id="@+id/CustomRewardForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The Custom Reward Form will go here (RelativeLayout)" />
+    <Button
+        android:id="@+id/SubmitCustomRewardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit" />
 </LinearLayout>

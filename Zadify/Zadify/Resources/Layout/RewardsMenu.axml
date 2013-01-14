@@ -3,5 +3,14 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-
+    <Button
+        android:id="@+id/ZadifyRewardsButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Zadify Rewards" />
+    <Button
+        android:id="@+id/CustomRewardsButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom Rewards" />
 </LinearLayout>

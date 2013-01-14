@@ -20,6 +20,9 @@ namespace Zadify
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.NewsFeedScreen);
+
+            var newsFeedButton = FindViewById<Button>(Resource.Id.NewsFeedButton);
+            //TODO: Fill with friends' activities
         }
     }
 }
