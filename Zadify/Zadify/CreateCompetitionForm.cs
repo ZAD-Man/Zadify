@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 
@@ -17,6 +18,8 @@ namespace Zadify
     {
         protected override void OnCreate(Bundle bundle)
         {
+            Log.Info("CreateCompetitionForm", "Create Competition Form created");
+
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.CreateCompetitionForm);

@@ -2,6 +2,7 @@
 using Android.App;
 using Android.Content;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
@@ -13,6 +14,7 @@ namespace Zadify
     {
         protected override void OnCreate(Bundle bundle)
         {
+            Log.Info("MainMenu", "Main Menu Created");
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.MainMenu);

@@ -4,6 +4,6 @@ Capstone Project for Zach Durtschi
 
 The project plan is included in the repository. The final product will be a gamification Android application.
 
-This project is written in Visual C#. It also uses Mono for Android. Unit Testing and Logging will be added soon, since the original frameworks are incompatible with Mono for Android. Commits are made with Github for Windows.
+This project is written in Visual C#. It also uses Mono for Android. Unit Testing will be added soon, since the original framework is incompatible with Mono for Android. Logging is done through Android's own logging system. Commits are made with Github for Windows.
 
 Progress and bug tracking can be found at https://trello.com/b/tigHJ6iz
