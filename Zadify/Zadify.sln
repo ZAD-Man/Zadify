@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadify", "Zadify\Zadify.csproj", "{1895DEE5-D4DF-4B1D-9C26-BC502A5450C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoDroidUnitTesting", "..\..\..\..\Desktop\Skool 2.0\Capstone\MonoDroid\MonoDroidUnitTesting\MonoDroidUnitTesting.csproj", "{A5F8FB02-00E0-4335-91EF-AEAA2C2F3C48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZadifyTests", "ZadifyTests\ZadifyTests.csproj", "{B333A9F3-7E4A-4A76-B371-4615D87C36AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{1895DEE5-D4DF-4B1D-9C26-BC502A5450C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1895DEE5-D4DF-4B1D-9C26-BC502A5450C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1895DEE5-D4DF-4B1D-9C26-BC502A5450C7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A5F8FB02-00E0-4335-91EF-AEAA2C2F3C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F8FB02-00E0-4335-91EF-AEAA2C2F3C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F8FB02-00E0-4335-91EF-AEAA2C2F3C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F8FB02-00E0-4335-91EF-AEAA2C2F3C48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B333A9F3-7E4A-4A76-B371-4615D87C36AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B333A9F3-7E4A-4A76-B371-4615D87C36AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B333A9F3-7E4A-4A76-B371-4615D87C36AA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B333A9F3-7E4A-4A76-B371-4615D87C36AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B333A9F3-7E4A-4A76-B371-4615D87C36AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B333A9F3-7E4A-4A76-B371-4615D87C36AA}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

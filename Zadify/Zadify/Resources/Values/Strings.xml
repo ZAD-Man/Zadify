@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ApplicationName">Zadify</string>
+  <string-array name="numbers">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+    <item>10</item>
+    <item>11</item>
+    <item>12</item>
+    <item>13</item>
+    <item>14</item>
+    <item>15</item>
+    <item>30</item>
+    <item>45</item>
+    <item>100</item>
+  </string-array>
+  <string-array name="predefinedGoalTypes">
+    <item>Fitness</item>
+    <item>Finance</item>
+    <item>Time Management</item>
+    <item>Reading</item>
+    <item>Writing</item>
+  </string-array>
+  <string-array name="readingGoalTypes">
+    <item>Per Timespan</item>
+    <item>By Date</item>
+  </string-array>
+  <string-array name="readingThings">
+    <item>Book(s)</item>
+    <item>Word(s)</item>
+    <item>Minute(s)</item>
+    <item>Hour(s)</item>
+  </string-array>
+  
 </resources>

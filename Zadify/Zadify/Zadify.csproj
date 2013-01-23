@@ -51,30 +51,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompetitionsMenu.cs" />
-    <Compile Include="CompletedGoalsMenu.cs" />
-    <Compile Include="CreateCompetitionForm.cs" />
-    <Compile Include="CreateCustomGoalForm.cs" />
-    <Compile Include="CreateGoalMenu.cs" />
-    <Compile Include="CreatePredefinedGoalForm.cs" />
-    <Compile Include="CreateRewardForm.cs" />
-    <Compile Include="CustomRewardDetailsScreen.cs" />
-    <Compile Include="CustomRewardsMenu.cs" />
-    <Compile Include="DeleteGoalForm.cs" />
-    <Compile Include="GoalDetailsScreen.cs" />
-    <Compile Include="GoalsMenu.cs" />
-    <Compile Include="MainMenu.cs" />
-    <Compile Include="NewsFeedScreen.cs" />
-    <Compile Include="RankDetailsScreen.cs" />
-    <Compile Include="RanksMenu.cs" />
-    <Compile Include="UnlockedItemsScreen.cs" />
-    <Compile Include="UpdateGoalForm.cs" />
-    <Compile Include="ZadifyRewardsMenu.cs" />
+    <Compile Include="Activities\CompetitionsMenu.cs" />
+    <Compile Include="Activities\CompletedGoalsMenu.cs" />
+    <Compile Include="Activities\CreateCompetitionForm.cs" />
+    <Compile Include="Activities\CreateCustomGoalForm.cs" />
+    <Compile Include="Activities\CreateGoalMenu.cs" />
+    <Compile Include="Activities\CreatePredefinedGoalForm.cs" />
+    <Compile Include="Activities\CreateRewardForm.cs" />
+    <Compile Include="Activities\CustomRewardDetailsScreen.cs" />
+    <Compile Include="Activities\CustomRewardsMenu.cs" />
+    <Compile Include="Activities\DeleteGoalForm.cs" />
+    <Compile Include="Activities\GoalDetailsScreen.cs" />
+    <Compile Include="Activities\GoalsMenu.cs" />
+    <Compile Include="Activities\MainMenu.cs" />
+    <Compile Include="Activities\NewsFeedScreen.cs" />
+    <Compile Include="Activities\RankDetailsScreen.cs" />
+    <Compile Include="Activities\RanksMenu.cs" />
+    <Compile Include="Activities\RewardsMenu.cs" />
+    <Compile Include="Activities\SettingsMenu.cs" />
+    <Compile Include="Activities\SocialMenu.cs" />
+    <Compile Include="Activities\UnlockedItemsScreen.cs" />
+    <Compile Include="Activities\UpdateGoalForm.cs" />
+    <Compile Include="Activities\ZadifyRewardsMenu.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RewardsMenu.cs" />
-    <Compile Include="SettingsMenu.cs" />
-    <Compile Include="SocialMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -147,7 +147,9 @@
     <AndroidResource Include="Resources\Layout\MainMenu.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Values\Strings.xml" />
+    <AndroidResource Include="Resources\Values\Strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\Icon.png" />

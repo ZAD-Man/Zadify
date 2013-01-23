@@ -3,14 +3,52 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:id="@+id/PredefinedGoalForm"
+    <Spinner
+        android:id="@+id/PredefinedGoalTypeSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Spinner
+        android:id="@+id/ReadingGoalTypeSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:id="@+id/ReadingByDateLayout"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The Predefined Goal Form will go here (RelativeLayout)" />
-    <Button
-        android:id="@+id/SubmitPredefinedGoalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/ReadingByDateText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ReadingGoalTypeSpinner"
+            android:text="Read" />
+        <Spinner
+            android:id="@+id/ReadingByDateNumberSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ReadingByDateText1" />
+        <Spinner
+            android:id="@+id/ReadingByDateThingSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ReadingByDateNumberSpinner" />
+        <TextView
+            android:id="@+id/ReadingByDateText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ReadingByDateText1"
+            android:text="by" />
+        <Button
+            android:id="@+id/ReadingByDateSelectDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ReadingByDateText2"
+            android:text="(Select Date)" />
+        <Button
+            android:id="@+id/SubmitReadingByDateGoalButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ReadingByDateText2"
+            android:text="Submit" />
+    </RelativeLayout>
 </LinearLayout>
