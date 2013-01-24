@@ -73,6 +73,15 @@
     <Compile Include="Activities\UnlockedItemsScreen.cs" />
     <Compile Include="Activities\UpdateGoalForm.cs" />
     <Compile Include="Activities\ZadifyRewardsMenu.cs" />
+    <Compile Include="IFinanceGoal.cs" />
+    <Compile Include="IFitnessGoal.cs" />
+    <Compile Include="IGoal.cs" />
+    <Compile Include="IReadingGoal.cs" />
+    <Compile Include="ITimeManagementGoal.cs" />
+    <Compile Include="IWritingGoal.cs" />
+    <Compile Include="JavaIO.cs" />
+    <Compile Include="ReadingByDateGoal.cs" />
+    <Compile Include="ReadingItems.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

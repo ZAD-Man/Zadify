@@ -20,7 +20,8 @@
             android:id="@+id/ReadingByDateLayout"
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ReadingGoalTypeSpinner">
             <LinearLayout
                 android:id="@+id/ReadingByDateInnerLayout1"
                 android:layout_width="fill_parent"
@@ -29,7 +30,6 @@
                     android:id="@+id/ReadingByDateText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/ReadingGoalTypeSpinner"
                     android:text="Read"
                     android:gravity="center_vertical" />
                 <EditText
