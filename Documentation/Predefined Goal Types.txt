@@ -4,10 +4,12 @@ Goal Types
 	Do # [activity] in [timespan]
 	Do # [activity] every [timespan]
 	Do # [activity] total by [date]
-	Lose # [weight] every [timespan]
+	
 	Lose # [weight] by [date]
-	Gain # [weight] every [timespan]
+	
 	Gain # [weight] by [date]
+	?-Lose # [weight] every [timespan]
+	?-Gain # [weight] every [timespan]
 -Finance
 	Save $ by [date]
 	Save $ every [timespan]

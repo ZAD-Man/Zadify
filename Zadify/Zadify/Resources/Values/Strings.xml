@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
-    <string name="applicationName">Zadify</string>
+  <string name="applicationName">Zadify</string>
   <string name="numberHint">#</string>
   <string-array name="predefinedGoalTypes">
     <item>Fitness</item>
@@ -9,15 +10,60 @@
     <item>Reading</item>
     <item>Writing</item>
   </string-array>
+  <string-array name="fitnessGoalTypes">
+    <item>Activities in Timespan</item>
+    <item>Activities per Timespan</item>
+    <item>Activities by Date</item>
+    <item>Lose Weight</item>
+    <item>Gain Weight</item>
+  </string-array>
+  <string-array name="financeGoalTypes">
+    <item>Save Money by Date</item>
+    <item>Save Money per Timespan</item>
+    <item>Pay Loan by Date</item>
+    <item>Pay Part of Loan per Timespan</item>
+  </string-array>
+  <string-array name="timeManagementGoalTypes">
+    <item>Limit Activity per Timespan</item>
+    <item>Stop Activity until Date</item>
+  </string-array>
   <string-array name="readingGoalTypes">
     <item>Per Timespan</item>
     <item>By Date</item>
   </string-array>
+  <string-array name="writingGoalTypes">
+    <item>Per Timespan</item>
+    <item>By Date</item>
+  </string-array>
+  <string-array name="fitnessActivities">
+    <item>Pushup(s)</item>
+    <item>Pullup(s)</item>
+    <item>Mile(s) jogged</item>
+    <item>Kilometer(s) jogged</item>
+    <item>Mile(s) ran</item>
+    <item>Kilometer(s) ran</item>
+  </string-array>
+  <string-array name="fitnessWeights">
+    <item>Pound(s)</item>
+    <item>Kilogram(s)</item>
+  </string-array>
+  <string-array name="timeManagementActivities">
+    <item>Social Networking</item>
+    <item>Video Games</item>
+    <item>Addiction</item>
+  </string-array>
   <string-array name="readingThings">
     <item>Book(s)</item>
     <item>Word(s)</item>
+    <item>Page(s)</item>
     <item>Minute(s)</item>
     <item>Hour(s)</item>
   </string-array>
-  
+  <string-array name="writingThings">
+    <item>Word(s)</item>
+    <item>Page(s)</item>
+    <item>Minute(s)</item>
+    <item>Hour(s)</item>
+  </string-array>
+
 </resources>

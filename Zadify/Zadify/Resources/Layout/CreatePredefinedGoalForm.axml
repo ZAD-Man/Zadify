@@ -7,62 +7,68 @@
         android:id="@+id/PredefinedGoalTypeSpinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
-    <Spinner
-        android:id="@+id/ReadingGoalTypeSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
     <RelativeLayout
-        android:id="@+id/ReadingByDateLayout"
+        android:id="@+id/ReadingGoalLayout"
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <LinearLayout
-            android:id="@+id/ReadingByDateInnerLayout1"
+        <Spinner
+            android:id="@+id/ReadingGoalTypeSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:id="@+id/ReadingByDateLayout"
+            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/ReadingByDateText1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ReadingGoalTypeSpinner"
-                android:text="Read"
-                android:gravity="center_vertical" />
-            <EditText
-                android:id="@+id/ReadingByDateNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/numberHint"
-                android:inputType="number" />
-            <Spinner
-                android:id="@+id/ReadingByDateThingSpinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/ReadingByDateNumber" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/ReadingByDateInnerLayout2"
-            android:layout_below="@id/ReadingByDateInnerLayout1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/ReadingByDateText2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ReadingByDateText1"
-                android:text="by"
-                android:gravity="center_vertical" />
+            <LinearLayout
+                android:id="@+id/ReadingByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ReadingByDateText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ReadingGoalTypeSpinner"
+                    android:text="Read"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/ReadingByDateNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/ReadingByDateThingSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ReadingByDateNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ReadingByDateInnerLayout2"
+                android:layout_below="@id/ReadingByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ReadingByDateText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ReadingByDateText1"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/ReadingByDateSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/ReadingByDateText2"
+                    android:text="(Date)" />
+            </LinearLayout>
             <Button
-                android:id="@+id/ReadingByDateSelectDate"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:layout_toRightOf="@id/ReadingByDateText2"
-                android:text="(Date)" />
-        </LinearLayout>
-        <Button
-            android:id="@+id/SubmitReadingByDateGoalButton"
-            android:layout_below="@id/ReadingByDateInnerLayout2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit" />
+                android:id="@+id/SubmitReadingByDateGoalButton"
+                android:layout_below="@id/ReadingByDateInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
     </RelativeLayout>
 </LinearLayout>

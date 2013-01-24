@@ -22,11 +22,13 @@ namespace Zadify.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.CreatePredefinedGoalForm);
-            
+
             var predefinedGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.PredefinedGoalTypeSpinner);
             var predefinedGoalTypeAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.predefinedGoalTypes, Android.Resource.Layout.SimpleSpinnerItem);
             predefinedGoalTypeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             predefinedGoalTypeSpinner.Adapter = predefinedGoalTypeAdapter;
+
+            var readingGoalLayout = FindViewById<RelativeLayout>(Resource.Id.ReadingGoalLayout);
 
             var readingGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.ReadingGoalTypeSpinner);
             var readingGoalTypeAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.readingGoalTypes, Android.Resource.Layout.SimpleSpinnerItem);
@@ -54,12 +56,11 @@ namespace Zadify.Activities
                     var currentItem = predefinedGoalTypeSpinner.GetItemAtPosition(predefinedGoalTypeSpinner.SelectedItemPosition);
                     if (currentItem.ToString() == "Reading")
                     {
-                        readingGoalTypeSpinner.Visibility = ViewStates.Visible;
-                    } 
-                    else 
+                        readingGoalLayout.Visibility = ViewStates.Visible;
+                    }
+                    else
                     {
-                        readingGoalTypeSpinner.Visibility = ViewStates.Gone;
-                        readingByDateLayout.Visibility = ViewStates.Gone;
+                        readingGoalLayout.Visibility = ViewStates.Invisible;
                     }
                 };
 
@@ -76,13 +77,13 @@ namespace Zadify.Activities
                     }
                 };
         }
-        
+
         private void UpdateReadingByDateDate()
         {
             readingByDateSelectDate.Text = date.ToString("d");
         }
 
-        void OnDateSet(object sender, DatePickerDialog.DateSetEventArgs e)
+        private void OnDateSet(object sender, DatePickerDialog.DateSetEventArgs e)
         {
             this.date = e.Date;
             UpdateReadingByDateDate();
