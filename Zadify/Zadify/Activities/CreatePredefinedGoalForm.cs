@@ -29,35 +29,22 @@ namespace Zadify.Activities
             predefinedGoalTypeSpinner.Adapter = predefinedGoalTypeAdapter;
 
             var readingGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.ReadingGoalTypeSpinner);
-            readingGoalTypeSpinner.Visibility = ViewStates.Gone;
             var readingGoalTypeAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.readingGoalTypes, Android.Resource.Layout.SimpleSpinnerItem);
             readingGoalTypeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             readingGoalTypeSpinner.Adapter = readingGoalTypeAdapter;
 
-            var readingByDateText1 = FindViewById<TextView>(Resource.Id.ReadingByDateText1);
-            readingByDateText1.Visibility = ViewStates.Gone;
-
-            var readingByDateNumberSpinner = FindViewById<Spinner>(Resource.Id.ReadingByDateNumberSpinner);
-            readingByDateNumberSpinner.Visibility = ViewStates.Gone;
-            var readingByDateNumberAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.numbers, Android.Resource.Layout.SimpleSpinnerItem);
-            readingByDateNumberAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            readingByDateNumberSpinner.Adapter = readingByDateNumberAdapter;
+            var readingByDateLayout = FindViewById<RelativeLayout>(Resource.Id.ReadingByDateLayout);
 
             var readingByDateThingSpinner = FindViewById<Spinner>(Resource.Id.ReadingByDateThingSpinner);
-            readingByDateThingSpinner.Visibility = ViewStates.Gone;
             var readingByDateThingAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.readingThings, Android.Resource.Layout.SimpleSpinnerItem);
             readingByDateThingAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             readingByDateThingSpinner.Adapter = readingByDateThingAdapter;
 
-            var readingByDateText2 = FindViewById<TextView>(Resource.Id.ReadingByDateText2);
-            readingByDateText2.Visibility = ViewStates.Gone;
-
             readingByDateSelectDate = FindViewById<Button>(Resource.Id.ReadingByDateSelectDate);
-            readingByDateSelectDate.Visibility = ViewStates.Gone;
             readingByDateSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
 
-            var submitPredefinedGoalButton = FindViewById<Button>(Resource.Id.SubmitReadingByDateGoalButton);
-            submitPredefinedGoalButton.Click += delegate
+            var submitReadingByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitReadingByDateGoalButton);
+            submitReadingByDateGoalButton.Click += delegate
                 {
                     //TODO: Go back to Goals Menu. Look into FinishActivity().
                 };
@@ -72,6 +59,7 @@ namespace Zadify.Activities
                     else 
                     {
                         readingGoalTypeSpinner.Visibility = ViewStates.Gone;
+                        readingByDateLayout.Visibility = ViewStates.Gone;
                     }
                 };
 
@@ -80,19 +68,11 @@ namespace Zadify.Activities
                     var currentItem = readingGoalTypeSpinner.GetItemAtPosition(readingGoalTypeSpinner.SelectedItemPosition);
                     if (currentItem.ToString() == "By Date")
                     {
-                        readingByDateSelectDate.Visibility = ViewStates.Visible;
-                        readingByDateText1.Visibility = ViewStates.Visible;
-                        readingByDateNumberSpinner.Visibility = ViewStates.Visible;
-                        readingByDateThingSpinner.Visibility = ViewStates.Visible;
-                        readingByDateText2.Visibility = ViewStates.Visible;
+                        readingByDateLayout.Visibility = ViewStates.Visible;
                     }
                     else
                     {
-                        readingByDateSelectDate.Visibility = ViewStates.Gone;
-                        readingByDateText1.Visibility = ViewStates.Gone;
-                        readingByDateNumberSpinner.Visibility = ViewStates.Gone;
-                        readingByDateThingSpinner.Visibility = ViewStates.Gone;
-                        readingByDateText2.Visibility = ViewStates.Gone;
+                        readingByDateLayout.Visibility = ViewStates.Gone;
                     }
                 };
         }

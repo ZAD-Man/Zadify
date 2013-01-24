@@ -14,41 +14,55 @@
     <RelativeLayout
         android:id="@+id/ReadingByDateLayout"
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/ReadingByDateText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ReadingGoalTypeSpinner"
-            android:text="Read" />
-        <Spinner
-            android:id="@+id/ReadingByDateNumberSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ReadingByDateText1" />
-        <Spinner
-            android:id="@+id/ReadingByDateThingSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ReadingByDateNumberSpinner" />
-        <TextView
-            android:id="@+id/ReadingByDateText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ReadingByDateText1"
-            android:text="by" />
-        <Button
-            android:id="@+id/ReadingByDateSelectDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ReadingByDateText2"
-            android:text="(Select Date)" />
+        <LinearLayout
+            android:id="@+id/ReadingByDateInnerLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ReadingByDateText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ReadingGoalTypeSpinner"
+                android:text="Read"
+                android:gravity="center_vertical" />
+            <EditText
+                android:id="@+id/ReadingByDateNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/numberHint"
+                android:inputType="number" />
+            <Spinner
+                android:id="@+id/ReadingByDateThingSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ReadingByDateNumber" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ReadingByDateInnerLayout2"
+            android:layout_below="@id/ReadingByDateInnerLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ReadingByDateText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ReadingByDateText1"
+                android:text="by"
+                android:gravity="center_vertical" />
+            <Button
+                android:id="@+id/ReadingByDateSelectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_toRightOf="@id/ReadingByDateText2"
+                android:text="(Date)" />
+        </LinearLayout>
         <Button
             android:id="@+id/SubmitReadingByDateGoalButton"
+            android:layout_below="@id/ReadingByDateInnerLayout2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ReadingByDateText2"
             android:text="Submit" />
     </RelativeLayout>
 </LinearLayout>
