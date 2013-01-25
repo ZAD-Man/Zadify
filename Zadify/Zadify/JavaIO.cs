@@ -8,6 +8,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 
@@ -19,34 +20,35 @@ namespace Zadify
         {
             try
             {
-                using (Stream stream = context.OpenFileOutput(fileName, FileCreationMode.Private))
+                using (var stream = context.OpenFileOutput(fileName, FileCreationMode.Private))
                 {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof (T));
+                    var xmlSerializer = new XmlSerializer(typeof (T));
 
                     xmlSerializer.Serialize(stream, data);
                 }
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Error("SaveDataError", e.Message + e.StackTrace);
                 return false;
             }
         }
 
         public static T LoadData<T>(Context context, string fileName)
         {
-            Java.IO.File file = context.GetFileStreamPath(fileName);
+            var file = context.GetFileStreamPath(fileName);
 
             if (file.Exists())
             {
-                using (Stream openStream = context.OpenFileInput(fileName))
+                using (var openStream = context.OpenFileInput(fileName))
                 {
-                    using (StreamReader reader = new StreamReader(openStream))
+                    using (var reader = new StreamReader(openStream))
                     {
                         try
                         {
-                            XmlSerializer serializer = new XmlSerializer(typeof (T));
+                            var serializer = new XmlSerializer(typeof (T));
 
                             var loadedObject = serializer.Deserialize(reader);
 

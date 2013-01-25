@@ -1,0 +1,21 @@
+For the most up-to-date schedule, visit https://trello.com/b/tigHJ6iz
+However, this file should always reflect the state of the project during the commit it was changed.
+O = incomplete, X = complete
+
+Week 3
+
+Tasks
+O-Ranks based on goals completed
+O-Friend network
+
+Tasks from Meeting
+X-Add a record of tasks to repository
+O-Look at class design (i.e. ReadingByDateGoal...)
+O-FIX - Keyboard doesn't come all the way up
+X-FIX - Date starts off in 1900
+O-FIX - No goal validation
+O-FIX - Only one goal file
+O-FIX - Only one goal type
+O-FIX - Toooo many Classes
+O-FIX - Full display of goal
+O-Meet with Matt about final weeks

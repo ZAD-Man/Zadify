@@ -1,1 +1,1 @@
-XML Serializer found here: http://stackoverflow.com/questions/13332025/mono-for-android-saving-data
+XML Serializer based on this: http://stackoverflow.com/questions/13332025/mono-for-android-saving-data

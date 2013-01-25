@@ -12,7 +12,7 @@ namespace Zadify.Activities
     {
         private const int DATE_DIALOG_ID = 0;
 
-        private DateTime _date;
+        private DateTime _date = DateTime.Today;
         private Button _readingByDateSelectDate;
 
         protected override void OnCreate(Bundle bundle)

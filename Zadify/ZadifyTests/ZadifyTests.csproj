@@ -15,6 +15,10 @@
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <TargetFrameworkVersion>v2.2</TargetFrameworkVersion>
+    <AndroidSupportedAbis>armeabi%3barmeabi-v7a%3bx86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +50,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Zadify\IFinanceGoal.cs">
+      <Link>IFinanceGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\IFitnessGoal.cs">
+      <Link>IFitnessGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\IGoal.cs">
+      <Link>IGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\IReadingGoal.cs">
+      <Link>IReadingGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\ITimeManagementGoal.cs">
+      <Link>ITimeManagementGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\IWritingGoal.cs">
+      <Link>IWritingGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\ReadingByDateGoal.cs">
+      <Link>ReadingByDateGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\ReadingItems.cs">
+      <Link>ReadingItems.cs</Link>
+    </Compile>
+    <Compile Include="CreateGoalTest.cs" />
     <Compile Include="TestActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
