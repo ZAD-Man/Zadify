@@ -19,3 +19,27 @@ O-FIX - Only one goal type
 O-FIX - Toooo many Classes
 O-FIX - Full display of goal
 O-Meet with Matt about final weeks
+
+Week 4
+
+O-Creation and storage of custom goals
+O-Adaptable Custom Goal Form
+
+Week 5
+
+O-Represent goals as monster chasing user
+O-Basic item sets, randomly chosen on goal creation
+O-Newsfeed of friends’ shared activities
+
+Week 6
+
+O-Create/send competition goals
+O-Creation and storage of custom rewards
+O-Connection of any class of goal to custom rewards
+
+Week 7
+
+O-UI Customization
+O-Edit and store user’s personal information
+O-Unlocking all items sets
+O-Share any activity on Facebook or Twitter
