@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -12,13 +11,15 @@ using Android.Widget;
 
 namespace Zadify
 {
+    [Serializable]
     class DietGoal : IGoal
     {
-        public DietGoal(DateTime dueDate, int goalAmount, DietItems measuredItems) : this(dueDate, goalAmount, measuredItems, new DateTime())
+        public DietGoal(DateTime dueDate, int goalAmount, DietItems measuredItems)
+            : this(dueDate, goalAmount, measuredItems, new TimeSpan())
         {
         }
 
-        public DietGoal(DateTime dueDate, int goalAmount, DietItems measuredItems, DateTime repeatingTime)
+        public DietGoal(DateTime dueDate, int goalAmount, DietItems measuredItems, TimeSpan repeatingTime)
         {
             RepeatingTime = repeatingTime;
             GoalAmount = goalAmount;
@@ -33,7 +34,7 @@ namespace Zadify
         public int GoalAmount { get; private set; }
         public int GoalCompletedAmount { get; private set; }
         public DietItems MeasuredItems { get; private set; }
-        public DateTime RepeatingTime { get; private set; }
+        public TimeSpan RepeatingTime { get; private set; }
 
         public void UpdateProgress(int amountCompleted)
         {

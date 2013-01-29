@@ -1,7 +1,6 @@
 Goal Types
 
 -Fitness
-	Do # [activity] in [timespan]
 	Do # [activity] every [timespan]
 	Do # [activity] total by [date]
 -Diet

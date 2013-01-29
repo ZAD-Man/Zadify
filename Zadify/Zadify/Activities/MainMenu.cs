@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.OS;
 using Android.Util;
@@ -14,6 +16,21 @@ namespace Zadify.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.MainMenu);
+
+            try
+            {
+                var goalsList = JavaIO.LoadData<List<IGoal>>(this, "Goals.zad");
+                if (goalsList == null)
+                {
+                    goalsList = new List<IGoal>();
+                    JavaIO.SaveData(this, "Goals.zad", goalsList);
+                }
+            }
+            catch (Exception)
+            {
+                var goalsList = new LinkedList<IGoal>();
+                JavaIO.SaveData(this, "Goals.zad", goalsList);
+            }
 
             var goalsButton = FindViewById<Button>(Resource.Id.GoalsButton);
             goalsButton.Click += delegate { StartActivity(typeof (GoalsMenu)); };

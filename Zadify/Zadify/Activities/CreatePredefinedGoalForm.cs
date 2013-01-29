@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.OS;
 using Android.Util;
@@ -12,8 +13,10 @@ namespace Zadify.Activities
     {
         private const int DATE_DIALOG_ID = 0;
 
-        private DateTime _date = DateTime.Today;
+        private DateTime _goalDate = DateTime.Today;
         private Button _readingByDateSelectDate;
+        private Button _fitnessByDateSelectDate;
+        private Button _fitnessPerTimespanSelectDate;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -28,6 +31,139 @@ namespace Zadify.Activities
             predefinedGoalTypeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             predefinedGoalTypeSpinner.Adapter = predefinedGoalTypeAdapter;
 
+            #region Fitness Goals
+            var fitnessGoalLayout = FindViewById<RelativeLayout>(Resource.Id.FitnessGoalLayout);
+
+            var fitnessGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.FitnessGoalTypeSpinner);
+            var fitnessGoalTypeAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.fitnessGoalTypes, Android.Resource.Layout.SimpleSpinnerItem);
+            fitnessGoalTypeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            fitnessGoalTypeSpinner.Adapter = fitnessGoalTypeAdapter;
+
+            #region Fitness By Date
+            var fitnessByDateLayout = FindViewById<RelativeLayout>(Resource.Id.FitnessByDateLayout);
+
+            var fitnessByDateNumber = FindViewById<EditText>(Resource.Id.FitnessByDateNumber);
+
+            var fitnessByDateItemsSpinner = FindViewById<Spinner>(Resource.Id.FitnessByDateItemsSpinner);
+            var fitnessByDateItemsAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.fitnessActivities, Android.Resource.Layout.SimpleSpinnerItem);
+            fitnessByDateItemsAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            fitnessByDateItemsSpinner.Adapter = fitnessByDateItemsAdapter;
+
+            _fitnessByDateSelectDate = FindViewById<Button>(Resource.Id.FitnessByDateSelectDate);
+            _fitnessByDateSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitFitnessByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitFitnessByDateGoalButton);
+            submitFitnessByDateGoalButton.Click += delegate
+            {
+                var goalNumber = int.Parse(fitnessByDateNumber.Text);
+                var items = FitnessItems.Pushups;
+                var selectedItems = fitnessByDateItemsSpinner.GetItemAtPosition(fitnessByDateItemsSpinner.SelectedItemPosition);
+                switch (selectedItems.ToString())
+                {
+                    case "Pushup(s)":
+                        items = FitnessItems.Pushups;
+                        break;
+                    case "Pullup(s)":
+                        items = FitnessItems.Pullups;
+                        break;
+                    case "Situp(s)":
+                        items = FitnessItems.Situps;
+                        break;
+                    case "Mile(s) Ran":
+                        items = FitnessItems.MilesRun;
+                        break;
+                    case "Kilometer(s) Ran":
+                        items = FitnessItems.KilometersRun;
+                        break;
+                }
+
+                try
+                {
+                    var fitnessByDateGoal = new FitnessGoal(_goalDate, goalNumber, items);
+                    var goalsList = JavaIO.LoadData<List<IGoal>>(this, "Goals.zad");
+                    goalsList.Add(fitnessByDateGoal);
+                    JavaIO.SaveData(this, "Goals.zad", goalsList);
+                }
+                catch (Exception)
+                {
+                    submitFitnessByDateGoalButton.Text = "Error";
+                }
+                //TODO: Go back to Goals Menu. Look into FinishActivity().
+            };
+            #endregion
+            #region Fitness Per Timespan
+            var fitnessPerTimespanLayout = FindViewById<RelativeLayout>(Resource.Id.FitnessPerTimespanLayout);
+
+            var fitnessPerTimespanNumber = FindViewById<EditText>(Resource.Id.FitnessPerTimespanNumber);
+
+            var fitnessPerTimespanItemsSpinner = FindViewById<Spinner>(Resource.Id.FitnessPerTimespanItemsSpinner);
+            var fitnessPerTimespanItemsAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.fitnessActivities, Android.Resource.Layout.SimpleSpinnerItem);
+            fitnessPerTimespanItemsAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            fitnessPerTimespanItemsSpinner.Adapter = fitnessPerTimespanItemsAdapter;
+
+            var fitnessPerTimespanTimespanSpinner = FindViewById<Spinner>(Resource.Id.FitnessPerTimespanTimespanSpinner);
+            var fitnessPerTimespanTimespanAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.fitnessActivities, Android.Resource.Layout.SimpleSpinnerItem);
+            fitnessPerTimespanTimespanAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            fitnessPerTimespanTimespanSpinner.Adapter = fitnessPerTimespanTimespanAdapter;
+
+            _fitnessPerTimespanSelectDate = FindViewById<Button>(Resource.Id.FitnessPerTimespanSelectDate);
+            _fitnessPerTimespanSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitFitnessPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitFitnessPerTimespanGoalButton);
+            submitFitnessPerTimespanGoalButton.Click += delegate
+            {
+                var goalNumber = int.Parse(fitnessPerTimespanNumber.Text);
+                var items = FitnessItems.Pushups;
+                var timespan = new TimeSpan();
+                var selectedItems = fitnessPerTimespanItemsSpinner.GetItemAtPosition(fitnessPerTimespanItemsSpinner.SelectedItemPosition);
+                var selectedTimespan = fitnessPerTimespanTimespanSpinner.GetItemAtPosition(fitnessPerTimespanTimespanSpinner.SelectedItemPosition);
+                switch (selectedItems.ToString())
+                {
+                    case "Pushup(s)":
+                        items = FitnessItems.Pushups;
+                        break;
+                    case "Pullup(s)":
+                        items = FitnessItems.Pullups;
+                        break;
+                    case "Situp(s)":
+                        items = FitnessItems.Situps;
+                        break;
+                    case "Mile(s) Ran":
+                        items = FitnessItems.MilesRun;
+                        break;
+                    case "Kilometer(s) Ran":
+                        items = FitnessItems.KilometersRun;
+                        break;
+                }
+
+                switch (selectedTimespan.ToString())
+                {
+                    case "Day":
+                        timespan = new TimeSpan(1,0,0,0);
+                        break;
+                    case "Week":
+                        timespan = new TimeSpan(7,0,0,0);
+                        break;
+                }
+
+                try
+                {
+                    var fitnessPerTimespanGoal = new FitnessGoal(_goalDate, goalNumber, items, timespan);
+                    var goalsList = JavaIO.LoadData<List<IGoal>>(this, "Goals.zad");
+                    goalsList.Add(fitnessPerTimespanGoal);
+                    JavaIO.SaveData(this, "Goals.zad", goalsList);
+                }
+                catch (Exception)
+                {
+                    submitFitnessPerTimespanGoalButton.Text = "Error";
+                }
+                //TODO: Go back to Goals Menu. Look into FinishActivity().
+            };
+            #endregion
+            #endregion
+
+            #region Reading Goals
+
             var readingGoalLayout = FindViewById<RelativeLayout>(Resource.Id.ReadingGoalLayout);
 
             var readingGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.ReadingGoalTypeSpinner);
@@ -35,14 +171,16 @@ namespace Zadify.Activities
             readingGoalTypeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             readingGoalTypeSpinner.Adapter = readingGoalTypeAdapter;
 
+            #region Reading By Date
+
             var readingByDateLayout = FindViewById<RelativeLayout>(Resource.Id.ReadingByDateLayout);
 
             var readingByDateNumber = FindViewById<EditText>(Resource.Id.ReadingByDateNumber);
 
-            var readingByDateThingSpinner = FindViewById<Spinner>(Resource.Id.ReadingByDateThingSpinner);
-            var readingByDateThingAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.readingThings, Android.Resource.Layout.SimpleSpinnerItem);
-            readingByDateThingAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            readingByDateThingSpinner.Adapter = readingByDateThingAdapter;
+            var readingByDateItemsSpinner = FindViewById<Spinner>(Resource.Id.ReadingByDateItemsSpinner);
+            var readingByDateItemsAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.readingItems, Android.Resource.Layout.SimpleSpinnerItem);
+            readingByDateItemsAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            readingByDateItemsSpinner.Adapter = readingByDateItemsAdapter;
 
             _readingByDateSelectDate = FindViewById<Button>(Resource.Id.ReadingByDateSelectDate);
             _readingByDateSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
@@ -52,8 +190,8 @@ namespace Zadify.Activities
                 {
                     var goalNumber = int.Parse(readingByDateNumber.Text);
                     var items = ReadingItems.Books;
-                    var selectedThings = readingByDateThingSpinner.GetItemAtPosition(readingByDateThingSpinner.SelectedItemPosition);
-                    switch (selectedThings.ToString())
+                    var selectedItems = readingByDateItemsSpinner.GetItemAtPosition(readingByDateItemsSpinner.SelectedItemPosition);
+                    switch (selectedItems.ToString())
                     {
                         case "Book(s)":
                             items = ReadingItems.Books;
@@ -72,63 +210,69 @@ namespace Zadify.Activities
                             break;
                     }
 
-                    var testReadingByDateGoal = new ReadingByDateGoal(_date, items, goalNumber);
-                    JavaIO.SaveData(this, "TestGoal.txt", testReadingByDateGoal);
-                        var testOutGoal = JavaIO.LoadData<ReadingByDateGoal>(this, "TestGoal.txt");
                     try
                     {
-                        submitReadingByDateGoalButton.Text = testOutGoal.ReadingItems.ToString();
+                        var readingByDateGoal = new ReadingGoal(_goalDate, goalNumber, items);
+                        var goalsList = JavaIO.LoadData<List<IGoal>>(this, "Goals.zad");
+                        goalsList.Add(readingByDateGoal);
+                        JavaIO.SaveData(this, "Goals.zad", goalsList);
                     }
-                    catch (Java.IO.FileNotFoundException e)
+                    catch (Exception)
                     {
-                        Log.Error("XMLTest:FileNotFound:", e.Message + e.StackTrace);
-                    }
-                    catch (Exception e)
-                    {
-                        Log.Error("XMLTest:General:", e.Message + e.StackTrace);
-                        Log.Error("ReadingItems", testOutGoal.ReadingItems.ToString());
-                        Log.Error("ItemsCompletedNr", testOutGoal.ItemsCompletedNumber.ToString());
-                        Log.Error("DueDate", testOutGoal.DueDate.ToString());
+                        submitReadingByDateGoalButton.Text = "Error";
                     }
                     //TODO: Go back to Goals Menu. Look into FinishActivity().
                 };
 
+            #endregion
+
+            #endregion
+
             predefinedGoalTypeSpinner.ItemSelected += delegate
                 {
                     var currentItem = predefinedGoalTypeSpinner.GetItemAtPosition(predefinedGoalTypeSpinner.SelectedItemPosition);
-                    if (currentItem.ToString() == "Reading")
-                    {
-                        readingGoalLayout.Visibility = ViewStates.Visible;
-                    }
-                    else
-                    {
-                        readingGoalLayout.Visibility = ViewStates.Invisible;
-                    }
+
+                    readingGoalLayout.Visibility = currentItem.ToString() == "Reading" ? ViewStates.Visible : ViewStates.Gone;
+                    fitnessGoalLayout.Visibility = currentItem.ToString() == "Fitness" ? ViewStates.Visible : ViewStates.Gone;
                 };
+
+            fitnessGoalTypeSpinner.ItemSelected += delegate
+            {
+                var currentItem = fitnessGoalTypeSpinner.GetItemAtPosition(fitnessGoalTypeSpinner.SelectedItemPosition);
+
+                fitnessByDateLayout.Visibility = currentItem.ToString() == "By Date" ? ViewStates.Visible : ViewStates.Gone;
+                fitnessPerTimespanLayout.Visibility = currentItem.ToString() == "Per Timespan" ? ViewStates.Visible : ViewStates.Gone;
+            };
 
             readingGoalTypeSpinner.ItemSelected += delegate
                 {
                     var currentItem = readingGoalTypeSpinner.GetItemAtPosition(readingGoalTypeSpinner.SelectedItemPosition);
-                    if (currentItem.ToString() == "By Date")
-                    {
-                        readingByDateLayout.Visibility = ViewStates.Visible;
-                    }
-                    else
-                    {
-                        readingByDateLayout.Visibility = ViewStates.Gone;
-                    }
+
+                    readingByDateLayout.Visibility = currentItem.ToString() == "By Date" ? ViewStates.Visible : ViewStates.Gone;
                 };
         }
 
         private void UpdateReadingByDateDate()
         {
-            _readingByDateSelectDate.Text = _date.ToString("d");
+            _readingByDateSelectDate.Text = _goalDate.ToString("d");
+        }
+        
+        private void UpdateFitnessByDateDate()
+        {
+            _fitnessByDateSelectDate.Text = _goalDate.ToString("d");
+        }
+        
+        private void UpdateFitnessPerTimespanDate()
+        {
+            _fitnessPerTimespanSelectDate.Text = _goalDate.ToString("d");
         }
 
         private void OnDateSet(object sender, DatePickerDialog.DateSetEventArgs e)
         {
-            this._date = e.Date;
+            _goalDate = e.Date;
             UpdateReadingByDateDate();
+            UpdateFitnessByDateDate();
+            UpdateFitnessPerTimespanDate();
         }
 
         protected override Dialog OnCreateDialog(int id)
@@ -136,7 +280,7 @@ namespace Zadify.Activities
             switch (id)
             {
                 case DATE_DIALOG_ID:
-                    return new DatePickerDialog(this, OnDateSet, _date.Year, _date.Month - 1, _date.Day);
+                    return new DatePickerDialog(this, OnDateSet, _goalDate.Year, _goalDate.Month - 1, _goalDate.Day);
             }
             return null;
         }

@@ -8,6 +8,142 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     <RelativeLayout
+        android:id="@+id/FitnessGoalLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/FitnessGoalTypeSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:id="@+id/FitnessByDateLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FitnessGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/FitnessByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FitnessByDateText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/FitnessByDateNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/FitnessByDateItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/FitnessByDateNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/FitnessByDateInnerLayout2"
+                android:layout_below="@id/FitnessByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FitnessByDateText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/FitnessByDateText1"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/FitnessByDateSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/FitnessByDateText2"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitFitnessByDateGoalButton"
+                android:layout_below="@id/FitnessByDateInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/FitnessPerTimespanLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FitnessGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/FitnessPerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FitnessPerTimespanText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/FitnessPerTimespanNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/FitnessPerTimespanItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/FitnessPerTimespanNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/FitnessPerTimespanInnerLayout2"
+                android:layout_below="@id/FitnessPerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FitnessPerTimespanText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/FitnessPerTimespanText1"
+                    android:text="every"
+                    android:gravity="center_vertical" />
+                <Spinner
+                    android:id="@+id/FitnessPerTimespanTimespanSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/FitnessPerTimespanText2" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/FitnessPerTimespanInnerLayout3"
+                android:layout_below="@id/FitnessPerTimespanInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FitnessPerTimespanText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/FitnessPerTimespanText2"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/FitnessPerTimespanSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/FitnessPerTimespanText3"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitFitnessPerTimespanGoalButton"
+                android:layout_below="@id/FitnessPerTimespanInnerLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/ReadingGoalLayout"
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -39,7 +175,7 @@
                     android:hint="@string/numberHint"
                     android:inputType="number" />
                 <Spinner
-                    android:id="@+id/ReadingByDateThingSpinner"
+                    android:id="@+id/ReadingByDateItemsSpinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/ReadingByDateNumber" />

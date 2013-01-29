@@ -73,19 +73,21 @@
     <Compile Include="Activities\UnlockedItemsScreen.cs" />
     <Compile Include="Activities\UpdateGoalForm.cs" />
     <Compile Include="Activities\ZadifyRewardsMenu.cs" />
+    <Compile Include="DietGoal.cs" />
+    <Compile Include="Enums\DietItems.cs" />
     <Compile Include="FinanceGoal.cs" />
-    <Compile Include="FinanceItems.cs" />
+    <Compile Include="Enums\FinanceItems.cs" />
     <Compile Include="FitnessGoal.cs" />
-    <Compile Include="FitnessItems.cs" />
+    <Compile Include="Enums\FitnessItems.cs" />
+    <Compile Include="Enums\FitnessWeights.cs" />
     <Compile Include="IGoal.cs" />
     <Compile Include="ReadingGoal.cs" />
-    <Compile Include="TimeManagementGoal.cs" />
     <Compile Include="WritingGoal.cs" />
     <Compile Include="JavaIO.cs" />
-    <Compile Include="ReadingByDateGoal.cs" />
-    <Compile Include="ReadingItems.cs" />
+    <Compile Include="Enums\ReadingItems.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enums\WritingItems.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

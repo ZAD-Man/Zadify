@@ -23,23 +23,23 @@ namespace ZadifyTests
             var date = new DateTime(2013, 5, 12);
             var readingItems = ReadingItems.Words;
             var itemsGoalNumber = 108;
-            var readingByDateGoal = new ReadingByDateGoal(date,readingItems, itemsGoalNumber);
-            Assert.AreEqual(date, readingByDateGoal.DueDate);
-            Assert.AreEqual(ReadingItems.Words, readingByDateGoal.ReadingItems);
-            Assert.AreEqual(108, readingByDateGoal.ItemsGoalNumber);
-            Assert.AreEqual(0, readingByDateGoal.ItemsCompletedNumber);
-            Assert.AreEqual(0, readingByDateGoal.Progress);
+            var readingGoal = new ReadingGoal(date, itemsGoalNumber, readingItems);
+            Assert.AreEqual(date, readingGoal.DueDate);
+            Assert.AreEqual(ReadingItems.Words, readingGoal.MeasuredItems);
+            Assert.AreEqual(108, readingGoal.GoalAmount);
+            Assert.AreEqual(0, readingGoal.GoalCompletedAmount);
+            Assert.AreEqual(0, readingGoal.Progress);
         }
 
         [TestMethod]
-        public void UpdateReadingByDateGoal()
+        public void UpdateReadingByDateGoalProgress()
         {
             var date = new DateTime(2013, 5, 12);
             var readingItems = ReadingItems.Words;
             var itemsGoalNumber = 108;
-            var readingByDateGoal = new ReadingByDateGoal(date, readingItems, itemsGoalNumber);
+            var readingByDateGoal = new ReadingGoal(date, itemsGoalNumber, readingItems);
             readingByDateGoal.UpdateProgress(42);
-            Assert.AreEqual(42, readingByDateGoal.ItemsCompletedNumber);
+            Assert.AreEqual(42, readingByDateGoal.GoalCompletedAmount);
             Assert.AreEqual((double)42/108, readingByDateGoal.Progress);
         }
     }

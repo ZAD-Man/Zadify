@@ -12,13 +12,14 @@ using Android.Widget;
 
 namespace Zadify
 {
+    [Serializable]
     public class WritingGoal : IGoal
     {
-        public WritingGoal(DateTime dueDate, int goalAmount, WritingItems measuredItems) : this(dueDate, goalAmount, measuredItems, new DateTime())
+        public WritingGoal(DateTime dueDate, int goalAmount, WritingItems measuredItems) : this(dueDate, goalAmount, measuredItems, new TimeSpan())
         {
         }
 
-        public WritingGoal(DateTime dueDate, int goalAmount, WritingItems measuredItems, DateTime repeatingTime)
+        public WritingGoal(DateTime dueDate, int goalAmount, WritingItems measuredItems, TimeSpan repeatingTime)
         {
             RepeatingTime = repeatingTime;
             GoalAmount = goalAmount;
@@ -33,7 +34,7 @@ namespace Zadify
         public int GoalAmount { get; private set; }
         public int GoalCompletedAmount { get; private set; }
         public WritingItems MeasuredItems { get; private set; }
-        public DateTime RepeatingTime { get; private set; }
+        public TimeSpan RepeatingTime { get; private set; }
 
         public void UpdateProgress(int amountCompleted)
         {

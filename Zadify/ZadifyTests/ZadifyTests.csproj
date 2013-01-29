@@ -50,29 +50,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Zadify\IFinanceGoal.cs">
-      <Link>IFinanceGoal.cs</Link>
+    <Compile Include="..\Zadify\DietGoal.cs">
+      <Link>DietGoal.cs</Link>
     </Compile>
-    <Compile Include="..\Zadify\IFitnessGoal.cs">
-      <Link>IFitnessGoal.cs</Link>
+    <Compile Include="..\Zadify\Enums\DietItems.cs">
+      <Link>DietItems.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\Enums\FinanceItems.cs">
+      <Link>FinanceItems.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\Enums\FitnessItems.cs">
+      <Link>FitnessItems.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\Enums\FitnessWeights.cs">
+      <Link>FitnessWeights.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\Enums\ReadingItems.cs">
+      <Link>ReadingItems.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\Enums\WritingItems.cs">
+      <Link>WritingItems.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\FinanceGoal.cs">
+      <Link>FinanceGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\FitnessGoal.cs">
+      <Link>FitnessGoal.cs</Link>
     </Compile>
     <Compile Include="..\Zadify\IGoal.cs">
       <Link>IGoal.cs</Link>
     </Compile>
-    <Compile Include="..\Zadify\IReadingGoal.cs">
-      <Link>IReadingGoal.cs</Link>
-    </Compile>
-    <Compile Include="..\Zadify\ITimeManagementGoal.cs">
-      <Link>ITimeManagementGoal.cs</Link>
-    </Compile>
-    <Compile Include="..\Zadify\IWritingGoal.cs">
-      <Link>IWritingGoal.cs</Link>
-    </Compile>
-    <Compile Include="..\Zadify\ReadingByDateGoal.cs">
-      <Link>ReadingByDateGoal.cs</Link>
-    </Compile>
-    <Compile Include="..\Zadify\ReadingItems.cs">
-      <Link>ReadingItems.cs</Link>
+    <Compile Include="..\Zadify\ReadingGoal.cs">
+      <Link>ReadingGoal.cs</Link>
     </Compile>
     <Compile Include="CreateGoalTest.cs" />
     <Compile Include="TestActivity.cs" />

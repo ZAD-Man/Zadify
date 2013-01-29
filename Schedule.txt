@@ -14,9 +14,9 @@ O-Look at class design (i.e. ReadingByDateGoal...)
 O-FIX - Keyboard doesn't come all the way up
 X-FIX - Date starts off in 1900
 O-FIX - No goal validation
-O-FIX - Only one goal file
+X-FIX - Only one goal file
 O-FIX - Only one goal type
-O-FIX - Toooo many Classes
+X-FIX - Toooo many Classes
 O-FIX - Full display of goal
 O-Meet with Matt about final weeks
 
