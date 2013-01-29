@@ -14,7 +14,6 @@ namespace Zadify
 {
     public enum WritingItems
     {
-        Books,
         Words,
         Pages,
         Minutes,

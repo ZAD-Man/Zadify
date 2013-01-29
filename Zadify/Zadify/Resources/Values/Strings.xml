@@ -5,8 +5,8 @@
   <string name="numberHint">#</string>
   <string-array name="predefinedGoalTypes">
     <item>Fitness</item>
+    <item>Diet</item>
     <item>Finance</item>
-    <item>Time Management</item>
     <item>Reading</item>
     <item>Writing</item>
   </string-array>
@@ -14,8 +14,6 @@
     <item>Activities in Timespan</item>
     <item>Activities per Timespan</item>
     <item>Activities by Date</item>
-    <item>Lose Weight</item>
-    <item>Gain Weight</item>
   </string-array>
   <string-array name="financeGoalTypes">
     <item>Save Money by Date</item>
@@ -23,9 +21,9 @@
     <item>Pay Loan by Date</item>
     <item>Pay Part of Loan per Timespan</item>
   </string-array>
-  <string-array name="timeManagementGoalTypes">
-    <item>Limit Activity per Timespan</item>
-    <item>Stop Activity until Date</item>
+  <string-array name="dietGoalTypes">
+    <item>Lose Weight</item>
+    <item>Gain Weight</item>
   </string-array>
   <string-array name="readingGoalTypes">
     <item>Per Timespan</item>
@@ -38,19 +36,17 @@
   <string-array name="fitnessActivities">
     <item>Pushup(s)</item>
     <item>Pullup(s)</item>
-    <item>Mile(s) jogged</item>
-    <item>Kilometer(s) jogged</item>
-    <item>Mile(s) ran</item>
-    <item>Kilometer(s) ran</item>
+    <item>Situp(s)</item>
+    <item>Mile(s) run</item>
+    <item>Kilometer(s) run</item>
   </string-array>
   <string-array name="fitnessWeights">
     <item>Pound(s)</item>
     <item>Kilogram(s)</item>
   </string-array>
-  <string-array name="timeManagementActivities">
-    <item>Social Networking</item>
-    <item>Video Games</item>
-    <item>Addiction</item>
+  <string-array name="dietWeights">
+    <item>Pound(s)</item>
+    <item>Kilogram(s)</item>
   </string-array>
   <string-array name="readingThings">
     <item>Book(s)</item>

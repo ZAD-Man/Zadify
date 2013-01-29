@@ -17,7 +17,7 @@ namespace Zadify
         Pushups,
         Pullups,
         Situps,
-        MilesTraveled,
-        KilometersTraveled
+        MilesRun,
+        KilometersRun
     }
 }
