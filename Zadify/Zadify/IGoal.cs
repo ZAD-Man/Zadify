@@ -15,7 +15,11 @@ namespace Zadify
 {
     interface IGoal
     {
+        DateTime DueDate { get; }
         double Progress { get; }
-        void UpdateProgress(int indicator);
+        void UpdateProgress(int amountCompleted);
+        int GoalAmount { get; }
+        int GoalCompletedAmount { get; }
+        DateTime RepeatingTime { get; }
     }
 }

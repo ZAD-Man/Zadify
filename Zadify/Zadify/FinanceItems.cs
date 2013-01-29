@@ -12,7 +12,9 @@ using Android.Widget;
 
 namespace Zadify
 {
-    interface ITimeManagementGoal : IGoal
+    public enum FinanceItems
     {
+        PayOffLoan,
+        SaveMoney
     }
 }

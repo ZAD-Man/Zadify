@@ -12,8 +12,12 @@ using Android.Widget;
 
 namespace Zadify
 {
-    interface IFitnessGoal : IGoal
+    public enum WritingItems
     {
-        
+        Books,
+        Words,
+        Pages,
+        Minutes,
+        Hours
     }
 }

@@ -54,8 +54,9 @@ namespace Zadify
 
                             return (T) loadedObject;
                         }
-                        catch (Exception ex)
+                        catch (Exception e)
                         {
+                            Log.Error("LoadDataError", e.Message + e.StackTrace);
                             return default(T);
                         }
                     }

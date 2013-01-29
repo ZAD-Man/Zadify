@@ -1,24 +1,17 @@
 Goal Types
 
--Fitness (Incl. Diet)
+-Fitness
 	Do # [activity] in [timespan]
 	Do # [activity] every [timespan]
 	Do # [activity] total by [date]
-	
+-Diet
 	Lose # [weight] by [date]
-	
 	Gain # [weight] by [date]
-	?-Lose # [weight] every [timespan]
-	?-Gain # [weight] every [timespan]
 -Finance
 	Save $ by [date]
 	Save $ every [timespan]
 	Pay off loan ($) by [date]
 	Pay off $ of loan every [date]
--Time Management
-	Don't do [activity] for [timespan]
-	Limit [activity] to # per [timespan]
-	Limit [activity] to [timespan] per [timespan]
 -Reading
 	Read # [thing] per [timespan]
 	Read # [thing] by [date]

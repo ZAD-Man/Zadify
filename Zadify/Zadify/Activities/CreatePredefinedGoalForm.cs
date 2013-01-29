@@ -7,7 +7,7 @@ using Android.Widget;
 
 namespace Zadify.Activities
 {
-    [Activity(Label = "Create Goal")]
+    [Activity(Label = "Create Goal", WindowSoftInputMode = SoftInput.AdjustPan)]
     public class CreatePredefinedGoalForm : Activity
     {
         private const int DATE_DIALOG_ID = 0;

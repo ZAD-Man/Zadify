@@ -12,7 +12,12 @@ using Android.Widget;
 
 namespace Zadify
 {
-    interface IWritingGoal : IGoal
+    public enum FitnessItems
     {
+        Pushups,
+        Pullups,
+        Situps,
+        MilesTraveled,
+        KilometersTraveled
     }
 }
