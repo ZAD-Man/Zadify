@@ -80,6 +80,9 @@
     <Compile Include="..\Zadify\Goal.cs">
       <Link>Goal.cs</Link>
     </Compile>
+    <Compile Include="..\Zadify\JavaIO.cs">
+      <Link>JavaIO.cs</Link>
+    </Compile>
     <Compile Include="..\Zadify\ReadingGoal.cs">
       <Link>ReadingGoal.cs</Link>
     </Compile>
@@ -90,6 +93,7 @@
     <Compile Include="TestActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestGoalStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
