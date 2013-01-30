@@ -119,6 +119,9 @@ namespace Zadify
 			// aapt resource value: 0x7f060030
 			public const int CreateRewardButton = 2131099696;
 			
+			// aapt resource value: 0x7f06003d
+			public const int CurrentRank = 2131099709;
+			
 			// aapt resource value: 0x7f060004
 			public const int CustomGoalForm = 2131099652;
 			
@@ -223,9 +226,6 @@ namespace Zadify
 			
 			// aapt resource value: 0x7f060046
 			public const int RanksButton = 2131099718;
-			
-			// aapt resource value: 0x7f06003d
-			public const int RanksList = 2131099709;
 			
 			// aapt resource value: 0x7f060024
 			public const int ReadingByDateInnerLayout1 = 2131099684;
