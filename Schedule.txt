@@ -18,7 +18,7 @@ X-FIX - Only one goal file
 O-FIX - Only one goal type
 X-FIX - Toooo many Classes
 O-FIX - Full display of goal
-O-Meet with Matt about final weeks
+X-Meet with Matt about final weeks
 
 Week 4
 

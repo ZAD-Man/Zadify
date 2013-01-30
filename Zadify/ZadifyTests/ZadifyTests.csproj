@@ -77,11 +77,14 @@
     <Compile Include="..\Zadify\FitnessGoal.cs">
       <Link>FitnessGoal.cs</Link>
     </Compile>
-    <Compile Include="..\Zadify\IGoal.cs">
-      <Link>IGoal.cs</Link>
+    <Compile Include="..\Zadify\Goal.cs">
+      <Link>Goal.cs</Link>
     </Compile>
     <Compile Include="..\Zadify\ReadingGoal.cs">
       <Link>ReadingGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\WritingGoal.cs">
+      <Link>WritingGoal.cs</Link>
     </Compile>
     <Compile Include="CreateGoalTest.cs" />
     <Compile Include="TestActivity.cs" />

@@ -19,16 +19,16 @@ namespace Zadify.Activities
 
             try
             {
-                var goalsList = JavaIO.LoadData<List<IGoal>>(this, "Goals.zad");
+                var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                 if (goalsList == null)
                 {
-                    goalsList = new List<IGoal>();
+                    goalsList = new List<Goal>();
                     JavaIO.SaveData(this, "Goals.zad", goalsList);
                 }
             }
             catch (Exception)
             {
-                var goalsList = new LinkedList<IGoal>();
+                var goalsList = new List<Goal>();
                 JavaIO.SaveData(this, "Goals.zad", goalsList);
             }
 

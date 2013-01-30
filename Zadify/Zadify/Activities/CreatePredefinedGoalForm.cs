@@ -80,13 +80,13 @@ namespace Zadify.Activities
                 try
                 {
                     var fitnessByDateGoal = new FitnessGoal(_goalDate, goalNumber, items);
-                    var goalsList = JavaIO.LoadData<List<IGoal>>(this, "Goals.zad");
+                    var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                     goalsList.Add(fitnessByDateGoal);
                     JavaIO.SaveData(this, "Goals.zad", goalsList);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    submitFitnessByDateGoalButton.Text = "Error";
+                    Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
                 }
                 //TODO: Go back to Goals Menu. Look into FinishActivity().
             };
@@ -102,7 +102,7 @@ namespace Zadify.Activities
             fitnessPerTimespanItemsSpinner.Adapter = fitnessPerTimespanItemsAdapter;
 
             var fitnessPerTimespanTimespanSpinner = FindViewById<Spinner>(Resource.Id.FitnessPerTimespanTimespanSpinner);
-            var fitnessPerTimespanTimespanAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.fitnessActivities, Android.Resource.Layout.SimpleSpinnerItem);
+            var fitnessPerTimespanTimespanAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.repeatingTimespans, Android.Resource.Layout.SimpleSpinnerItem);
             fitnessPerTimespanTimespanAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             fitnessPerTimespanTimespanSpinner.Adapter = fitnessPerTimespanTimespanAdapter;
 
@@ -149,13 +149,13 @@ namespace Zadify.Activities
                 try
                 {
                     var fitnessPerTimespanGoal = new FitnessGoal(_goalDate, goalNumber, items, timespan);
-                    var goalsList = JavaIO.LoadData<List<IGoal>>(this, "Goals.zad");
+                    var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                     goalsList.Add(fitnessPerTimespanGoal);
                     JavaIO.SaveData(this, "Goals.zad", goalsList);
                 }
-                catch (Exception)
+                catch (Exception e )
                 {
-                    submitFitnessPerTimespanGoalButton.Text = "Error";
+                    Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
                 }
                 //TODO: Go back to Goals Menu. Look into FinishActivity().
             };
@@ -213,13 +213,13 @@ namespace Zadify.Activities
                     try
                     {
                         var readingByDateGoal = new ReadingGoal(_goalDate, goalNumber, items);
-                        var goalsList = JavaIO.LoadData<List<IGoal>>(this, "Goals.zad");
+                        var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                         goalsList.Add(readingByDateGoal);
                         JavaIO.SaveData(this, "Goals.zad", goalsList);
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
-                        submitReadingByDateGoalButton.Text = "Error";
+                        Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
                     }
                     //TODO: Go back to Goals Menu. Look into FinishActivity().
                 };
