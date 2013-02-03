@@ -82,7 +82,11 @@ namespace Zadify.Activities
                     var fitnessByDateGoal = new FitnessGoal(_goalDate, goalNumber, items);
                     var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                     goalsList.Add(fitnessByDateGoal);
-                    JavaIO.SaveData(this, "Goals.zad", goalsList);
+                    bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                    if (successfulSave)
+                    {
+                        Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -151,7 +155,11 @@ namespace Zadify.Activities
                     var fitnessPerTimespanGoal = new FitnessGoal(_goalDate, goalNumber, items, timespan);
                     var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                     goalsList.Add(fitnessPerTimespanGoal);
-                    JavaIO.SaveData(this, "Goals.zad", goalsList);
+                    bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                    if (successfulSave)
+                    {
+                        Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                    }
                 }
                 catch (Exception e )
                 {
@@ -215,7 +223,11 @@ namespace Zadify.Activities
                         var readingByDateGoal = new ReadingGoal(_goalDate, goalNumber, items);
                         var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                         goalsList.Add(readingByDateGoal);
-                        JavaIO.SaveData(this, "Goals.zad", goalsList);
+                        bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                        if (successfulSave)
+                        {
+                            Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                        }
                     }
                     catch (Exception e)
                     {
