@@ -32,6 +32,7 @@ namespace Zadify.Activities
             predefinedGoalTypeSpinner.Adapter = predefinedGoalTypeAdapter;
 
             #region Fitness Goals
+
             var fitnessGoalLayout = FindViewById<RelativeLayout>(Resource.Id.FitnessGoalLayout);
 
             var fitnessGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.FitnessGoalTypeSpinner);
@@ -40,6 +41,7 @@ namespace Zadify.Activities
             fitnessGoalTypeSpinner.Adapter = fitnessGoalTypeAdapter;
 
             #region Fitness By Date
+
             var fitnessByDateLayout = FindViewById<RelativeLayout>(Resource.Id.FitnessByDateLayout);
 
             var fitnessByDateNumber = FindViewById<EditText>(Resource.Id.FitnessByDateNumber);
@@ -54,48 +56,57 @@ namespace Zadify.Activities
 
             var submitFitnessByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitFitnessByDateGoalButton);
             submitFitnessByDateGoalButton.Click += delegate
-            {
-                var goalNumber = int.Parse(fitnessByDateNumber.Text);
-                var items = FitnessItems.Pushups;
-                var selectedItems = fitnessByDateItemsSpinner.GetItemAtPosition(fitnessByDateItemsSpinner.SelectedItemPosition);
-                switch (selectedItems.ToString())
                 {
-                    case "Pushup(s)":
-                        items = FitnessItems.Pushups;
-                        break;
-                    case "Pullup(s)":
-                        items = FitnessItems.Pullups;
-                        break;
-                    case "Situp(s)":
-                        items = FitnessItems.Situps;
-                        break;
-                    case "Mile(s) Ran":
-                        items = FitnessItems.MilesRun;
-                        break;
-                    case "Kilometer(s) Ran":
-                        items = FitnessItems.KilometersRun;
-                        break;
-                }
-
-                try
-                {
-                    var fitnessByDateGoal = new FitnessGoal(_goalDate, goalNumber, items);
-                    var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                    goalsList.Add(fitnessByDateGoal);
-                    bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                    if (successfulSave)
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
                     {
-                        Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                        var goalNumber = int.Parse(fitnessByDateNumber.Text);
+                        var items = FitnessItems.Pushups;
+                        var selectedItems = fitnessByDateItemsSpinner.GetItemAtPosition(fitnessByDateItemsSpinner.SelectedItemPosition);
+                        switch (selectedItems.ToString())
+                        {
+                            case "Pushup(s)":
+                                items = FitnessItems.Pushups;
+                                break;
+                            case "Pullup(s)":
+                                items = FitnessItems.Pullups;
+                                break;
+                            case "Situp(s)":
+                                items = FitnessItems.Situps;
+                                break;
+                            case "Mile(s) Ran":
+                                items = FitnessItems.MilesRun;
+                                break;
+                            case "Kilometer(s) Ran":
+                                items = FitnessItems.KilometersRun;
+                                break;
+                        }
+
+                        try
+                        {
+                            var fitnessByDateGoal = new FitnessGoal(_goalDate, goalNumber, items);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(fitnessByDateGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        }
                     }
-                }
-                catch (Exception e)
-                {
-                    Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                }
-                //TODO: Go back to Goals Menu. Look into FinishActivity().
-            };
+                    else
+                    {
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                    }
+                };
+
             #endregion
+
             #region Fitness Per Timespan
+
             var fitnessPerTimespanLayout = FindViewById<RelativeLayout>(Resource.Id.FitnessPerTimespanLayout);
 
             var fitnessPerTimespanNumber = FindViewById<EditText>(Resource.Id.FitnessPerTimespanNumber);
@@ -115,59 +126,67 @@ namespace Zadify.Activities
 
             var submitFitnessPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitFitnessPerTimespanGoalButton);
             submitFitnessPerTimespanGoalButton.Click += delegate
-            {
-                var goalNumber = int.Parse(fitnessPerTimespanNumber.Text);
-                var items = FitnessItems.Pushups;
-                var timespan = new TimeSpan();
-                var selectedItems = fitnessPerTimespanItemsSpinner.GetItemAtPosition(fitnessPerTimespanItemsSpinner.SelectedItemPosition);
-                var selectedTimespan = fitnessPerTimespanTimespanSpinner.GetItemAtPosition(fitnessPerTimespanTimespanSpinner.SelectedItemPosition);
-                switch (selectedItems.ToString())
                 {
-                    case "Pushup(s)":
-                        items = FitnessItems.Pushups;
-                        break;
-                    case "Pullup(s)":
-                        items = FitnessItems.Pullups;
-                        break;
-                    case "Situp(s)":
-                        items = FitnessItems.Situps;
-                        break;
-                    case "Mile(s) Ran":
-                        items = FitnessItems.MilesRun;
-                        break;
-                    case "Kilometer(s) Ran":
-                        items = FitnessItems.KilometersRun;
-                        break;
-                }
-
-                switch (selectedTimespan.ToString())
-                {
-                    case "Day":
-                        timespan = new TimeSpan(1,0,0,0);
-                        break;
-                    case "Week":
-                        timespan = new TimeSpan(7,0,0,0);
-                        break;
-                }
-
-                try
-                {
-                    var fitnessPerTimespanGoal = new FitnessGoal(_goalDate, goalNumber, items, timespan);
-                    var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                    goalsList.Add(fitnessPerTimespanGoal);
-                    bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                    if (successfulSave)
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
                     {
-                        Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                        var goalNumber = int.Parse(fitnessPerTimespanNumber.Text);
+                        var items = FitnessItems.Pushups;
+                        var timespan = new TimeSpan();
+                        var selectedItems = fitnessPerTimespanItemsSpinner.GetItemAtPosition(fitnessPerTimespanItemsSpinner.SelectedItemPosition);
+                        var selectedTimespan = fitnessPerTimespanTimespanSpinner.GetItemAtPosition(fitnessPerTimespanTimespanSpinner.SelectedItemPosition);
+                        switch (selectedItems.ToString())
+                        {
+                            case "Pushup(s)":
+                                items = FitnessItems.Pushups;
+                                break;
+                            case "Pullup(s)":
+                                items = FitnessItems.Pullups;
+                                break;
+                            case "Situp(s)":
+                                items = FitnessItems.Situps;
+                                break;
+                            case "Mile(s) Ran":
+                                items = FitnessItems.MilesRun;
+                                break;
+                            case "Kilometer(s) Ran":
+                                items = FitnessItems.KilometersRun;
+                                break;
+                        }
+
+                        switch (selectedTimespan.ToString())
+                        {
+                            case "Day":
+                                timespan = new TimeSpan(1, 0, 0, 0);
+                                break;
+                            case "Week":
+                                timespan = new TimeSpan(7, 0, 0, 0);
+                                break;
+                        }
+
+                        try
+                        {
+                            var fitnessPerTimespanGoal = new FitnessGoal(_goalDate, goalNumber, items, timespan);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(fitnessPerTimespanGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        }
                     }
-                }
-                catch (Exception e )
-                {
-                    Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                }
-                //TODO: Go back to Goals Menu. Look into FinishActivity().
-            };
+                    else
+                    {
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                    }
+                };
+
             #endregion
+
             #endregion
 
             #region Reading Goals
@@ -217,28 +236,40 @@ namespace Zadify.Activities
                             items = ReadingItems.Pages;
                             break;
                     }
-
-                    try
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
                     {
-                        var readingByDateGoal = new ReadingGoal(_goalDate, goalNumber, items);
-                        var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                        goalsList.Add(readingByDateGoal);
-                        bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                        if (successfulSave)
+                        try
                         {
-                            Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            var readingByDateGoal = new ReadingGoal(_goalDate, goalNumber, items);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(readingByDateGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
                         }
                     }
-                    catch (Exception e)
+                    else
                     {
-                        Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
                     }
-                    //TODO: Go back to Goals Menu. Look into FinishActivity().
                 };
 
             #endregion
 
             #endregion
+
+            #region Date Management
 
             predefinedGoalTypeSpinner.ItemSelected += delegate
                 {
@@ -249,12 +280,12 @@ namespace Zadify.Activities
                 };
 
             fitnessGoalTypeSpinner.ItemSelected += delegate
-            {
-                var currentItem = fitnessGoalTypeSpinner.GetItemAtPosition(fitnessGoalTypeSpinner.SelectedItemPosition);
+                {
+                    var currentItem = fitnessGoalTypeSpinner.GetItemAtPosition(fitnessGoalTypeSpinner.SelectedItemPosition);
 
-                fitnessByDateLayout.Visibility = currentItem.ToString() == "By Date" ? ViewStates.Visible : ViewStates.Gone;
-                fitnessPerTimespanLayout.Visibility = currentItem.ToString() == "Per Timespan" ? ViewStates.Visible : ViewStates.Gone;
-            };
+                    fitnessByDateLayout.Visibility = currentItem.ToString() == "By Date" ? ViewStates.Visible : ViewStates.Gone;
+                    fitnessPerTimespanLayout.Visibility = currentItem.ToString() == "Per Timespan" ? ViewStates.Visible : ViewStates.Gone;
+                };
 
             readingGoalTypeSpinner.ItemSelected += delegate
                 {
@@ -268,12 +299,12 @@ namespace Zadify.Activities
         {
             _readingByDateSelectDate.Text = _goalDate.ToString("d");
         }
-        
+
         private void UpdateFitnessByDateDate()
         {
             _fitnessByDateSelectDate.Text = _goalDate.ToString("d");
         }
-        
+
         private void UpdateFitnessPerTimespanDate()
         {
             _fitnessPerTimespanSelectDate.Text = _goalDate.ToString("d");
@@ -296,5 +327,7 @@ namespace Zadify.Activities
             }
             return null;
         }
+
+        #endregion
     }
 }

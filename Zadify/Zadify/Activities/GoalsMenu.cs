@@ -43,32 +43,47 @@ namespace Zadify.Activities
                     {
                         if (goal is DietGoal)
                         {
-                            var dietGoal = (DietGoal)goal;
-                            storedGoalStrings.Add("Diet:" + dietGoal.MeasuredItems);
+                            var dietGoal = (DietGoal) goal;
+                            if (dietGoal.GoalAmount > 0)
+                            {
+                                storedGoalStrings.Add("Gain " + dietGoal.GoalAmount + " " + dietGoal.MeasuredItems + " - " + (int) (dietGoal.Progress*100) + "%");
+                            }
+                            else if (dietGoal.GoalAmount < 0)
+                            {
+                                storedGoalStrings.Add("Lose " + Math.Abs(dietGoal.GoalAmount) + " " + dietGoal.MeasuredItems + " - " + (int) (dietGoal.Progress*100) + "%");
+                            }
                         }
                         else if (goal is FinanceGoal)
                         {
-                            var financeGoal = (FinanceGoal)goal;
-                            storedGoalStrings.Add("Finance:" + financeGoal.MeasuredItems);
+                            var financeGoal = (FinanceGoal) goal;
+                            if (financeGoal.GoalAmount > 0)
+                            {
+                                storedGoalStrings.Add("Save " + financeGoal.GoalAmount + " " + financeGoal.MeasuredItems + " - " + (int) (financeGoal.Progress*100) + "%");
+                            }
+                            else if (financeGoal.GoalAmount < 0)
+                            {
+                                storedGoalStrings.Add("Pay " + Math.Abs(financeGoal.GoalAmount) + " " + financeGoal.MeasuredItems + " - " + (int) (financeGoal.Progress*100) + "%");
+                            }
                         }
                         else if (goal is FitnessGoal)
                         {
-                            var fitnessGoal = (FitnessGoal)goal;
-                            storedGoalStrings.Add("Fitness:" + fitnessGoal.MeasuredItems);
+                            var fitnessGoal = (FitnessGoal) goal;
+
+                            storedGoalStrings.Add("Do " + fitnessGoal.GoalAmount + " " + fitnessGoal.MeasuredItems + " - " + (int) (fitnessGoal.Progress*100) + "%");
                         }
                         else if (goal is ReadingGoal)
                         {
-                            var readingGoal = (ReadingGoal)goal;
-                            storedGoalStrings.Add("Reading:" + readingGoal.MeasuredItems);
+                            var readingGoal = (ReadingGoal) goal;
+                            storedGoalStrings.Add("Read " + readingGoal.GoalAmount + " " + readingGoal.MeasuredItems + " - " + (int) (readingGoal.Progress*100) + "%");
                         }
                         else if (goal is WritingGoal)
                         {
-                            var writingGoal = (WritingGoal)goal;
-                            storedGoalStrings.Add("Writing:" + writingGoal.MeasuredItems);
+                            var writingGoal = (WritingGoal) goal;
+                            storedGoalStrings.Add("Write " + writingGoal.GoalAmount + " " + writingGoal.MeasuredItems + " - " + (int) (writingGoal.Progress*100) + "%");
                         }
                         else
                         {
-                            Log.Error("GoalsMenu", "Can't cast goal " + goal.ToString());
+                            Log.Error("GoalsMenu", "Can't cast goal " + goal);
                         }
                     }
                     var goalsAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, storedGoalStrings);
@@ -85,7 +100,6 @@ namespace Zadify.Activities
                 Log.Error("GoalsMenu:GeneralException", e.Message + e.StackTrace);
                 Toast.MakeText(this, "Goals could not be displayed", ToastLength.Long);
             }
-
         }
     }
 }
