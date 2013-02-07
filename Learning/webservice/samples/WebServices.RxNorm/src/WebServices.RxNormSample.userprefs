@@ -1,0 +1,34 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebServices.RxNormSample/RestClient/RxTermRestClient.cs">
+    <Files>
+      <File FileName="WebServices.RxNormSample/NavControllers/RootViewController.cs" Line="1" Column="1" />
+      <File FileName="WebServices.RxNormSample/ViewControllers/DrugViewController.cs" Line="51" Column="27" />
+      <File FileName="WebServices.RxNormSample/ViewControllers/DrugImageViewController.cs" Line="71" Column="42" />
+      <File FileName="WebServices.RxNormSample/RestClient/RxTermRestClient.cs" Line="89" Column="44" />
+      <File FileName="WebServices.RxNormSample/ViewControllers/DrugSearchViewController.cs" Line="162" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="WebServices.RxNormSample" expanded="True" selected="True">
+            <Node name="WebReferences" expanded="True" />
+            <Node name="Elements" expanded="True" />
+            <Node name="Model" expanded="True" />
+            <Node name="NavControllers" expanded="True" />
+            <Node name="RestClient" expanded="True" />
+            <Node name="ViewControllers" expanded="True" />
+            <Node name="Views" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
