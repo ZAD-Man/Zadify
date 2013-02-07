@@ -1,0 +1,28 @@
+Plan
+
+Thu - 	Finish up other classes
+Fri - 	11>5: Display/Access goals, details; Validate Goal submission
+	5 >9: Read the rest of Xamarin's Intro to WS, choose a type; ensure Server 2008 works, set up according to choice
+Sat - 	11>5: Make simple services - first just get a string, then send input and get response, build from there.
+	5 >9: Make better services - send goals, users
+Mon - 	11>5: (-1>3) Implement every goal type
+	5 >9: Make simple database, 2-column, interact with in service. CRUD.
+Tue - 	11>5: Make database for friends/competitions
+	5 >9: CRUD for database 
+Wed - 	11>5: Add sample data
+	5 >9: Make database for news; CRUD
+Thu?-	11>1: Wrap up if needed, make plan for next week if not
+
+
+Thought drop
+
+Test if keyboard problem is just b/c of running in debug vs. not
+Validate goal info
+Show a list of goals
+Web Services
+-Read more about different services, choose one
+-Write something that just gets text and displays it, then one that sends text, gets it back altered, and displays it.
+-Determine the nature of the database needed.
+-Make a simple, 2 column database table; add something and pull something out of it in code.
+-Expand that: User table, connected to self w/ "is friends with" relationship; Competition table, two foreign keys to indicate competitors;News table, just user ID and snippets of text about activity (be sure to make a setting for opting in to/out of sharing).
+Custom Goals: Should be very similar to predefined, just have to figure out form/storage that will still work in the Goal list.
