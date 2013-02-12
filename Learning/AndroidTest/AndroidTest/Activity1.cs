@@ -1,11 +1,12 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using AndroidTest.com.parasoft.soatest;
 
 namespace AndroidTest
 {
@@ -22,10 +23,17 @@ namespace AndroidTest
             var aLabel = FindViewById<TextView>(Resource.Id.helloLabel);
 
             aButton.Click += (sender, e) =>
-            {
-                aLabel.Text = "Hello from the button";
-            }; 
+                {
+                    try
+                    {
+                        var webServiceCalc = new Calculator();
+                        aLabel.Text = webServiceCalc.add(23, 42).ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error("WebService", ex.Message + ex.StackTrace);
+                    }
+                };
         }
     }
 }
-
