@@ -4,6 +4,7 @@ using Android.App;
 using Android.OS;
 using Android.Util;
 using Android.Widget;
+using ServiceStack.ServiceClient.Web;
 
 namespace Zadify.Activities
 {
@@ -43,6 +44,19 @@ namespace Zadify.Activities
 
             var settingsButton = FindViewById<Button>(Resource.Id.SettingsButton);
             settingsButton.Click += delegate { StartActivity(typeof (SettingsMenu)); };
+
+            try
+            {
+                var client = new JsonServiceClient("http://localhost:62577/servicestack");
+                var response = client.Get<HelloResponse>("~/hello/Zach!");
+
+                Toast.MakeText(this, response.Result, ToastLength.Long);
+                Log.Error("REST rsult", response.Result);
+            }
+            catch (Exception e)
+            {
+                Log.Error("ReST Error", e.Message + e.StackTrace);
+            }
         }
     }
 }
