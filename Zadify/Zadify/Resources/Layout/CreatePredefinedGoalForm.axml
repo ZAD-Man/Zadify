@@ -206,5 +206,77 @@
                 android:layout_height="wrap_content"
                 android:text="Submit" />
         </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/ReadingPerTimespanLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ReadingGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/ReadingPerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ReadingPerTimespanText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/ReadingPerTimespanNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/ReadingPerTimespanItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ReadingPerTimespanNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ReadingPerTimespanInnerLayout2"
+                android:layout_below="@id/ReadingPerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ReadingPerTimespanText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ReadingPerTimespanText1"
+                    android:text="every"
+                    android:gravity="center_vertical" />
+                <Spinner
+                    android:id="@+id/ReadingPerTimespanTimespanSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ReadingPerTimespanText2" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ReadingPerTimespanInnerLayout3"
+                android:layout_below="@id/ReadingPerTimespanInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ReadingPerTimespanText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ReadingPerTimespanText2"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/ReadingPerTimespanSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/ReadingPerTimespanText3"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitReadingPerTimespanGoalButton"
+                android:layout_below="@id/ReadingPerTimespanInnerLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
     </RelativeLayout>
 </LinearLayout>

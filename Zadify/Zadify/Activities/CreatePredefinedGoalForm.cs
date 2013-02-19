@@ -15,6 +15,7 @@ namespace Zadify.Activities
 
         private DateTime _goalDate = DateTime.Today;
         private Button _readingByDateSelectDate;
+        private Button _readingPerTimespanSelectDate;
         private Button _fitnessByDateSelectDate;
         private Button _fitnessPerTimespanSelectDate;
 
@@ -267,6 +268,87 @@ namespace Zadify.Activities
 
             #endregion
 
+            #region Reading Per Timespan
+
+            var readingPerTimespanLayout = FindViewById<RelativeLayout>(Resource.Id.ReadingPerTimespanLayout);
+
+            var readingPerTimespanNumber = FindViewById<EditText>(Resource.Id.ReadingPerTimespanNumber);
+
+            var readingPerTimespanItemsSpinner = FindViewById<Spinner>(Resource.Id.ReadingPerTimespanItemsSpinner);
+            var readingPerTimespanItemsAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.readingItems, Android.Resource.Layout.SimpleSpinnerItem);
+            readingPerTimespanItemsAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            readingPerTimespanItemsSpinner.Adapter = readingPerTimespanItemsAdapter;
+
+            var readingPerTimespanTimespanSpinner = FindViewById<Spinner>(Resource.Id.ReadingPerTimespanTimespanSpinner);
+            var readingPerTimespanTimespanAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.repeatingTimespans, Android.Resource.Layout.SimpleSpinnerItem);
+            readingPerTimespanTimespanAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            readingPerTimespanTimespanSpinner.Adapter = readingPerTimespanTimespanAdapter;
+
+            _readingPerTimespanSelectDate = FindViewById<Button>(Resource.Id.ReadingPerTimespanSelectDate);
+            _readingPerTimespanSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitReadingPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitReadingPerTimespanGoalButton);
+            submitReadingPerTimespanGoalButton.Click += delegate
+            {
+                if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                {
+                    var goalNumber = int.Parse(readingPerTimespanNumber.Text);
+                    var items = ReadingItems.Books;
+                    var timespan = new TimeSpan();
+                    var selectedItems = readingPerTimespanItemsSpinner.GetItemAtPosition(readingPerTimespanItemsSpinner.SelectedItemPosition);
+                    var selectedTimespan = readingPerTimespanTimespanSpinner.GetItemAtPosition(readingPerTimespanTimespanSpinner.SelectedItemPosition);
+                    switch (selectedItems.ToString())
+                    {
+                        case "Book(s)":
+                            items = ReadingItems.Books;
+                            break;
+                        case "Hour(s)":
+                            items = ReadingItems.Hours;
+                            break;
+                        case "Minute(s)":
+                            items = ReadingItems.Minutes;
+                            break;
+                        case "Page(s)":
+                            items = ReadingItems.Pages;
+                            break;
+                        case "Word(s)":
+                            items = ReadingItems.Words;
+                            break;
+                    }
+
+                    switch (selectedTimespan.ToString())
+                    {
+                        case "Day":
+                            timespan = new TimeSpan(1, 0, 0, 0);
+                            break;
+                        case "Week":
+                            timespan = new TimeSpan(7, 0, 0, 0);
+                            break;
+                    }
+
+                    try
+                    {
+                        var readingPerTimespanGoal = new ReadingGoal(_goalDate, goalNumber, items, timespan);
+                        var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                        goalsList.Add(readingPerTimespanGoal);
+                        bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                        if (successfulSave)
+                        {
+                            Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                    }
+                }
+                else
+                {
+                    Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                }
+            };
+            #endregion
+
             #endregion
 
             #region Date Management
@@ -292,6 +374,7 @@ namespace Zadify.Activities
                     var currentItem = readingGoalTypeSpinner.GetItemAtPosition(readingGoalTypeSpinner.SelectedItemPosition);
 
                     readingByDateLayout.Visibility = currentItem.ToString() == "By Date" ? ViewStates.Visible : ViewStates.Gone;
+                    readingPerTimespanLayout.Visibility = currentItem.ToString() == "Per Timespan" ? ViewStates.Visible : ViewStates.Gone;
                 };
         }
 
