@@ -1,5 +1,3 @@
 The AndroidTest and MultiScreenTest projects in this folder were created while following the tutorials at http://docs.xamarin.com/Android/Guides/Getting_Started
 
 The MonoDroid examples come from the MonoDroid respository at https://bitbucket.org/mayastudios/monodroid-unittest
-
-The projects in webservice come from http://docs.xamarin.com/android/guides/Application_Fundamentals/Introduction_to_Web_Services

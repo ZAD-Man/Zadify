@@ -45,18 +45,6 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="ServiceStack.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Servicestack Mono DLLs\ServiceStack.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Servicestack Mono DLLs\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Text, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Servicestack Mono DLLs\ServiceStack.Text.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -93,7 +81,6 @@
     <Compile Include="Enums\FitnessItems.cs" />
     <Compile Include="Enums\FitnessWeights.cs" />
     <Compile Include="Goal.cs" />
-    <Compile Include="HelloClasses.cs" />
     <Compile Include="ReadingGoal.cs" />
     <Compile Include="JavaIO.cs" />
     <Compile Include="Enums\ReadingItems.cs" />
