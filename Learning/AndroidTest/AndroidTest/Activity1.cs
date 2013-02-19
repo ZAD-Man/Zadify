@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Net.NetworkInformation;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -27,6 +29,9 @@ namespace AndroidTest
                     try
                     {
                         var webServiceCalc = new Calculator();
+                        Ping ping = new Ping();
+                        var pingReply = ping.Send("192.55.86.58");
+                        Toast.MakeText(this, pingReply.Status.ToString(), ToastLength.Long).Show();
                         aLabel.Text = webServiceCalc.add(23, 42).ToString();
                     }
                     catch (Exception ex)
