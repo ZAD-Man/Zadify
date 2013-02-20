@@ -14,24 +14,21 @@ namespace Zadify
     [Serializable]
     public class FinanceGoal : Goal
     {
-        public FinanceItems MeasuredItems { get; private set; }
-
         public FinanceGoal()
         {
             
         }
 
-        public FinanceGoal(DateTime dueDate, int goalAmount, FinanceItems measuredItems)
-            : this(dueDate, goalAmount, measuredItems, new TimeSpan())
+        public FinanceGoal(DateTime dueDate, int goalAmount)
+            : this(dueDate, goalAmount, new TimeSpan())
         {
         }
 
-        public FinanceGoal(DateTime dueDate, int goalAmount, FinanceItems measuredItems, TimeSpan repeatingTime)
+        public FinanceGoal(DateTime dueDate, int goalAmount, TimeSpan repeatingTime)
         {
             RepeatingTime = repeatingTime;
             GoalAmount = goalAmount;
             DueDate = dueDate;
-            MeasuredItems = measuredItems;
             GoalCompletedAmount = 0;
             Progress = 0;
         }

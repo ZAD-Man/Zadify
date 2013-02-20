@@ -20,6 +20,10 @@ namespace Zadify.Activities
         private Button _writingPerTimespanSelectDate;
         private Button _fitnessByDateSelectDate;
         private Button _fitnessPerTimespanSelectDate;
+        private Button _financeSaveByDateSelectDate;
+        private Button _financeSavePerTimespanSelectDate;
+        private Button _financePayByDateSelectDate;
+        private Button _financePayPerTimespanSelectDate;
         private Button _dietGainWeightSelectDate;
         private Button _dietLoseWeightSelectDate;
 
@@ -166,6 +170,9 @@ namespace Zadify.Activities
                             case "Week":
                                 timespan = new TimeSpan(7, 0, 0, 0);
                                 break;
+                            case "Month":
+                                timespan = new TimeSpan(30, 0, 0, 0);
+                                break;
                         }
 
                         try
@@ -297,6 +304,218 @@ namespace Zadify.Activities
                             var dietLoseWeightGoal = new DietGoal(_goalDate, goalNumber, items, timespan);
                             var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                             goalsList.Add(dietLoseWeightGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                    }
+                };
+
+            #endregion
+
+            #endregion
+
+            #region Finance Goals
+
+            var financeGoalLayout = FindViewById<RelativeLayout>(Resource.Id.FinanceGoalLayout);
+
+            var financeGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.FinanceGoalTypeSpinner);
+            var financeGoalTypeAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.financeGoalTypes, Android.Resource.Layout.SimpleSpinnerItem);
+            financeGoalTypeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            financeGoalTypeSpinner.Adapter = financeGoalTypeAdapter;
+
+            #region Finance Save By Date
+
+            var financeSaveByDateLayout = FindViewById<RelativeLayout>(Resource.Id.FinanceSaveByDateLayout);
+
+            var financeSaveByDateNumber = FindViewById<EditText>(Resource.Id.FinanceSaveByDateNumber);
+
+            _financeSaveByDateSelectDate = FindViewById<Button>(Resource.Id.FinanceSaveByDateSelectDate);
+            _financeSaveByDateSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitFinanceSaveByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitFinanceSaveByDateGoalButton);
+            submitFinanceSaveByDateGoalButton.Click += delegate
+                {
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    {
+                        var goalNumber = int.Parse(financeSaveByDateNumber.Text);
+
+                        try
+                        {
+                            var financeSaveByDateGoal = new FinanceGoal(_goalDate, goalNumber);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(financeSaveByDateGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                    }
+                };
+
+            #endregion
+
+            #region Finance Save Per Timespan
+
+            var financeSavePerTimespanLayout = FindViewById<RelativeLayout>(Resource.Id.FinanceSavePerTimespanLayout);
+
+            var financeSavePerTimespanNumber = FindViewById<EditText>(Resource.Id.FinanceSavePerTimespanNumber);
+
+            var financeSavePerTimespanTimespanSpinner = FindViewById<Spinner>(Resource.Id.FinanceSavePerTimespanTimespanSpinner);
+            var financeSavePerTimespanTimespanAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.repeatingTimespans, Android.Resource.Layout.SimpleSpinnerItem);
+            financeSavePerTimespanTimespanAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            financeSavePerTimespanTimespanSpinner.Adapter = financeSavePerTimespanTimespanAdapter;
+
+            _financeSavePerTimespanSelectDate = FindViewById<Button>(Resource.Id.FinanceSavePerTimespanSelectDate);
+            _financeSavePerTimespanSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitFinanceSavePerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitFinanceSavePerTimespanGoalButton);
+            submitFinanceSavePerTimespanGoalButton.Click += delegate
+                {
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    {
+                        var goalNumber = int.Parse(financeSavePerTimespanNumber.Text);
+                        var timespan = new TimeSpan();
+
+                        var selectedTimespan = financeSavePerTimespanTimespanSpinner.GetItemAtPosition(financeSavePerTimespanTimespanSpinner.SelectedItemPosition);
+
+                        switch (selectedTimespan.ToString())
+                        {
+                            case "Day":
+                                timespan = new TimeSpan(1, 0, 0, 0);
+                                break;
+                            case "Week":
+                                timespan = new TimeSpan(7, 0, 0, 0);
+                                break;
+                            case "Month":
+                                timespan = new TimeSpan(30, 0, 0, 0);
+                                break;
+                        }
+
+                        try
+                        {
+                            var financeSavePerTimespanGoal = new FinanceGoal(_goalDate, goalNumber, timespan);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(financeSavePerTimespanGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                    }
+                };
+
+            #endregion
+
+            #region Finance Pay By Date
+
+            var financePayByDateLayout = FindViewById<RelativeLayout>(Resource.Id.FinancePayByDateLayout);
+
+            var financePayByDateNumber = FindViewById<EditText>(Resource.Id.FinancePayByDateNumber);
+
+            _financePayByDateSelectDate = FindViewById<Button>(Resource.Id.FinancePayByDateSelectDate);
+            _financePayByDateSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitFinancePayByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitFinancePayByDateGoalButton);
+            submitFinancePayByDateGoalButton.Click += delegate
+                {
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    {
+                        var goalNumber = int.Parse(financePayByDateNumber.Text);
+
+                        try
+                        {
+                            var financePayByDateGoal = new FinanceGoal(_goalDate, 0 - goalNumber);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(financePayByDateGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                    }
+                };
+
+            #endregion
+
+            #region Finance Pay Per Timespan
+
+            var financePayPerTimespanLayout = FindViewById<RelativeLayout>(Resource.Id.FinancePayPerTimespanLayout);
+
+            var financePayPerTimespanNumber = FindViewById<EditText>(Resource.Id.FinancePayPerTimespanNumber);
+
+            var financePayPerTimespanTimespanSpinner = FindViewById<Spinner>(Resource.Id.FinancePayPerTimespanTimespanSpinner);
+            var financePayPerTimespanTimespanAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.repeatingTimespans, Android.Resource.Layout.SimpleSpinnerItem);
+            financePayPerTimespanTimespanAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            financePayPerTimespanTimespanSpinner.Adapter = financePayPerTimespanTimespanAdapter;
+
+            _financePayPerTimespanSelectDate = FindViewById<Button>(Resource.Id.FinancePayPerTimespanSelectDate);
+            _financePayPerTimespanSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitFinancePayPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitFinancePayPerTimespanGoalButton);
+            submitFinancePayPerTimespanGoalButton.Click += delegate
+                {
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    {
+                        var goalNumber = int.Parse(financePayPerTimespanNumber.Text);
+                        var timespan = new TimeSpan();
+                        var selectedTimespan = financePayPerTimespanTimespanSpinner.GetItemAtPosition(financePayPerTimespanTimespanSpinner.SelectedItemPosition);
+
+                        switch (selectedTimespan.ToString())
+                        {
+                            case "Day":
+                                timespan = new TimeSpan(1, 0, 0, 0);
+                                break;
+                            case "Week":
+                                timespan = new TimeSpan(7, 0, 0, 0);
+                                break;
+                            case "Month":
+                                timespan = new TimeSpan(30, 0, 0, 0);
+                                break;
+                        }
+
+                        try
+                        {
+                            var financePayPerTimespanGoal = new FinanceGoal(_goalDate, 0 - goalNumber, timespan);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(financePayPerTimespanGoal);
                             bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
                             if (successfulSave)
                             {
@@ -452,6 +671,9 @@ namespace Zadify.Activities
                             case "Week":
                                 timespan = new TimeSpan(7, 0, 0, 0);
                                 break;
+                            case "Month":
+                                timespan = new TimeSpan(30, 0, 0, 0);
+                                break;
                         }
 
                         try
@@ -505,53 +727,53 @@ namespace Zadify.Activities
 
             var submitWritingByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitWritingByDateGoalButton);
             submitWritingByDateGoalButton.Click += delegate
-            {
-                var goalNumber = int.Parse(writingByDateNumber.Text);
-                var items = WritingItems.Hours;
-                var selectedItems = writingByDateItemsSpinner.GetItemAtPosition(writingByDateItemsSpinner.SelectedItemPosition);
-                switch (selectedItems.ToString())
                 {
-                    case "Hour(s)":
-                        items = WritingItems.Hours;
-                        break;
-                    case "Minute(s)":
-                        items = WritingItems.Minutes;
-                        break;
-                    case "Word(s)":
-                        items = WritingItems.Words;
-                        break;
-                    case "Page(s)":
-                        items = WritingItems.Pages;
-                        break;
-                }
-                if (_goalDate.CompareTo(DateTime.Today) >= 0)
-                {
-                    try
+                    var goalNumber = int.Parse(writingByDateNumber.Text);
+                    var items = WritingItems.Hours;
+                    var selectedItems = writingByDateItemsSpinner.GetItemAtPosition(writingByDateItemsSpinner.SelectedItemPosition);
+                    switch (selectedItems.ToString())
                     {
-                        var writingByDateGoal = new WritingGoal(_goalDate, goalNumber, items);
-                        var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                        goalsList.Add(writingByDateGoal);
-                        bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                        if (successfulSave)
+                        case "Hour(s)":
+                            items = WritingItems.Hours;
+                            break;
+                        case "Minute(s)":
+                            items = WritingItems.Minutes;
+                            break;
+                        case "Word(s)":
+                            items = WritingItems.Words;
+                            break;
+                        case "Page(s)":
+                            items = WritingItems.Pages;
+                            break;
+                    }
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    {
+                        try
                         {
-                            Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                            Finish();
+                            var writingByDateGoal = new WritingGoal(_goalDate, goalNumber, items);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(writingByDateGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
+                            }
                         }
-                        else
+                        catch (Exception e)
                         {
-                            Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
                         }
                     }
-                    catch (Exception e)
+                    else
                     {
-                        Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
                     }
-                }
-                else
-                {
-                    Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
-                }
-            };
+                };
 
             #endregion
 
@@ -576,61 +798,64 @@ namespace Zadify.Activities
 
             var submitWritingPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitWritingPerTimespanGoalButton);
             submitWritingPerTimespanGoalButton.Click += delegate
-            {
-                if (_goalDate.CompareTo(DateTime.Today) >= 0)
                 {
-                    var goalNumber = int.Parse(writingPerTimespanNumber.Text);
-                    var items = WritingItems.Hours;
-                    var timespan = new TimeSpan();
-                    var selectedItems = writingPerTimespanItemsSpinner.GetItemAtPosition(writingPerTimespanItemsSpinner.SelectedItemPosition);
-                    var selectedTimespan = writingPerTimespanTimespanSpinner.GetItemAtPosition(writingPerTimespanTimespanSpinner.SelectedItemPosition);
-                    switch (selectedItems.ToString())
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
                     {
-                        case "Hour(s)":
-                            items = WritingItems.Hours;
-                            break;
-                        case "Minute(s)":
-                            items = WritingItems.Minutes;
-                            break;
-                        case "Page(s)":
-                            items = WritingItems.Pages;
-                            break;
-                        case "Word(s)":
-                            items = WritingItems.Words;
-                            break;
-                    }
-
-                    switch (selectedTimespan.ToString())
-                    {
-                        case "Day":
-                            timespan = new TimeSpan(1, 0, 0, 0);
-                            break;
-                        case "Week":
-                            timespan = new TimeSpan(7, 0, 0, 0);
-                            break;
-                    }
-
-                    try
-                    {
-                        var writingPerTimespanGoal = new WritingGoal(_goalDate, goalNumber, items, timespan);
-                        var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                        goalsList.Add(writingPerTimespanGoal);
-                        bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                        if (successfulSave)
+                        var goalNumber = int.Parse(writingPerTimespanNumber.Text);
+                        var items = WritingItems.Hours;
+                        var timespan = new TimeSpan();
+                        var selectedItems = writingPerTimespanItemsSpinner.GetItemAtPosition(writingPerTimespanItemsSpinner.SelectedItemPosition);
+                        var selectedTimespan = writingPerTimespanTimespanSpinner.GetItemAtPosition(writingPerTimespanTimespanSpinner.SelectedItemPosition);
+                        switch (selectedItems.ToString())
                         {
-                            Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            case "Hour(s)":
+                                items = WritingItems.Hours;
+                                break;
+                            case "Minute(s)":
+                                items = WritingItems.Minutes;
+                                break;
+                            case "Page(s)":
+                                items = WritingItems.Pages;
+                                break;
+                            case "Word(s)":
+                                items = WritingItems.Words;
+                                break;
+                        }
+
+                        switch (selectedTimespan.ToString())
+                        {
+                            case "Day":
+                                timespan = new TimeSpan(1, 0, 0, 0);
+                                break;
+                            case "Week":
+                                timespan = new TimeSpan(7, 0, 0, 0);
+                                break;
+                            case "Month":
+                                timespan = new TimeSpan(30, 0, 0, 0);
+                                break;
+                        }
+
+                        try
+                        {
+                            var writingPerTimespanGoal = new WritingGoal(_goalDate, goalNumber, items, timespan);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(writingPerTimespanGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
                         }
                     }
-                    catch (Exception e)
+                    else
                     {
-                        Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
                     }
-                }
-                else
-                {
-                    Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
-                }
-            };
+                };
 
             #endregion
 
@@ -645,6 +870,7 @@ namespace Zadify.Activities
                     readingGoalLayout.Visibility = currentItem.ToString() == "Reading" ? ViewStates.Visible : ViewStates.Gone;
                     writingGoalLayout.Visibility = currentItem.ToString() == "Writing" ? ViewStates.Visible : ViewStates.Gone;
                     fitnessGoalLayout.Visibility = currentItem.ToString() == "Fitness" ? ViewStates.Visible : ViewStates.Gone;
+                    financeGoalLayout.Visibility = currentItem.ToString() == "Finance" ? ViewStates.Visible : ViewStates.Gone;
                     dietGoalLayout.Visibility = currentItem.ToString() == "Diet" ? ViewStates.Visible : ViewStates.Gone;
                 };
 
@@ -656,6 +882,16 @@ namespace Zadify.Activities
                     fitnessPerTimespanLayout.Visibility = currentItem.ToString() == "Per Timespan" ? ViewStates.Visible : ViewStates.Gone;
                 };
 
+            financeGoalTypeSpinner.ItemSelected += delegate
+                {
+                    var currentItem = financeGoalTypeSpinner.GetItemAtPosition(financeGoalTypeSpinner.SelectedItemPosition);
+
+                    financeSaveByDateLayout.Visibility = currentItem.ToString() == "Save Money by Date" ? ViewStates.Visible : ViewStates.Gone;
+                    financeSavePerTimespanLayout.Visibility = currentItem.ToString() == "Save Money per Timespan" ? ViewStates.Visible : ViewStates.Gone;
+                    financePayByDateLayout.Visibility = currentItem.ToString() == "Pay Loan by Date" ? ViewStates.Visible : ViewStates.Gone;
+                    financePayPerTimespanLayout.Visibility = currentItem.ToString() == "Pay Part of Loan per Timespan" ? ViewStates.Visible : ViewStates.Gone;
+                };
+
             readingGoalTypeSpinner.ItemSelected += delegate
                 {
                     var currentItem = readingGoalTypeSpinner.GetItemAtPosition(readingGoalTypeSpinner.SelectedItemPosition);
@@ -663,7 +899,7 @@ namespace Zadify.Activities
                     readingByDateLayout.Visibility = currentItem.ToString() == "By Date" ? ViewStates.Visible : ViewStates.Gone;
                     readingPerTimespanLayout.Visibility = currentItem.ToString() == "Per Timespan" ? ViewStates.Visible : ViewStates.Gone;
                 };
-            
+
             writingGoalTypeSpinner.ItemSelected += delegate
                 {
                     var currentItem = writingGoalTypeSpinner.GetItemAtPosition(writingGoalTypeSpinner.SelectedItemPosition);
@@ -694,7 +930,7 @@ namespace Zadify.Activities
         {
             _readingPerTimespanSelectDate.Text = _goalDate.ToString("d");
         }
-        
+
         private void UpdateWritingByDateDate()
         {
             _writingByDateSelectDate.Text = _goalDate.ToString("d");
@@ -713,6 +949,26 @@ namespace Zadify.Activities
         private void UpdateFitnessPerTimespanDate()
         {
             _fitnessPerTimespanSelectDate.Text = _goalDate.ToString("d");
+        }
+        
+        private void UpdateFinanceSaveByDateDate()
+        {
+            _financeSaveByDateSelectDate.Text = _goalDate.ToString("d");
+        }
+
+        private void UpdateFinanceSavePerTimespanDate()
+        {
+            _financeSavePerTimespanSelectDate.Text = _goalDate.ToString("d");
+        }
+
+        private void UpdateFinancePayByDateDate()
+        {
+            _financePayByDateSelectDate.Text = _goalDate.ToString("d");
+        }
+
+        private void UpdateFinancePayPerTimespanDate()
+        {
+            _financePayPerTimespanSelectDate.Text = _goalDate.ToString("d");
         }
 
         private void UpdateDietGainWeightDate()
@@ -734,6 +990,10 @@ namespace Zadify.Activities
             UpdateWritingPerTimespanDate();
             UpdateFitnessByDateDate();
             UpdateFitnessPerTimespanDate();
+            UpdateFinanceSaveByDateDate();
+            UpdateFinanceSavePerTimespanDate();
+            UpdateFinancePayByDateDate();
+            UpdateFinancePayPerTimespanDate();
             UpdateDietLoseWeightDate();
             UpdateDietGainWeightDate();
         }

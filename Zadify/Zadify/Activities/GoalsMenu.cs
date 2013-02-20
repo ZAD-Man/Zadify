@@ -58,11 +58,11 @@ namespace Zadify.Activities
                             var financeGoal = (FinanceGoal) goal;
                             if (financeGoal.GoalAmount > 0)
                             {
-                                storedGoalStrings.Add("Save " + financeGoal.GoalAmount + " " + financeGoal.MeasuredItems + " - " + (int) (financeGoal.Progress*100) + "%");
+                                storedGoalStrings.Add("Save $" + financeGoal.GoalAmount + " - " + (int) (financeGoal.Progress*100) + "%");
                             }
                             else if (financeGoal.GoalAmount < 0)
                             {
-                                storedGoalStrings.Add("Pay " + Math.Abs(financeGoal.GoalAmount) + " " + financeGoal.MeasuredItems + " - " + (int) (financeGoal.Progress*100) + "%");
+                                storedGoalStrings.Add("Pay $" + Math.Abs(financeGoal.GoalAmount) + " - " + (int) (financeGoal.Progress*100) + "%");
                             }
                         }
                         else if (goal is FitnessGoal)

@@ -7,10 +7,10 @@ Goal Types
 	Lose # [weight] by [date]X
 	Gain # [weight] by [date]X
 -Finance
-	Save $ by [date]
-	Save $ every [timespan]
-	Pay off loan ($) by [date]
-	Pay off $ of loan every [date]
+	Save $ by [date]X
+	Save $ every [timespan]X
+	Pay off loan ($) by [date]X
+	Pay off $ of loan every [timespan]X
 -Reading
 	Read # [thing] per [timespan]X
 	Read # [thing] by [date]X

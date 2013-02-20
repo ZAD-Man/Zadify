@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/FitnessPerTimespanText2"
-                    android:text="by"
+                    android:text="until"
                     android:gravity="center_vertical" />
                 <Button
                     android:id="@+id/FitnessPerTimespanSelectDate"
@@ -138,6 +138,268 @@
             <Button
                 android:id="@+id/SubmitFitnessPerTimespanGoalButton"
                 android:layout_below="@id/FitnessPerTimespanInnerLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/FinanceGoalLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/FinanceGoalTypeSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:id="@+id/FinanceSaveByDateLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FinanceGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/FinanceSaveByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinanceSaveByDateText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/FinanceSaveByDateNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/FinanceSaveByDateItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/FinanceSaveByDateNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/FinanceSaveByDateInnerLayout2"
+                android:layout_below="@id/FinanceSaveByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinanceSaveByDateText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/FinanceSaveByDateText1"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/FinanceSaveByDateSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/FinanceSaveByDateText2"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitFinanceSaveByDateGoalButton"
+                android:layout_below="@id/FinanceSaveByDateInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/FinanceSavePerTimespanLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FinanceGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/FinanceSavePerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinanceSavePerTimespanText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/FinanceSavePerTimespanNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/FinanceSavePerTimespanItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/FinanceSavePerTimespanNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/FinanceSavePerTimespanInnerLayout2"
+                android:layout_below="@id/FinanceSavePerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinanceSavePerTimespanText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/FinanceSavePerTimespanText1"
+                    android:text="every"
+                    android:gravity="center_vertical" />
+                <Spinner
+                    android:id="@+id/FinanceSavePerTimespanTimespanSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/FinanceSavePerTimespanText2" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/FinanceSavePerTimespanInnerLayout3"
+                android:layout_below="@id/FinanceSavePerTimespanInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinanceSavePerTimespanText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/FinanceSavePerTimespanText2"
+                    android:text="until"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/FinanceSavePerTimespanSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/FinanceSavePerTimespanText3"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitFinanceSavePerTimespanGoalButton"
+                android:layout_below="@id/FinanceSavePerTimespanInnerLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/FinancePayByDateLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FinanceGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/FinancePayByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinancePayByDateText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pay"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/FinancePayByDateNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/FinancePayByDateItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/FinancePayByDateNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/FinancePayByDateInnerLayout2"
+                android:layout_below="@id/FinancePayByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinancePayByDateText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/FinancePayByDateText1"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/FinancePayByDateSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/FinancePayByDateText2"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitFinancePayByDateGoalButton"
+                android:layout_below="@id/FinancePayByDateInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/FinancePayPerTimespanLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FinanceGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/FinancePayPerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinancePayPerTimespanText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pay"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/FinancePayPerTimespanNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/FinancePayPerTimespanItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/FinancePayPerTimespanNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/FinancePayPerTimespanInnerLayout2"
+                android:layout_below="@id/FinancePayPerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinancePayPerTimespanText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/FinancePayPerTimespanText1"
+                    android:text="every"
+                    android:gravity="center_vertical" />
+                <Spinner
+                    android:id="@+id/FinancePayPerTimespanTimespanSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/FinancePayPerTimespanText2" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/FinancePayPerTimespanInnerLayout3"
+                android:layout_below="@id/FinancePayPerTimespanInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/FinancePayPerTimespanText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/FinancePayPerTimespanText2"
+                    android:text="until"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/FinancePayPerTimespanSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/FinancePayPerTimespanText3"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitFinancePayPerTimespanGoalButton"
+                android:layout_below="@id/FinancePayPerTimespanInnerLayout3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Submit" />
@@ -262,7 +524,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ReadingPerTimespanText2"
-                    android:text="by"
+                    android:text="until"
                     android:gravity="center_vertical" />
                 <Button
                     android:id="@+id/ReadingPerTimespanSelectDate"
@@ -398,7 +660,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/WritingPerTimespanText2"
-                    android:text="by"
+                    android:text="until"
                     android:gravity="center_vertical" />
                 <Button
                     android:id="@+id/WritingPerTimespanSelectDate"

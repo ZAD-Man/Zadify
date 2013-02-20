@@ -6,6 +6,7 @@
   <string-array name="repeatingTimespans">
     <item>Day</item>
     <item>Week</item>
+    <item>Month</item>
   </string-array>
   <string-array name="predefinedGoalTypes">
     <item>Fitness</item>
