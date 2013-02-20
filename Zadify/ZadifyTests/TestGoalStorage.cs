@@ -27,7 +27,7 @@ namespace ZadifyTests
             Assert.AreEqual(readingGoal.GoalCompletedAmount, loadedReadingGoal.GoalCompletedAmount);
             Assert.AreEqual(readingGoal.MeasuredItems, loadedReadingGoal.MeasuredItems);
             Assert.AreEqual(readingGoal.Progress, loadedReadingGoal.Progress);
-            Assert.AreEqual(readingGoal.RepeatingTime, loadedReadingGoal.RepeatingTime);
+            Assert.AreEqual(readingGoal.RepeatingDays, loadedReadingGoal.RepeatingDays);
         }
 
         [TestMethod]

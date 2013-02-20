@@ -19,14 +19,9 @@ namespace Zadify
             
         }
 
-        public FinanceGoal(DateTime dueDate, int goalAmount)
-            : this(dueDate, goalAmount, new TimeSpan())
+        public FinanceGoal(DateTime dueDate, int goalAmount, int repeatingDays = 0)
         {
-        }
-
-        public FinanceGoal(DateTime dueDate, int goalAmount, TimeSpan repeatingTime)
-        {
-            RepeatingTime = repeatingTime;
+            RepeatingDays = repeatingDays;
             GoalAmount = goalAmount;
             DueDate = dueDate;
             GoalCompletedAmount = 0;

@@ -21,14 +21,9 @@ namespace Zadify
 
         }
 
-        public WritingGoal(DateTime dueDate, int goalAmount, WritingItems measuredItems)
-            : this(dueDate, goalAmount, measuredItems, new TimeSpan())
+        public WritingGoal(DateTime dueDate, int goalAmount, WritingItems measuredItems, int repeatingDays = 0)
         {
-        }
-
-        public WritingGoal(DateTime dueDate, int goalAmount, WritingItems measuredItems, TimeSpan repeatingTime)
-        {
-            RepeatingTime = repeatingTime;
+            RepeatingDays = repeatingDays;
             GoalAmount = goalAmount;
             DueDate = dueDate;
             MeasuredItems = measuredItems;

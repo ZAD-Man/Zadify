@@ -140,7 +140,7 @@ namespace Zadify.Activities
                     {
                         var goalNumber = int.Parse(fitnessPerTimespanNumber.Text);
                         var items = FitnessItems.Pushups;
-                        var timespan = new TimeSpan();
+                        var timespan = 0;
                         var selectedItems = fitnessPerTimespanItemsSpinner.GetItemAtPosition(fitnessPerTimespanItemsSpinner.SelectedItemPosition);
                         var selectedTimespan = fitnessPerTimespanTimespanSpinner.GetItemAtPosition(fitnessPerTimespanTimespanSpinner.SelectedItemPosition);
                         switch (selectedItems.ToString())
@@ -165,13 +165,13 @@ namespace Zadify.Activities
                         switch (selectedTimespan.ToString())
                         {
                             case "Day":
-                                timespan = new TimeSpan(1, 0, 0, 0);
+                                timespan = 1;
                                 break;
                             case "Week":
-                                timespan = new TimeSpan(7, 0, 0, 0);
+                                timespan = 7;
                                 break;
                             case "Month":
-                                timespan = new TimeSpan(30, 0, 0, 0);
+                                timespan = 30;
                                 break;
                         }
 
@@ -287,7 +287,7 @@ namespace Zadify.Activities
                     {
                         var goalNumber = int.Parse(dietLoseWeightNumber.Text);
                         var items = DietItems.Pounds;
-                        var timespan = new TimeSpan();
+                        var timespan = 0;
                         var selectedItems = dietLoseWeightItemsSpinner.GetItemAtPosition(dietLoseWeightItemsSpinner.SelectedItemPosition);
                         switch (selectedItems.ToString())
                         {
@@ -394,20 +394,20 @@ namespace Zadify.Activities
                     if (_goalDate.CompareTo(DateTime.Today) >= 0)
                     {
                         var goalNumber = int.Parse(financeSavePerTimespanNumber.Text);
-                        var timespan = new TimeSpan();
+                        var timespan = 0;
 
                         var selectedTimespan = financeSavePerTimespanTimespanSpinner.GetItemAtPosition(financeSavePerTimespanTimespanSpinner.SelectedItemPosition);
 
                         switch (selectedTimespan.ToString())
                         {
                             case "Day":
-                                timespan = new TimeSpan(1, 0, 0, 0);
+                                timespan = 1;
                                 break;
                             case "Week":
-                                timespan = new TimeSpan(7, 0, 0, 0);
+                                timespan = 7;
                                 break;
                             case "Month":
-                                timespan = new TimeSpan(30, 0, 0, 0);
+                                timespan = 30;
                                 break;
                         }
 
@@ -495,19 +495,19 @@ namespace Zadify.Activities
                     if (_goalDate.CompareTo(DateTime.Today) >= 0)
                     {
                         var goalNumber = int.Parse(financePayPerTimespanNumber.Text);
-                        var timespan = new TimeSpan();
+                        var timespan = 0;
                         var selectedTimespan = financePayPerTimespanTimespanSpinner.GetItemAtPosition(financePayPerTimespanTimespanSpinner.SelectedItemPosition);
 
                         switch (selectedTimespan.ToString())
                         {
                             case "Day":
-                                timespan = new TimeSpan(1, 0, 0, 0);
+                                timespan = 1;
                                 break;
                             case "Week":
-                                timespan = new TimeSpan(7, 0, 0, 0);
+                                timespan = 7;
                                 break;
                             case "Month":
-                                timespan = new TimeSpan(30, 0, 0, 0);
+                                timespan = 30;
                                 break;
                         }
 
@@ -641,7 +641,7 @@ namespace Zadify.Activities
                     {
                         var goalNumber = int.Parse(readingPerTimespanNumber.Text);
                         var items = ReadingItems.Books;
-                        var timespan = new TimeSpan();
+                        var timespan = 0;
                         var selectedItems = readingPerTimespanItemsSpinner.GetItemAtPosition(readingPerTimespanItemsSpinner.SelectedItemPosition);
                         var selectedTimespan = readingPerTimespanTimespanSpinner.GetItemAtPosition(readingPerTimespanTimespanSpinner.SelectedItemPosition);
                         switch (selectedItems.ToString())
@@ -666,13 +666,13 @@ namespace Zadify.Activities
                         switch (selectedTimespan.ToString())
                         {
                             case "Day":
-                                timespan = new TimeSpan(1, 0, 0, 0);
+                                timespan = 1;
                                 break;
                             case "Week":
-                                timespan = new TimeSpan(7, 0, 0, 0);
+                                timespan = 7;
                                 break;
                             case "Month":
-                                timespan = new TimeSpan(30, 0, 0, 0);
+                                timespan = 30;
                                 break;
                         }
 
@@ -803,7 +803,7 @@ namespace Zadify.Activities
                     {
                         var goalNumber = int.Parse(writingPerTimespanNumber.Text);
                         var items = WritingItems.Hours;
-                        var timespan = new TimeSpan();
+                        var timespan = 0;
                         var selectedItems = writingPerTimespanItemsSpinner.GetItemAtPosition(writingPerTimespanItemsSpinner.SelectedItemPosition);
                         var selectedTimespan = writingPerTimespanTimespanSpinner.GetItemAtPosition(writingPerTimespanTimespanSpinner.SelectedItemPosition);
                         switch (selectedItems.ToString())
@@ -825,13 +825,13 @@ namespace Zadify.Activities
                         switch (selectedTimespan.ToString())
                         {
                             case "Day":
-                                timespan = new TimeSpan(1, 0, 0, 0);
+                                timespan = 1;
                                 break;
                             case "Week":
-                                timespan = new TimeSpan(7, 0, 0, 0);
+                                timespan = 7;
                                 break;
                             case "Month":
-                                timespan = new TimeSpan(30, 0, 0, 0);
+                                timespan = 30;
                                 break;
                         }
 

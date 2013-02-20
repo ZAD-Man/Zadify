@@ -25,7 +25,7 @@ namespace Zadify
         public double Progress { get; protected set; }
         public int GoalAmount { get; protected set; }
         public int GoalCompletedAmount { get; protected set; }
-        public TimeSpan RepeatingTime { get; protected set; }
+        public int RepeatingDays { get; protected set; }
 
         public void UpdateProgress(int amountCompleted)
         {
