@@ -16,6 +16,8 @@ namespace Zadify.Activities
         private DateTime _goalDate = DateTime.Today;
         private Button _readingByDateSelectDate;
         private Button _readingPerTimespanSelectDate;
+        private Button _writingByDateSelectDate;
+        private Button _writingPerTimespanSelectDate;
         private Button _fitnessByDateSelectDate;
         private Button _fitnessPerTimespanSelectDate;
         private Button _dietGainWeightSelectDate;
@@ -478,6 +480,162 @@ namespace Zadify.Activities
 
             #endregion
 
+            #region Writing Goals
+
+            var writingGoalLayout = FindViewById<RelativeLayout>(Resource.Id.WritingGoalLayout);
+
+            var writingGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.WritingGoalTypeSpinner);
+            var writingGoalTypeAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.writingGoalTypes, Android.Resource.Layout.SimpleSpinnerItem);
+            writingGoalTypeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            writingGoalTypeSpinner.Adapter = writingGoalTypeAdapter;
+
+            #region Writing By Date
+
+            var writingByDateLayout = FindViewById<RelativeLayout>(Resource.Id.WritingByDateLayout);
+
+            var writingByDateNumber = FindViewById<EditText>(Resource.Id.WritingByDateNumber);
+
+            var writingByDateItemsSpinner = FindViewById<Spinner>(Resource.Id.WritingByDateItemsSpinner);
+            var writingByDateItemsAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.writingItems, Android.Resource.Layout.SimpleSpinnerItem);
+            writingByDateItemsAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            writingByDateItemsSpinner.Adapter = writingByDateItemsAdapter;
+
+            _writingByDateSelectDate = FindViewById<Button>(Resource.Id.WritingByDateSelectDate);
+            _writingByDateSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitWritingByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitWritingByDateGoalButton);
+            submitWritingByDateGoalButton.Click += delegate
+            {
+                var goalNumber = int.Parse(writingByDateNumber.Text);
+                var items = WritingItems.Hours;
+                var selectedItems = writingByDateItemsSpinner.GetItemAtPosition(writingByDateItemsSpinner.SelectedItemPosition);
+                switch (selectedItems.ToString())
+                {
+                    case "Hour(s)":
+                        items = WritingItems.Hours;
+                        break;
+                    case "Minute(s)":
+                        items = WritingItems.Minutes;
+                        break;
+                    case "Word(s)":
+                        items = WritingItems.Words;
+                        break;
+                    case "Page(s)":
+                        items = WritingItems.Pages;
+                        break;
+                }
+                if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                {
+                    try
+                    {
+                        var writingByDateGoal = new WritingGoal(_goalDate, goalNumber, items);
+                        var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                        goalsList.Add(writingByDateGoal);
+                        bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                        if (successfulSave)
+                        {
+                            Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            Finish();
+                        }
+                        else
+                        {
+                            Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                    }
+                }
+                else
+                {
+                    Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                }
+            };
+
+            #endregion
+
+            #region Writing Per Timespan
+
+            var writingPerTimespanLayout = FindViewById<RelativeLayout>(Resource.Id.WritingPerTimespanLayout);
+
+            var writingPerTimespanNumber = FindViewById<EditText>(Resource.Id.WritingPerTimespanNumber);
+
+            var writingPerTimespanItemsSpinner = FindViewById<Spinner>(Resource.Id.WritingPerTimespanItemsSpinner);
+            var writingPerTimespanItemsAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.writingItems, Android.Resource.Layout.SimpleSpinnerItem);
+            writingPerTimespanItemsAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            writingPerTimespanItemsSpinner.Adapter = writingPerTimespanItemsAdapter;
+
+            var writingPerTimespanTimespanSpinner = FindViewById<Spinner>(Resource.Id.WritingPerTimespanTimespanSpinner);
+            var writingPerTimespanTimespanAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.repeatingTimespans, Android.Resource.Layout.SimpleSpinnerItem);
+            writingPerTimespanTimespanAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            writingPerTimespanTimespanSpinner.Adapter = writingPerTimespanTimespanAdapter;
+
+            _writingPerTimespanSelectDate = FindViewById<Button>(Resource.Id.WritingPerTimespanSelectDate);
+            _writingPerTimespanSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitWritingPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitWritingPerTimespanGoalButton);
+            submitWritingPerTimespanGoalButton.Click += delegate
+            {
+                if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                {
+                    var goalNumber = int.Parse(writingPerTimespanNumber.Text);
+                    var items = WritingItems.Hours;
+                    var timespan = new TimeSpan();
+                    var selectedItems = writingPerTimespanItemsSpinner.GetItemAtPosition(writingPerTimespanItemsSpinner.SelectedItemPosition);
+                    var selectedTimespan = writingPerTimespanTimespanSpinner.GetItemAtPosition(writingPerTimespanTimespanSpinner.SelectedItemPosition);
+                    switch (selectedItems.ToString())
+                    {
+                        case "Hour(s)":
+                            items = WritingItems.Hours;
+                            break;
+                        case "Minute(s)":
+                            items = WritingItems.Minutes;
+                            break;
+                        case "Page(s)":
+                            items = WritingItems.Pages;
+                            break;
+                        case "Word(s)":
+                            items = WritingItems.Words;
+                            break;
+                    }
+
+                    switch (selectedTimespan.ToString())
+                    {
+                        case "Day":
+                            timespan = new TimeSpan(1, 0, 0, 0);
+                            break;
+                        case "Week":
+                            timespan = new TimeSpan(7, 0, 0, 0);
+                            break;
+                    }
+
+                    try
+                    {
+                        var writingPerTimespanGoal = new WritingGoal(_goalDate, goalNumber, items, timespan);
+                        var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                        goalsList.Add(writingPerTimespanGoal);
+                        bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                        if (successfulSave)
+                        {
+                            Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                    }
+                }
+                else
+                {
+                    Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                }
+            };
+
+            #endregion
+
+            #endregion
+
             #region Menu Management
 
             predefinedGoalTypeSpinner.ItemSelected += delegate
@@ -485,9 +643,9 @@ namespace Zadify.Activities
                     var currentItem = predefinedGoalTypeSpinner.GetItemAtPosition(predefinedGoalTypeSpinner.SelectedItemPosition);
 
                     readingGoalLayout.Visibility = currentItem.ToString() == "Reading" ? ViewStates.Visible : ViewStates.Gone;
+                    writingGoalLayout.Visibility = currentItem.ToString() == "Writing" ? ViewStates.Visible : ViewStates.Gone;
                     fitnessGoalLayout.Visibility = currentItem.ToString() == "Fitness" ? ViewStates.Visible : ViewStates.Gone;
                     dietGoalLayout.Visibility = currentItem.ToString() == "Diet" ? ViewStates.Visible : ViewStates.Gone;
-                    var one = 1;
                 };
 
             fitnessGoalTypeSpinner.ItemSelected += delegate
@@ -504,6 +662,14 @@ namespace Zadify.Activities
 
                     readingByDateLayout.Visibility = currentItem.ToString() == "By Date" ? ViewStates.Visible : ViewStates.Gone;
                     readingPerTimespanLayout.Visibility = currentItem.ToString() == "Per Timespan" ? ViewStates.Visible : ViewStates.Gone;
+                };
+            
+            writingGoalTypeSpinner.ItemSelected += delegate
+                {
+                    var currentItem = writingGoalTypeSpinner.GetItemAtPosition(writingGoalTypeSpinner.SelectedItemPosition);
+
+                    writingByDateLayout.Visibility = currentItem.ToString() == "By Date" ? ViewStates.Visible : ViewStates.Gone;
+                    writingPerTimespanLayout.Visibility = currentItem.ToString() == "Per Timespan" ? ViewStates.Visible : ViewStates.Gone;
                 };
 
             dietGoalTypeSpinner.ItemSelected += delegate
@@ -527,6 +693,16 @@ namespace Zadify.Activities
         private void UpdateReadingPerTimespanDate()
         {
             _readingPerTimespanSelectDate.Text = _goalDate.ToString("d");
+        }
+        
+        private void UpdateWritingByDateDate()
+        {
+            _writingByDateSelectDate.Text = _goalDate.ToString("d");
+        }
+
+        private void UpdateWritingPerTimespanDate()
+        {
+            _writingPerTimespanSelectDate.Text = _goalDate.ToString("d");
         }
 
         private void UpdateFitnessByDateDate()
@@ -554,6 +730,8 @@ namespace Zadify.Activities
             _goalDate = e.Date;
             UpdateReadingByDateDate();
             UpdateReadingPerTimespanDate();
+            UpdateWritingByDateDate();
+            UpdateWritingPerTimespanDate();
             UpdateFitnessByDateDate();
             UpdateFitnessPerTimespanDate();
             UpdateDietLoseWeightDate();

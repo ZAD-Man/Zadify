@@ -4,8 +4,8 @@ Goal Types
 	Do # [activity] every [timespan]X
 	Do # [activity] total by [date]X
 -Diet
-	Lose # [weight] by [date]
-	Gain # [weight] by [date]
+	Lose # [weight] by [date]X
+	Gain # [weight] by [date]X
 -Finance
 	Save $ by [date]
 	Save $ every [timespan]
@@ -15,5 +15,5 @@ Goal Types
 	Read # [thing] per [timespan]X
 	Read # [thing] by [date]X
 -Writing
-	Write # [thing] per [timespan]
-	Write # [thing] by [date]
+	Write # [thing] per [timespan]X
+	Write # [thing] by [date]X

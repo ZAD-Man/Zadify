@@ -280,6 +280,142 @@
         </RelativeLayout>
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/WritingGoalLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/WritingGoalTypeSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:id="@+id/WritingByDateLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/WritingGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/WritingByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/WritingByDateText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/WritingByDateNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/WritingByDateItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/WritingByDateNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/WritingByDateInnerLayout2"
+                android:layout_below="@id/WritingByDateInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/WritingByDateText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/WritingByDateText1"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/WritingByDateSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/WritingByDateText2"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitWritingByDateGoalButton"
+                android:layout_below="@id/WritingByDateInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/WritingPerTimespanLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/WritingGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/WritingPerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/WritingPerTimespanText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/WritingPerTimespanNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/WritingPerTimespanItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/WritingPerTimespanNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/WritingPerTimespanInnerLayout2"
+                android:layout_below="@id/WritingPerTimespanInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/WritingPerTimespanText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/WritingPerTimespanText1"
+                    android:text="every"
+                    android:gravity="center_vertical" />
+                <Spinner
+                    android:id="@+id/WritingPerTimespanTimespanSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/WritingPerTimespanText2" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/WritingPerTimespanInnerLayout3"
+                android:layout_below="@id/WritingPerTimespanInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/WritingPerTimespanText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/WritingPerTimespanText2"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/WritingPerTimespanSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/WritingPerTimespanText3"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitWritingPerTimespanGoalButton"
+                android:layout_below="@id/WritingPerTimespanInnerLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/DietGoalLayout"
         android:orientation="vertical"
         android:layout_width="fill_parent"
