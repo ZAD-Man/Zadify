@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Widget;
@@ -16,14 +17,7 @@ namespace Zadify.Activities
             Log.Info("GoalsMenu", "Goals Menu Created");
 
             base.OnCreate(bundle);
-
-            SetContentView(Resource.Layout.GoalsMenu);
-
-            var createGoalButton = FindViewById<Button>(Resource.Id.CreateGoalButton);
-            createGoalButton.Click += delegate { StartActivity(typeof (CreateGoalMenu)); };
-
-            var completedGoalsButton = FindViewById<Button>(Resource.Id.CompletedGoalsButton);
-            completedGoalsButton.Click += delegate { StartActivity(typeof (CompletedGoalsMenu)); };
+            
         }
 
         protected override void OnStart()
@@ -31,6 +25,14 @@ namespace Zadify.Activities
             Log.Info("GoalsMenu", "Goals Menu Started");
 
             base.OnStart();
+
+            SetContentView(Resource.Layout.GoalsMenu);
+
+            var createGoalButton = FindViewById<Button>(Resource.Id.CreateGoalButton);
+            createGoalButton.Click += delegate { StartActivity(typeof(CreateGoalMenu)); };
+
+            var completedGoalsButton = FindViewById<Button>(Resource.Id.CompletedGoalsButton);
+            completedGoalsButton.Click += delegate { StartActivity(typeof(CompletedGoalsMenu)); };
 
             try
             {
@@ -88,6 +90,14 @@ namespace Zadify.Activities
                     }
                     var goalsAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, storedGoalStrings);
                     goalsList.Adapter = goalsAdapter;
+
+                    goalsList.ItemClick += (sender, args) =>
+                        {
+                            var goalDetailsScreen = new Intent(this, typeof (GoalDetailsScreen));
+                            goalDetailsScreen.PutExtra("Position", args.Position);
+                            goalDetailsScreen.PutExtra("GoalType", storedGoalList[args.Position].GetType().ToString());
+                            StartActivity(goalDetailsScreen);
+                        };
                 }
             }
             catch (Java.IO.FileNotFoundException e)
