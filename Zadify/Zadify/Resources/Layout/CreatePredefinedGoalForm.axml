@@ -302,7 +302,7 @@
                     android:id="@+id/WritingByDateText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Read"
+                    android:text="Write"
                     android:gravity="center_vertical" />
                 <EditText
                     android:id="@+id/WritingByDateNumber"
@@ -356,7 +356,7 @@
                     android:id="@+id/WritingPerTimespanText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Read"
+                    android:text="Write"
                     android:gravity="center_vertical" />
                 <EditText
                     android:id="@+id/WritingPerTimespanNumber"
