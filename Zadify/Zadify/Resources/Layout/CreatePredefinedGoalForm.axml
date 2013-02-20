@@ -279,4 +279,122 @@
                 android:text="Submit" />
         </RelativeLayout>
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/DietGoalLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/DietGoalTypeSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:id="@+id/DietGainWeightLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/DietGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/DietGainWeightInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/DietGainWeightText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gain"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/DietGainWeightNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/DietGainWeightItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/DietGainWeightNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/DietGainWeightInnerLayout2"
+                android:layout_below="@id/DietGainWeightInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/DietGainWeightText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/DietGainWeightText1"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/DietGainWeightSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/DietGainWeightText2"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitDietGainWeightGoalButton"
+                android:layout_below="@id/DietGainWeightInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/DietLoseWeightLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/DietGoalTypeSpinner">
+            <LinearLayout
+                android:id="@+id/DietLoseWeightInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/DietLoseWeightText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lose"
+                    android:gravity="center_vertical" />
+                <EditText
+                    android:id="@+id/DietLoseWeightNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/numberHint"
+                    android:inputType="number" />
+                <Spinner
+                    android:id="@+id/DietLoseWeightItemsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/DietLoseWeightNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/DietLoseWeightInnerLayout2"
+                android:layout_below="@id/DietLoseWeightInnerLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/DietLoseWeightText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/DietLoseWeightText1"
+                    android:text="by"
+                    android:gravity="center_vertical" />
+                <Button
+                    android:id="@+id/DietLoseWeightSelectDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_toRightOf="@id/DietLoseWeightText2"
+                    android:text="(Date)" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/SubmitDietLoseWeightGoalButton"
+                android:layout_below="@id/DietLoseWeightInnerLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </RelativeLayout>
+    </RelativeLayout>
 </LinearLayout>

@@ -18,6 +18,8 @@ namespace Zadify.Activities
         private Button _readingPerTimespanSelectDate;
         private Button _fitnessByDateSelectDate;
         private Button _fitnessPerTimespanSelectDate;
+        private Button _dietGainWeightSelectDate;
+        private Button _dietLoseWeightSelectDate;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -190,6 +192,130 @@ namespace Zadify.Activities
 
             #endregion
 
+            #region Diet Goals
+
+            var dietGoalLayout = FindViewById<RelativeLayout>(Resource.Id.DietGoalLayout);
+
+            var dietGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.DietGoalTypeSpinner);
+            var dietGoalTypeAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.dietGoalTypes, Android.Resource.Layout.SimpleSpinnerItem);
+            dietGoalTypeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            dietGoalTypeSpinner.Adapter = dietGoalTypeAdapter;
+
+            #region Diet Gain Weight
+
+            var dietGainWeightLayout = FindViewById<RelativeLayout>(Resource.Id.DietGainWeightLayout);
+
+            var dietGainWeightNumber = FindViewById<EditText>(Resource.Id.DietGainWeightNumber);
+
+            var dietGainWeightWeightsSpinner = FindViewById<Spinner>(Resource.Id.DietGainWeightItemsSpinner);
+            var dietGainWeightWeightsAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.dietWeights, Android.Resource.Layout.SimpleSpinnerItem);
+            dietGainWeightWeightsAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            dietGainWeightWeightsSpinner.Adapter = dietGainWeightWeightsAdapter;
+
+            _dietGainWeightSelectDate = FindViewById<Button>(Resource.Id.DietGainWeightSelectDate);
+            _dietGainWeightSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitDietGainWeightGoalButton = FindViewById<Button>(Resource.Id.SubmitDietGainWeightGoalButton);
+            submitDietGainWeightGoalButton.Click += delegate
+                {
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    {
+                        var goalNumber = int.Parse(dietGainWeightNumber.Text);
+                        var items = DietItems.Pounds;
+                        var selectedItems = dietGainWeightWeightsSpinner.GetItemAtPosition(dietGainWeightWeightsSpinner.SelectedItemPosition);
+                        switch (selectedItems.ToString())
+                        {
+                            case "Pound(s)":
+                                items = DietItems.Pounds;
+                                break;
+                            case "Kilogram(s)":
+                                items = DietItems.Kilograms;
+                                break;
+                        }
+
+                        try
+                        {
+                            var dietGainWeightGoal = new DietGoal(_goalDate, goalNumber, items);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(dietGainWeightGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                    }
+                };
+
+            #endregion
+
+            #region Diet Lose Weight
+
+            var dietLoseWeightLayout = FindViewById<RelativeLayout>(Resource.Id.DietLoseWeightLayout);
+
+            var dietLoseWeightNumber = FindViewById<EditText>(Resource.Id.DietLoseWeightNumber);
+
+            var dietLoseWeightItemsSpinner = FindViewById<Spinner>(Resource.Id.DietLoseWeightItemsSpinner);
+            var dietLoseWeightItemsAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.dietWeights, Android.Resource.Layout.SimpleSpinnerItem);
+            dietLoseWeightItemsAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            dietLoseWeightItemsSpinner.Adapter = dietLoseWeightItemsAdapter;
+
+            _dietLoseWeightSelectDate = FindViewById<Button>(Resource.Id.DietLoseWeightSelectDate);
+            _dietLoseWeightSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
+
+            var submitDietLoseWeightGoalButton = FindViewById<Button>(Resource.Id.SubmitDietLoseWeightGoalButton);
+            submitDietLoseWeightGoalButton.Click += delegate
+                {
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    {
+                        var goalNumber = int.Parse(dietLoseWeightNumber.Text);
+                        var items = DietItems.Pounds;
+                        var timespan = new TimeSpan();
+                        var selectedItems = dietLoseWeightItemsSpinner.GetItemAtPosition(dietLoseWeightItemsSpinner.SelectedItemPosition);
+                        switch (selectedItems.ToString())
+                        {
+                            case "Pound(s)":
+                                items = DietItems.Pounds;
+                                break;
+                            case "Kilogram(s)":
+                                items = DietItems.Kilograms;
+                                break;
+                        }
+
+                        try
+                        {
+                            var dietLoseWeightGoal = new DietGoal(_goalDate, goalNumber, items, timespan);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(dietLoseWeightGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                    }
+                };
+
+            #endregion
+
+            #endregion
+
             #region Reading Goals
 
             var readingGoalLayout = FindViewById<RelativeLayout>(Resource.Id.ReadingGoalLayout);
@@ -289,69 +415,70 @@ namespace Zadify.Activities
 
             var submitReadingPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitReadingPerTimespanGoalButton);
             submitReadingPerTimespanGoalButton.Click += delegate
-            {
-                if (_goalDate.CompareTo(DateTime.Today) >= 0)
                 {
-                    var goalNumber = int.Parse(readingPerTimespanNumber.Text);
-                    var items = ReadingItems.Books;
-                    var timespan = new TimeSpan();
-                    var selectedItems = readingPerTimespanItemsSpinner.GetItemAtPosition(readingPerTimespanItemsSpinner.SelectedItemPosition);
-                    var selectedTimespan = readingPerTimespanTimespanSpinner.GetItemAtPosition(readingPerTimespanTimespanSpinner.SelectedItemPosition);
-                    switch (selectedItems.ToString())
+                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
                     {
-                        case "Book(s)":
-                            items = ReadingItems.Books;
-                            break;
-                        case "Hour(s)":
-                            items = ReadingItems.Hours;
-                            break;
-                        case "Minute(s)":
-                            items = ReadingItems.Minutes;
-                            break;
-                        case "Page(s)":
-                            items = ReadingItems.Pages;
-                            break;
-                        case "Word(s)":
-                            items = ReadingItems.Words;
-                            break;
-                    }
-
-                    switch (selectedTimespan.ToString())
-                    {
-                        case "Day":
-                            timespan = new TimeSpan(1, 0, 0, 0);
-                            break;
-                        case "Week":
-                            timespan = new TimeSpan(7, 0, 0, 0);
-                            break;
-                    }
-
-                    try
-                    {
-                        var readingPerTimespanGoal = new ReadingGoal(_goalDate, goalNumber, items, timespan);
-                        var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                        goalsList.Add(readingPerTimespanGoal);
-                        bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                        if (successfulSave)
+                        var goalNumber = int.Parse(readingPerTimespanNumber.Text);
+                        var items = ReadingItems.Books;
+                        var timespan = new TimeSpan();
+                        var selectedItems = readingPerTimespanItemsSpinner.GetItemAtPosition(readingPerTimespanItemsSpinner.SelectedItemPosition);
+                        var selectedTimespan = readingPerTimespanTimespanSpinner.GetItemAtPosition(readingPerTimespanTimespanSpinner.SelectedItemPosition);
+                        switch (selectedItems.ToString())
                         {
-                            Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            case "Book(s)":
+                                items = ReadingItems.Books;
+                                break;
+                            case "Hour(s)":
+                                items = ReadingItems.Hours;
+                                break;
+                            case "Minute(s)":
+                                items = ReadingItems.Minutes;
+                                break;
+                            case "Page(s)":
+                                items = ReadingItems.Pages;
+                                break;
+                            case "Word(s)":
+                                items = ReadingItems.Words;
+                                break;
+                        }
+
+                        switch (selectedTimespan.ToString())
+                        {
+                            case "Day":
+                                timespan = new TimeSpan(1, 0, 0, 0);
+                                break;
+                            case "Week":
+                                timespan = new TimeSpan(7, 0, 0, 0);
+                                break;
+                        }
+
+                        try
+                        {
+                            var readingPerTimespanGoal = new ReadingGoal(_goalDate, goalNumber, items, timespan);
+                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                            goalsList.Add(readingPerTimespanGoal);
+                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            if (successfulSave)
+                            {
+                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
                         }
                     }
-                    catch (Exception e)
+                    else
                     {
-                        Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
                     }
-                }
-                else
-                {
-                    Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
-                }
-            };
+                };
+
             #endregion
 
             #endregion
 
-            #region Date Management
+            #region Menu Management
 
             predefinedGoalTypeSpinner.ItemSelected += delegate
                 {
@@ -359,6 +486,8 @@ namespace Zadify.Activities
 
                     readingGoalLayout.Visibility = currentItem.ToString() == "Reading" ? ViewStates.Visible : ViewStates.Gone;
                     fitnessGoalLayout.Visibility = currentItem.ToString() == "Fitness" ? ViewStates.Visible : ViewStates.Gone;
+                    dietGoalLayout.Visibility = currentItem.ToString() == "Diet" ? ViewStates.Visible : ViewStates.Gone;
+                    var one = 1;
                 };
 
             fitnessGoalTypeSpinner.ItemSelected += delegate
@@ -376,11 +505,28 @@ namespace Zadify.Activities
                     readingByDateLayout.Visibility = currentItem.ToString() == "By Date" ? ViewStates.Visible : ViewStates.Gone;
                     readingPerTimespanLayout.Visibility = currentItem.ToString() == "Per Timespan" ? ViewStates.Visible : ViewStates.Gone;
                 };
+
+            dietGoalTypeSpinner.ItemSelected += delegate
+                {
+                    var currentItem = dietGoalTypeSpinner.GetItemAtPosition(dietGoalTypeSpinner.SelectedItemPosition);
+
+                    dietLoseWeightLayout.Visibility = currentItem.ToString() == "Lose Weight" ? ViewStates.Visible : ViewStates.Gone;
+                    dietGainWeightLayout.Visibility = currentItem.ToString() == "Gain Weight" ? ViewStates.Visible : ViewStates.Gone;
+                };
+
+            #endregion
         }
+
+        #region Date Management
 
         private void UpdateReadingByDateDate()
         {
             _readingByDateSelectDate.Text = _goalDate.ToString("d");
+        }
+
+        private void UpdateReadingPerTimespanDate()
+        {
+            _readingPerTimespanSelectDate.Text = _goalDate.ToString("d");
         }
 
         private void UpdateFitnessByDateDate()
@@ -393,12 +539,25 @@ namespace Zadify.Activities
             _fitnessPerTimespanSelectDate.Text = _goalDate.ToString("d");
         }
 
+        private void UpdateDietGainWeightDate()
+        {
+            _dietGainWeightSelectDate.Text = _goalDate.ToString("d");
+        }
+
+        private void UpdateDietLoseWeightDate()
+        {
+            _dietLoseWeightSelectDate.Text = _goalDate.ToString("d");
+        }
+
         private void OnDateSet(object sender, DatePickerDialog.DateSetEventArgs e)
         {
             _goalDate = e.Date;
             UpdateReadingByDateDate();
+            UpdateReadingPerTimespanDate();
             UpdateFitnessByDateDate();
             UpdateFitnessPerTimespanDate();
+            UpdateDietLoseWeightDate();
+            UpdateDietGainWeightDate();
         }
 
         protected override Dialog OnCreateDialog(int id)

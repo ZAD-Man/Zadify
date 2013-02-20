@@ -1,8 +1,8 @@
 Goal Types
 
 -Fitness
-	Do # [activity] every [timespan]
-	Do # [activity] total by [date]
+	Do # [activity] every [timespan]X
+	Do # [activity] total by [date]X
 -Diet
 	Lose # [weight] by [date]
 	Gain # [weight] by [date]
@@ -12,10 +12,8 @@ Goal Types
 	Pay off loan ($) by [date]
 	Pay off $ of loan every [date]
 -Reading
-	Read # [thing] per [timespan]
-	Read # [thing] by [date]
+	Read # [thing] per [timespan]X
+	Read # [thing] by [date]X
 -Writing
 	Write # [thing] per [timespan]
 	Write # [thing] by [date]
-
-Be thinking about last 2 weeks ("bufferzone")
