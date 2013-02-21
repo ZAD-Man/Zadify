@@ -51,6 +51,9 @@ namespace AndroidTest
 			// aapt resource value: 0x7f050000
 			public const int helloLabel = 2131034112;
 			
+			// aapt resource value: 0x7f050002
+			public const int zTutorialButton = 2131034114;
+			
 			private Id()
 			{
 			}
@@ -73,8 +76,11 @@ namespace AndroidTest
 			// aapt resource value: 0x7f040000
 			public const int helloButtonText = 2130968576;
 			
+			// aapt resource value: 0x7f040002
+			public const int helloLabelText = 2130968578;
+			
 			// aapt resource value: 0x7f040001
-			public const int helloLabelText = 2130968577;
+			public const int zText = 2130968577;
 			
 			private String()
 			{

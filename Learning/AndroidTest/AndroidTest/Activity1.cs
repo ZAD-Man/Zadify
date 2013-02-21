@@ -9,6 +9,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using AndroidTest.com.parasoft.soatest;
+using AndroidTest.ZWebServiceTutorial;
 
 namespace AndroidTest
 {
@@ -22,6 +23,7 @@ namespace AndroidTest
             SetContentView(Resource.Layout.Main);
 
             var aButton = FindViewById<Button>(Resource.Id.aButton);
+            var zTutorialButton = FindViewById<Button>(Resource.Id.zTutorialButton);
             var aLabel = FindViewById<TextView>(Resource.Id.helloLabel);
 
             aButton.Click += (sender, e) =>
@@ -37,6 +39,20 @@ namespace AndroidTest
                     catch (Exception ex)
                     {
                         Log.Error("WebService", ex.Message + ex.StackTrace);
+                    }
+                };
+
+            zTutorialButton.Click += delegate
+                {
+                    try
+                    {
+                        var zService1 = new Service1();
+                        var greeting = zService1.WebMethodTheFirst("Zach", "Durtschi");
+                        aLabel.Text = greeting;
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error("ZWebService", ex.Message + ex.StackTrace);
                     }
                 };
         }

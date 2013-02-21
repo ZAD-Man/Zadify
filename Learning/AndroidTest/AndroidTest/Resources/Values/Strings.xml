@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="helloButtonText">Add 23 + 42</string>
+  <string name="zText">Ask how I am (ZTutorial)</string>
   <string name="helloLabelText">Hello Mono for Android</string>
 </resources>
