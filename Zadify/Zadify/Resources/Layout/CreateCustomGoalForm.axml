@@ -3,14 +3,89 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:id="@+id/CustomGoalForm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The Custom Goal Form will go here (RelativeLayout)" />
-    <Button
-        android:id="@+id/SubmitCustomGoalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit" />
+    <RelativeLayout
+        android:id="@+id/CustomGoalLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/CustomGoalInnerLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/CustomGoalText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Do"
+                android:gravity="center_vertical" />
+            <EditText
+                android:id="@+id/CustomGoalNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/numberHint"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/CustomGoalItems"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/activityHint" />
+        </LinearLayout>
+        <CheckBox
+            android:id="@+id/CustomGoalRepeatCheckbox"
+            android:layout_below="@id/CustomGoalInnerLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repeating?" />
+        <LinearLayout
+            android:id="@+id/CustomGoalInnerLayout2"
+            android:layout_below="@id/CustomGoalRepeatCheckbox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/CustomGoalText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CustomGoalText1"
+                android:text="every"
+                android:gravity="center_vertical" />
+            <EditText
+                android:id="@+id/CustomGoalDaysNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/numberHint"
+                android:layout_toRightOf="@id/CustomGoalText2"
+                android:inputType="number" />
+            <TextView
+                android:id="@+id/CustomGoalText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/CustomGoalDaysNumber"
+                android:text="days" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/CustomGoalInnerLayout3"
+            android:layout_below="@id/CustomGoalInnerLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/CustomGoalText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CustomGoalText2"
+                android:text="by"
+                android:gravity="center_vertical" />
+            <Button
+                android:id="@+id/CustomGoalSelectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_toRightOf="@id/CustomGoalText3"
+                android:text="(Date)" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/SubmitCustomGoalButton"
+            android:layout_below="@id/CustomGoalInnerLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
+    </RelativeLayout>
 </LinearLayout>

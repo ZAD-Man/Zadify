@@ -73,6 +73,7 @@
     <Compile Include="Activities\UnlockedItemsScreen.cs" />
     <Compile Include="Activities\UpdateGoalForm.cs" />
     <Compile Include="Activities\ZadifyRewardsMenu.cs" />
+    <Compile Include="CustomGoal.cs" />
     <Compile Include="DietGoal.cs" />
     <Compile Include="Enums\DietItems.cs" />
     <Compile Include="FinanceGoal.cs" />

@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Zadify\CustomGoal.cs">
+      <Link>CustomGoal.cs</Link>
+    </Compile>
     <Compile Include="..\Zadify\DietGoal.cs">
       <Link>DietGoal.cs</Link>
     </Compile>

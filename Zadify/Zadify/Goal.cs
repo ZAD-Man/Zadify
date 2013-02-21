@@ -19,6 +19,7 @@ namespace Zadify
     [XmlInclude(typeof(FitnessGoal))]
     [XmlInclude(typeof(ReadingGoal))]
     [XmlInclude(typeof(WritingGoal))]
+    [XmlInclude(typeof(CustomGoal))]
     public abstract class Goal
     {
         public DateTime DueDate { get; protected set; }
