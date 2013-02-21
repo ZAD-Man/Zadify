@@ -47,11 +47,11 @@ namespace Zadify.Activities
                             var dietGoal = (DietGoal) goal;
                             if (dietGoal.GoalAmount > 0)
                             {
-                                storedGoalStrings.Add("Gain " + dietGoal.GoalAmount + " " + dietGoal.MeasuredItems + " - " + (int) (dietGoal.Progress*100) + "%");
+                                storedGoalStrings.Add("Gain " + dietGoal.GoalAmount + " " + dietGoal.MeasuredItems.ToString().ToLower() + " - " + (int) (dietGoal.Progress*100) + "%");
                             }
                             else if (dietGoal.GoalAmount < 0)
                             {
-                                storedGoalStrings.Add("Lose " + Math.Abs(dietGoal.GoalAmount) + " " + dietGoal.MeasuredItems + " - " + (int) (dietGoal.Progress*100) + "%");
+                                storedGoalStrings.Add("Lose " + Math.Abs(dietGoal.GoalAmount) + " " + dietGoal.MeasuredItems.ToString().ToLower() + " - " + (int) (dietGoal.Progress*100) + "%");
                             }
                         }
                         else if (goal is FinanceGoal)
@@ -70,17 +70,22 @@ namespace Zadify.Activities
                         {
                             var fitnessGoal = (FitnessGoal) goal;
 
-                            storedGoalStrings.Add("Do " + fitnessGoal.GoalAmount + " " + fitnessGoal.MeasuredItems + " - " + (int) (fitnessGoal.Progress*100) + "%");
+                            storedGoalStrings.Add("Do " + fitnessGoal.GoalAmount + " " + fitnessGoal.MeasuredItems.ToString().ToLower() + " - " + (int) (fitnessGoal.Progress*100) + "%");
                         }
                         else if (goal is ReadingGoal)
                         {
                             var readingGoal = (ReadingGoal) goal;
-                            storedGoalStrings.Add("Read " + readingGoal.GoalAmount + " " + readingGoal.MeasuredItems + " - " + (int) (readingGoal.Progress*100) + "%");
+                            storedGoalStrings.Add("Read " + readingGoal.GoalAmount + " " + readingGoal.MeasuredItems.ToString().ToLower() + " - " + (int) (readingGoal.Progress*100) + "%");
                         }
                         else if (goal is WritingGoal)
                         {
                             var writingGoal = (WritingGoal) goal;
-                            storedGoalStrings.Add("Write " + writingGoal.GoalAmount + " " + writingGoal.MeasuredItems + " - " + (int) (writingGoal.Progress*100) + "%");
+                            storedGoalStrings.Add("Write " + writingGoal.GoalAmount + " " + writingGoal.MeasuredItems.ToString().ToLower() + " - " + (int)(writingGoal.Progress * 100) + "%");
+                        }
+                        else if (goal is CustomGoal)
+                        {
+                            var customGoal = (CustomGoal)goal;
+                            storedGoalStrings.Add("Do " + customGoal.GoalAmount + " " + customGoal.MeasuredItems.ToLower() + " - " + (int)(customGoal.Progress * 100) + "%");
                         }
                         else
                         {
