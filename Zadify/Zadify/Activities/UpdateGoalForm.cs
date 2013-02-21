@@ -43,8 +43,8 @@ namespace Zadify.Activities
                                 {
                                     updateGoalText.Text = "How many " + dietGoal.MeasuredItems.ToString().ToLower() + " did you lose?";
                                 }
+                                break;
                             }
-                            break;
                         case "FinanceGoal":
                             {
                                 var financeGoal = (FinanceGoal) updateGoal;
@@ -56,26 +56,32 @@ namespace Zadify.Activities
                                 {
                                     updateGoalText.Text = "How much did you pay off? $";
                                 }
+                                break;
                             }
-                            break;
                         case "FitnessGoal":
                             {
                                 var fitnessGoal = (FitnessGoal) updateGoal;
                                 updateGoalText.Text = "How many " + fitnessGoal.MeasuredItems.ToString().ToLower() + " did you do?";
+                                break;
                             }
-                            break;
                         case "ReadingGoal":
                             {
                                 var readingGoal = (ReadingGoal) updateGoal;
                                 updateGoalText.Text = "How many " + readingGoal.MeasuredItems.ToString().ToLower() + " did you read?";
+                                break;
                             }
-                            break;
                         case "WritingGoal":
                             {
                                 var writingGoal = (WritingGoal) updateGoal;
                                 updateGoalText.Text = "How many " + writingGoal.MeasuredItems.ToString().ToLower() + " did you write?";
+                                break;
                             }
-                            break;
+                        case "CustomGoal":
+                            {
+                                var customGoal = (CustomGoal) updateGoal;
+                                updateGoalText.Text = "How many " + customGoal.MeasuredItems.ToLower() + " did you do?";
+                                break;
+                            }
                         default:
                             Log.Error("GoalsDetailsScreen", "Error with goal " + updateGoal);
                             Log.Error("GoalsDetailsScreen", "Invalid goal type: " + goalType);
