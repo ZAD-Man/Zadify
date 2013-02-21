@@ -99,6 +99,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -184,6 +189,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -251,6 +261,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -308,6 +323,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -359,6 +379,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -420,6 +445,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -460,6 +490,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -520,6 +555,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -685,6 +725,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -844,6 +889,11 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                Finish();
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                             }
                         }
                         catch (Exception e)
@@ -950,7 +1000,7 @@ namespace Zadify.Activities
         {
             _fitnessPerTimespanSelectDate.Text = _goalDate.ToString("d");
         }
-        
+
         private void UpdateFinanceSaveByDateDate()
         {
             _financeSaveByDateSelectDate.Text = _goalDate.ToString("d");
