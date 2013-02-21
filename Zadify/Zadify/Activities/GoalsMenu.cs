@@ -17,7 +17,6 @@ namespace Zadify.Activities
             Log.Info("GoalsMenu", "Goals Menu Created");
 
             base.OnCreate(bundle);
-            
         }
 
         protected override void OnStart()
@@ -29,10 +28,10 @@ namespace Zadify.Activities
             SetContentView(Resource.Layout.GoalsMenu);
 
             var createGoalButton = FindViewById<Button>(Resource.Id.CreateGoalButton);
-            createGoalButton.Click += delegate { StartActivity(typeof(CreateGoalMenu)); };
+            createGoalButton.Click += delegate { StartActivity(typeof (CreateGoalMenu)); };
 
             var completedGoalsButton = FindViewById<Button>(Resource.Id.CompletedGoalsButton);
-            completedGoalsButton.Click += delegate { StartActivity(typeof(CompletedGoalsMenu)); };
+            completedGoalsButton.Click += delegate { StartActivity(typeof (CompletedGoalsMenu)); };
 
             try
             {

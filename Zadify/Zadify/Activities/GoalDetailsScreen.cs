@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Views;
@@ -8,7 +9,7 @@ using Android.Widget;
 
 namespace Zadify.Activities
 {
-    [Activity(Label = "Goal Details")] //TODO: Replace with name of selected goal
+    [Activity(Label = "Goal Details")]
     public class GoalDetailsScreen : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -16,6 +17,13 @@ namespace Zadify.Activities
             Log.Info("GoalDetailsScreen", "Goal Details Screen Created");
 
             base.OnCreate(bundle);
+        }
+
+        protected override void OnStart()
+        {
+            Log.Info("GoalDetailsScreen", "Goal Details Screen Started");
+
+            base.OnStart();
 
             SetContentView(Resource.Layout.GoalDetailsScreen);
 
@@ -56,12 +64,10 @@ namespace Zadify.Activities
                                 var financeGoal = (FinanceGoal) displayGoal;
                                 if (financeGoal.GoalAmount > 0)
                                 {
-                                    //TODO: Save
                                     goalDetailsActionText.Text = "Save $" + financeGoal.GoalAmount;
                                 }
                                 else if (financeGoal.GoalAmount < 0)
                                 {
-                                    //TODO: Pay
                                     goalDetailsActionText.Text = "Pay $" + Math.Abs(financeGoal.GoalAmount);
                                 }
                             }
@@ -93,9 +99,9 @@ namespace Zadify.Activities
                             break;
                     }
 
-                    var repeatingDaysDays = displayGoal.RepeatingDays;
-                    Log.Debug("GoalDetailsrepeatingDays", repeatingDaysDays.ToString());
-                    switch (repeatingDaysDays)
+                    var repeatingDays = displayGoal.RepeatingDays;
+                    Log.Debug("GoalDetailsrepeatingDays", repeatingDays.ToString());
+                    switch (repeatingDays)
                     {
                         case 0:
                             goalDetailsTimespanText.Visibility = ViewStates.Gone;
@@ -114,7 +120,7 @@ namespace Zadify.Activities
                             break;
                     }
 
-                    if (repeatingDaysDays > 0)
+                    if (repeatingDays > 0)
                     {
                         goalDetailsDueDateText.Text = "Until " + displayGoal.DueDate.ToString("d");
                     }
@@ -123,7 +129,7 @@ namespace Zadify.Activities
                         goalDetailsDueDateText.Text = "By " + displayGoal.DueDate.ToString("d");
                     }
 
-                    goalDetailsAmountCompletedText.Text = displayGoal.GoalCompletedAmount + "/" + displayGoal.GoalAmount + " done (" + (int)displayGoal.Progress * 100 + "%)";
+                    goalDetailsAmountCompletedText.Text = Math.Abs(displayGoal.GoalCompletedAmount) + "/" + Math.Abs(displayGoal.GoalAmount) + " done (" + (int) (displayGoal.Progress*100) + "%)";
                 }
                 else
                 {
@@ -136,7 +142,12 @@ namespace Zadify.Activities
             }
 
             var updateGoalButton = FindViewById<Button>(Resource.Id.UpdateGoalButton);
-            updateGoalButton.Click += delegate { StartActivity(typeof (UpdateGoalForm)); };
+            updateGoalButton.Click += delegate
+                {
+                    var updateGoalForm = new Intent(this, typeof (UpdateGoalForm));
+                    updateGoalForm.PutExtra("Position", position);
+                    StartActivity(updateGoalForm);
+                };
 
             var deleteGoalButton = FindViewById<Button>(Resource.Id.DeleteGoalButton);
             deleteGoalButton.Click += delegate { StartActivity(typeof (DeleteGoalForm)); };

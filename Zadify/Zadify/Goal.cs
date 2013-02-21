@@ -30,7 +30,7 @@ namespace Zadify
         public void UpdateProgress(int amountCompleted)
         {
             GoalCompletedAmount = amountCompleted;
-            Progress = (double)GoalCompletedAmount / GoalAmount;
+            Progress = Math.Abs((double)GoalCompletedAmount / GoalAmount);
         }
     }
 }

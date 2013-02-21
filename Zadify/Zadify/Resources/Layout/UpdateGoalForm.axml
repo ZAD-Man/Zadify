@@ -3,14 +3,27 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:id="@+id/UpdateGoalForm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The Update Goal Form will go here (RelativeLayout)" />
+    <RelativeLayout
+        android:id="@+id/UpdateGoalLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/UpdateGoalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How many X did you do?" />
+        <EditText
+            android:id="@+id/UpdateGoalNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/numberHint"
+            android:layout_toRightOf="@id/UpdateGoalText"
+            android:inputType="number" />
+    </RelativeLayout>
     <Button
         android:id="@+id/UpdateGoalSubmitButton"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Update" />
 </LinearLayout>

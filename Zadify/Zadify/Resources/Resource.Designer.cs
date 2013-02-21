@@ -410,8 +410,8 @@ namespace Zadify
 			// aapt resource value: 0x7f060009
 			public const int PredefinedGoalTypeSpinner = 2131099657;
 			
-			// aapt resource value: 0x7f0600ad
-			public const int RanksButton = 2131099821;
+			// aapt resource value: 0x7f0600af
+			public const int RanksButton = 2131099823;
 			
 			// aapt resource value: 0x7f060050
 			public const int ReadingByDateInnerLayout1 = 2131099728;
@@ -533,8 +533,8 @@ namespace Zadify
 			// aapt resource value: 0x7f06007a
 			public const int SubmitWritingPerTimespanGoalButton = 2131099770;
 			
-			// aapt resource value: 0x7f0600ae
-			public const int UnlockedItemsButton = 2131099822;
+			// aapt resource value: 0x7f0600b0
+			public const int UnlockedItemsButton = 2131099824;
 			
 			// aapt resource value: 0x7f0600aa
 			public const int UnlockedItemsList = 2131099818;
@@ -543,10 +543,16 @@ namespace Zadify
 			public const int UpdateGoalButton = 2131099803;
 			
 			// aapt resource value: 0x7f0600ab
-			public const int UpdateGoalForm = 2131099819;
+			public const int UpdateGoalLayout = 2131099819;
+			
+			// aapt resource value: 0x7f0600ad
+			public const int UpdateGoalNumber = 2131099821;
+			
+			// aapt resource value: 0x7f0600ae
+			public const int UpdateGoalSubmitButton = 2131099822;
 			
 			// aapt resource value: 0x7f0600ac
-			public const int UpdateGoalSubmitButton = 2131099820;
+			public const int UpdateGoalText = 2131099820;
 			
 			// aapt resource value: 0x7f060067
 			public const int WritingByDateInnerLayout1 = 2131099751;
