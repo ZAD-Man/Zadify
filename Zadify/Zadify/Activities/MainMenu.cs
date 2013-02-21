@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Android.App;
 using Android.OS;
 using Android.Util;
@@ -26,7 +27,7 @@ namespace Zadify.Activities
                     JavaIO.SaveData(this, "Goals.zad", goalsList);
                 }
             }
-            catch (Exception)
+            catch (FileNotFoundException)
             {
                 var goalsList = new List<Goal>();
                 JavaIO.SaveData(this, "Goals.zad", goalsList);
@@ -43,6 +44,21 @@ namespace Zadify.Activities
 
             var settingsButton = FindViewById<Button>(Resource.Id.SettingsButton);
             settingsButton.Click += delegate { StartActivity(typeof (SettingsMenu)); };
+
+            var setupButton = FindViewById<Button>(Resource.Id.SetupButton);
+            setupButton.Click += delegate
+                {
+                    var idesOfMarch2020 = new DateTime(2020, 3, 15);
+                    var fitnessGoal = new FitnessGoal(DateTime.Today, 23, FitnessItems.Pullups, 7);
+                    var dietGoal = new DietGoal(idesOfMarch2020, -15, DietItems.Pounds, 7);
+                    var customGoal = new CustomGoal(DateTime.Today, 8, "good deeds", 8);
+                    var futureCustomGoal = new CustomGoal(idesOfMarch2020, 42, "paintings");
+
+                    var goalsList = new List<Goal> {fitnessGoal, dietGoal, customGoal, futureCustomGoal};
+                    JavaIO.SaveData(this, "Goals.zad", goalsList);
+
+                    Toast.MakeText(this, "Setup Complete", ToastLength.Short).Show();
+                };
         }
     }
 }

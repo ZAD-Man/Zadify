@@ -66,7 +66,7 @@ namespace Zadify.Activities
             var submitFitnessByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitFitnessByDateGoalButton);
             submitFitnessByDateGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(fitnessByDateNumber.Text);
                         var items = FitnessItems.Pushups;
@@ -82,10 +82,10 @@ namespace Zadify.Activities
                             case "Situp(s)":
                                 items = FitnessItems.Situps;
                                 break;
-                            case "Mile(s) Ran":
+                            case "Mile(s) Run":
                                 items = FitnessItems.MilesRun;
                                 break;
-                            case "Kilometer(s) Ran":
+                            case "Kilometer(s) Run":
                                 items = FitnessItems.KilometersRun;
                                 break;
                         }
@@ -113,7 +113,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -141,7 +141,7 @@ namespace Zadify.Activities
             var submitFitnessPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitFitnessPerTimespanGoalButton);
             submitFitnessPerTimespanGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(fitnessPerTimespanNumber.Text);
                         var items = FitnessItems.Pushups;
@@ -159,10 +159,10 @@ namespace Zadify.Activities
                             case "Situp(s)":
                                 items = FitnessItems.Situps;
                                 break;
-                            case "Mile(s) Ran":
+                            case "Mile(s) Run":
                                 items = FitnessItems.MilesRun;
                                 break;
-                            case "Kilometer(s) Ran":
+                            case "Kilometer(s) Run":
                                 items = FitnessItems.KilometersRun;
                                 break;
                         }
@@ -203,7 +203,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -237,7 +237,7 @@ namespace Zadify.Activities
             var submitDietGainWeightGoalButton = FindViewById<Button>(Resource.Id.SubmitDietGainWeightGoalButton);
             submitDietGainWeightGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(dietGainWeightNumber.Text);
                         var items = DietItems.Pounds;
@@ -275,7 +275,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -298,7 +298,7 @@ namespace Zadify.Activities
             var submitDietLoseWeightGoalButton = FindViewById<Button>(Resource.Id.SubmitDietLoseWeightGoalButton);
             submitDietLoseWeightGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(dietLoseWeightNumber.Text);
                         var items = DietItems.Pounds;
@@ -337,7 +337,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -366,7 +366,7 @@ namespace Zadify.Activities
             var submitFinanceSaveByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitFinanceSaveByDateGoalButton);
             submitFinanceSaveByDateGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(financeSaveByDateNumber.Text);
 
@@ -393,7 +393,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -416,7 +416,7 @@ namespace Zadify.Activities
             var submitFinanceSavePerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitFinanceSavePerTimespanGoalButton);
             submitFinanceSavePerTimespanGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(financeSavePerTimespanNumber.Text);
                         var timespan = 0;
@@ -459,7 +459,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -477,7 +477,7 @@ namespace Zadify.Activities
             var submitFinancePayByDateGoalButton = FindViewById<Button>(Resource.Id.SubmitFinancePayByDateGoalButton);
             submitFinancePayByDateGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(financePayByDateNumber.Text);
 
@@ -504,7 +504,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -527,7 +527,7 @@ namespace Zadify.Activities
             var submitFinancePayPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitFinancePayPerTimespanGoalButton);
             submitFinancePayPerTimespanGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(financePayPerTimespanNumber.Text);
                         var timespan = 0;
@@ -569,7 +569,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -624,7 +624,7 @@ namespace Zadify.Activities
                             items = ReadingItems.Pages;
                             break;
                     }
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         try
                         {
@@ -649,7 +649,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -677,7 +677,7 @@ namespace Zadify.Activities
             var submitReadingPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitReadingPerTimespanGoalButton);
             submitReadingPerTimespanGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(readingPerTimespanNumber.Text);
                         var items = ReadingItems.Books;
@@ -739,7 +739,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -791,7 +791,7 @@ namespace Zadify.Activities
                             items = WritingItems.Pages;
                             break;
                     }
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         try
                         {
@@ -816,7 +816,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 
@@ -844,7 +844,7 @@ namespace Zadify.Activities
             var submitWritingPerTimespanGoalButton = FindViewById<Button>(Resource.Id.SubmitWritingPerTimespanGoalButton);
             submitWritingPerTimespanGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(writingPerTimespanNumber.Text);
                         var items = WritingItems.Hours;
@@ -903,7 +903,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
 

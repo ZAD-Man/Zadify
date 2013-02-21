@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -40,7 +41,7 @@ namespace Zadify.Activities
                 var storedGoalList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                 if (storedGoalList != null)
                 {
-                    foreach (var goal in storedGoalList)
+                    foreach (var goal in storedGoalList.Where(goal => !goal.ViewedPostDueDate))
                     {
                         if (goal is DietGoal)
                         {
@@ -80,12 +81,12 @@ namespace Zadify.Activities
                         else if (goal is WritingGoal)
                         {
                             var writingGoal = (WritingGoal) goal;
-                            storedGoalStrings.Add("Write " + writingGoal.GoalAmount + " " + writingGoal.MeasuredItems.ToString().ToLower() + " - " + (int)(writingGoal.Progress * 100) + "%");
+                            storedGoalStrings.Add("Write " + writingGoal.GoalAmount + " " + writingGoal.MeasuredItems.ToString().ToLower() + " - " + (int) (writingGoal.Progress*100) + "%");
                         }
                         else if (goal is CustomGoal)
                         {
-                            var customGoal = (CustomGoal)goal;
-                            storedGoalStrings.Add("Do " + customGoal.GoalAmount + " " + customGoal.MeasuredItems.ToLower() + " - " + (int)(customGoal.Progress * 100) + "%");
+                            var customGoal = (CustomGoal) goal;
+                            storedGoalStrings.Add("Do " + customGoal.GoalAmount + " " + customGoal.MeasuredItems.ToLower() + " - " + (int) (customGoal.Progress*100) + "%");
                         }
                         else
                         {
@@ -99,7 +100,7 @@ namespace Zadify.Activities
                         {
                             var goalDetailsScreen = new Intent(this, typeof (GoalDetailsScreen));
                             goalDetailsScreen.PutExtra("Position", args.Position);
-                            goalDetailsScreen.PutExtra("GoalType", storedGoalList[args.Position].GetType().ToString());
+                            goalDetailsScreen.PutExtra("IsCompleted", false);
                             StartActivity(goalDetailsScreen);
                         };
                 }
@@ -107,12 +108,12 @@ namespace Zadify.Activities
             catch (Java.IO.FileNotFoundException e)
             {
                 Log.Error("GoalsMenu:FileNotFound", e.Message + e.StackTrace);
-                Toast.MakeText(this, "No goals to display", ToastLength.Long);
+                Toast.MakeText(this, "No goals to display", ToastLength.Long).Show();
             }
             catch (Exception e)
             {
                 Log.Error("GoalsMenu:GeneralException", e.Message + e.StackTrace);
-                Toast.MakeText(this, "Goals could not be displayed", ToastLength.Long);
+                Toast.MakeText(this, "Goals could not be displayed", ToastLength.Long).Show();
             }
         }
     }

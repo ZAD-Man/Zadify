@@ -59,7 +59,7 @@ namespace Zadify.Activities
             var submitCustomGoalButton = FindViewById<Button>(Resource.Id.SubmitCustomGoalButton);
             submitCustomGoalButton.Click += delegate
                 {
-                    if (_goalDate.CompareTo(DateTime.Today) >= 0)
+                    if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var goalNumber = int.Parse(customGoalNumber.Text);
                         var items = customGoalItems.Text;
@@ -92,7 +92,7 @@ namespace Zadify.Activities
                     }
                     else
                     {
-                        Toast.MakeText(this, "Error: Date in past", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
         }

@@ -65,7 +65,7 @@ namespace Zadify
             else
             {
                 Log.Error("LoadDataFileNotFound", fileName);
-                throw new Java.IO.FileNotFoundException("Could not find file " + fileName);
+                throw new FileNotFoundException("Could not find file " + fileName);
             }
         }
 
