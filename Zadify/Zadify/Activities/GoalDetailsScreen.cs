@@ -47,21 +47,21 @@ namespace Zadify.Activities
                         case "DietGoal":
                             {
                                 goalDetailsTitle.Text = "Diet Goal";
-                                var dietGoal = (DietGoal) displayGoal;
+                                var dietGoal = (DietGoal)displayGoal;
                                 if (dietGoal.GoalAmount > 0)
                                 {
-                                    goalDetailsActionText.Text = "Gain " + dietGoal.GoalAmount + " " + dietGoal.MeasuredItems;
+                                    goalDetailsActionText.Text = "Gain " + dietGoal.GoalAmount + " " + dietGoal.MeasuredItems.ToString().ToLower(); 
                                 }
                                 else
                                 {
-                                    goalDetailsActionText.Text = "Lose " + Math.Abs(dietGoal.GoalAmount) + " " + dietGoal.MeasuredItems;
+                                    goalDetailsActionText.Text = "Lose " + Math.Abs(dietGoal.GoalAmount) + " " + dietGoal.MeasuredItems.ToString().ToLower(); 
                                 }
                             }
                             break;
                         case "FinanceGoal":
                             {
                                 goalDetailsTitle.Text = "Finance Goal";
-                                var financeGoal = (FinanceGoal) displayGoal;
+                                var financeGoal = (FinanceGoal)displayGoal;
                                 if (financeGoal.GoalAmount > 0)
                                 {
                                     goalDetailsActionText.Text = "Save $" + financeGoal.GoalAmount;
@@ -75,24 +75,31 @@ namespace Zadify.Activities
                         case "FitnessGoal":
                             {
                                 goalDetailsTitle.Text = "Fitness Goal";
-                                var fitnessGoal = (FitnessGoal) displayGoal;
-                                goalDetailsActionText.Text = "Do " + fitnessGoal.GoalAmount + " " + fitnessGoal.MeasuredItems;
+                                var fitnessGoal = (FitnessGoal)displayGoal;
+                                goalDetailsActionText.Text = "Do " + fitnessGoal.GoalAmount + " " + fitnessGoal.MeasuredItems.ToString().ToLower(); 
                             }
                             break;
                         case "ReadingGoal":
                             {
                                 goalDetailsTitle.Text = "Reading Goal";
-                                var readingGoal = (ReadingGoal) displayGoal;
-                                goalDetailsActionText.Text = "Read " + readingGoal.GoalAmount + " " + readingGoal.MeasuredItems;
+                                var readingGoal = (ReadingGoal)displayGoal;
+                                goalDetailsActionText.Text = "Read " + readingGoal.GoalAmount + " " + readingGoal.MeasuredItems.ToString().ToLower(); 
                             }
                             break;
                         case "WritingGoal":
                             {
                                 goalDetailsTitle.Text = "Writing Goal";
-                                var writingGoal = (WritingGoal) displayGoal;
-                                goalDetailsActionText.Text = "Write " + writingGoal.GoalAmount + " " + writingGoal.MeasuredItems;
+                                var writingGoal = (WritingGoal)displayGoal;
+                                goalDetailsActionText.Text = "Write " + writingGoal.GoalAmount + " " + writingGoal.MeasuredItems.ToString().ToLower(); 
                             }
                             break;
+                        case "CustomGoal":
+                            {
+                                goalDetailsTitle.Text = "Custom Goal";
+                                var customGoal = (CustomGoal) displayGoal;
+                                goalDetailsActionText.Text = "Do " + customGoal.GoalAmount + " " + customGoal.MeasuredItems.ToLower();
+                                break;
+                            }
                         default:
                             Log.Error("GoalsDetailsScreen", "Error with goal " + displayGoal);
                             Log.Error("GoalsDetailsScreen", "Invalid goal type: " + goalType);
@@ -100,7 +107,7 @@ namespace Zadify.Activities
                     }
 
                     var repeatingDays = displayGoal.RepeatingDays;
-                    Log.Debug("GoalDetailsrepeatingDays", repeatingDays.ToString());
+                    Log.Debug("GoalDetailsRepeatingDays", repeatingDays.ToString());
                     switch (repeatingDays)
                     {
                         case 0:
@@ -108,25 +115,29 @@ namespace Zadify.Activities
                             break;
                         case 1:
                             goalDetailsTimespanText.Visibility = ViewStates.Visible;
-                            goalDetailsTimespanText.Text = "Every day";
+                            goalDetailsTimespanText.Text = "every day";
                             break;
                         case 7:
                             goalDetailsTimespanText.Visibility = ViewStates.Visible;
-                            goalDetailsTimespanText.Text = "Every week";
+                            goalDetailsTimespanText.Text = "every week";
                             break;
                         case 30:
                             goalDetailsTimespanText.Visibility = ViewStates.Visible;
-                            goalDetailsTimespanText.Text = "Every month";
+                            goalDetailsTimespanText.Text = "every month";
+                            break;
+                        default:
+                            goalDetailsTimespanText.Visibility = ViewStates.Visible;
+                            goalDetailsTimespanText.Text = "every " + repeatingDays + " days";
                             break;
                     }
 
                     if (repeatingDays > 0)
                     {
-                        goalDetailsDueDateText.Text = "Until " + displayGoal.DueDate.ToString("d");
+                        goalDetailsDueDateText.Text = "until " + displayGoal.DueDate.ToString("d");
                     }
                     else
                     {
-                        goalDetailsDueDateText.Text = "By " + displayGoal.DueDate.ToString("d");
+                        goalDetailsDueDateText.Text = "by " + displayGoal.DueDate.ToString("d");
                     }
 
                     goalDetailsAmountCompletedText.Text = Math.Abs(displayGoal.GoalCompletedAmount) + "/" + Math.Abs(displayGoal.GoalAmount) + " done (" + (int) (displayGoal.Progress*100) + "%)";
