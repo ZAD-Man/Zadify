@@ -150,7 +150,13 @@ namespace Zadify.Activities
                 };
 
             var deleteGoalButton = FindViewById<Button>(Resource.Id.DeleteGoalButton);
-            deleteGoalButton.Click += delegate { StartActivity(typeof (DeleteGoalForm)); };
+            deleteGoalButton.Click += delegate
+                {
+                    var deleteGoalForm = new Intent(this, typeof (DeleteGoalForm));
+                    deleteGoalForm.PutExtra("Position", position);
+                    StartActivity(deleteGoalForm);
+                    Finish();
+                };
         }
     }
 }

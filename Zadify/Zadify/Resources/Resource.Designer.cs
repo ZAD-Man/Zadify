@@ -101,8 +101,8 @@ namespace Zadify
 			// aapt resource value: 0x7f060001
 			public const int CompletedGoalsList = 2131099649;
 			
-			// aapt resource value: 0x7f060095
-			public const int ConfirmDeleteGoalButton = 2131099797;
+			// aapt resource value: 0x7f060096
+			public const int ConfirmDeleteGoalButton = 2131099798;
 			
 			// aapt resource value: 0x7f060008
 			public const int CreateCompetitionButton = 2131099656;
@@ -392,8 +392,8 @@ namespace Zadify
 			// aapt resource value: 0x7f060098
 			public const int GoalDetailsTimespanText = 2131099800;
 			
-			// aapt resource value: 0x7f060096
-			public const int GoalDetailsTitle = 2131099798;
+			// aapt resource value: 0x7f060095
+			public const int GoalDetailsTitle = 2131099797;
 			
 			// aapt resource value: 0x7f0600a0
 			public const int GoalsButton = 2131099808;
