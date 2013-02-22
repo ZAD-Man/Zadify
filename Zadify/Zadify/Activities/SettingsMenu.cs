@@ -1,4 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Widget;
@@ -16,7 +20,19 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.SettingsMenu);
 
-            var settings = FindViewById<TextView>(Resource.Id.Settings);
+            var preferences = GetPreferences(FileCreationMode.Private);
+
+            var monsterModeCheckbox = FindViewById<CheckBox>(Resource.Id.MonsterModeCheckbox);
+            monsterModeCheckbox.Checked = preferences.GetBoolean("Monster Mode", true);
+
+            var saveSettingsButton = FindViewById<Button>(Resource.Id.SaveSettingsButton);
+            saveSettingsButton.Click += delegate
+                {
+                    var preferencesEditor = preferences.Edit();
+                    preferencesEditor.PutBoolean("Monster Mode", monsterModeCheckbox.Checked).Commit();
+                    Toast.MakeText(this, "Settings Saved", ToastLength.Long).Show();
+                    Finish();
+                };
         }
     }
 }

@@ -3,9 +3,14 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:id="@+id/Settings"
+    <CheckBox
+        android:id="@+id/MonsterModeCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Settings will go here" />
+        android:text="Monster Mode" />
+    <Button
+        android:id="@+id/SaveSettingsButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Settings" />
 </LinearLayout>
