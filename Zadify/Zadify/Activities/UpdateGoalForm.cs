@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Android.App;
 using Android.OS;
 using Android.Util;
@@ -20,13 +21,15 @@ namespace Zadify.Activities
 
             var position = Intent.GetIntExtra("Position", -1);
 
-
             if (position != -1)
             {
                 var storedGoals = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                 if (storedGoals != null)
                 {
-                    var updateGoal = storedGoals[position];
+                    var updateableGoals = new List<Goal>();
+                    updateableGoals.AddRange(storedGoals.Where(goal => !goal.ViewedPostDueDate));
+
+                    var updateGoal = updateableGoals[position];
                     var goalType = updateGoal.GetType().Name;
                     var updateGoalText = FindViewById<TextView>(Resource.Id.UpdateGoalText);
 
