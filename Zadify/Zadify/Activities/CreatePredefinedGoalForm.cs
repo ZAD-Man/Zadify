@@ -90,26 +90,8 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                        try
-                        {
                             var fitnessByDateGoal = new FitnessGoal(_goalDate, goalNumber, items);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(fitnessByDateGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(fitnessByDateGoal);
                     }
                     else
                     {
@@ -180,26 +162,8 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                        try
-                        {
-                            var fitnessPerTimespanGoal = new FitnessGoal(_goalDate, goalNumber, items, timespan);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(fitnessPerTimespanGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                        var fitnessPerTimespanGoal = new FitnessGoal(_goalDate, goalNumber, items, timespan);
+                        SaveGoalToList(fitnessPerTimespanGoal);
                     }
                     else
                     {
@@ -252,26 +216,8 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                        try
-                        {
                             var dietGainWeightGoal = new DietGoal(_goalDate, goalNumber, items);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(dietGainWeightGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(dietGainWeightGoal);
                     }
                     else
                     {
@@ -314,26 +260,8 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                        try
-                        {
                             var dietLoseWeightGoal = new DietGoal(_goalDate, goalNumber, items, timespan);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(dietLoseWeightGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(dietLoseWeightGoal);
                     }
                     else
                     {
@@ -370,26 +298,8 @@ namespace Zadify.Activities
                     {
                         var goalNumber = int.Parse(financeSaveByDateNumber.Text);
 
-                        try
-                        {
                             var financeSaveByDateGoal = new FinanceGoal(_goalDate, goalNumber);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(financeSaveByDateGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(financeSaveByDateGoal);
                     }
                     else
                     {
@@ -436,26 +346,8 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                        try
-                        {
                             var financeSavePerTimespanGoal = new FinanceGoal(_goalDate, goalNumber, timespan);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(financeSavePerTimespanGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(financeSavePerTimespanGoal);
                     }
                     else
                     {
@@ -481,26 +373,8 @@ namespace Zadify.Activities
                     {
                         var goalNumber = int.Parse(financePayByDateNumber.Text);
 
-                        try
-                        {
                             var financePayByDateGoal = new FinanceGoal(_goalDate, 0 - goalNumber);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(financePayByDateGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(financePayByDateGoal);
                     }
                     else
                     {
@@ -546,26 +420,8 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                        try
-                        {
                             var financePayPerTimespanGoal = new FinanceGoal(_goalDate, 0 - goalNumber, timespan);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(financePayPerTimespanGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(financePayPerTimespanGoal);
                     }
                     else
                     {
@@ -626,26 +482,8 @@ namespace Zadify.Activities
                     }
                     if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
-                        try
-                        {
                             var readingByDateGoal = new ReadingGoal(_goalDate, goalNumber, items);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(readingByDateGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(readingByDateGoal);
                     }
                     else
                     {
@@ -716,26 +554,8 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                        try
-                        {
                             var readingPerTimespanGoal = new ReadingGoal(_goalDate, goalNumber, items, timespan);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(readingPerTimespanGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(readingPerTimespanGoal);
                     }
                     else
                     {
@@ -793,26 +613,8 @@ namespace Zadify.Activities
                     }
                     if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
-                        try
-                        {
                             var writingByDateGoal = new WritingGoal(_goalDate, goalNumber, items);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(writingByDateGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(writingByDateGoal);
                     }
                     else
                     {
@@ -880,26 +682,8 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                        try
-                        {
                             var writingPerTimespanGoal = new WritingGoal(_goalDate, goalNumber, items, timespan);
-                            var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                            goalsList.Add(writingPerTimespanGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
-                            if (successfulSave)
-                            {
-                                Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                Finish();
-                            }
-                            else
-                            {
-                                Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
-                        }
+                            SaveGoalToList(writingPerTimespanGoal);
                     }
                     else
                     {
@@ -967,6 +751,29 @@ namespace Zadify.Activities
                 };
 
             #endregion
+        }
+
+        private void SaveGoalToList(Goal fitnessPerTimespanGoal)
+        {
+            try
+            {
+                var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                goalsList.Add(fitnessPerTimespanGoal);
+                bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                if (successfulSave)
+                {
+                    Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                    Finish();
+                }
+                else
+                {
+                    Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
+                }
+            }
+            catch (Exception e)
+            {
+                Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+            }
         }
 
         #region Date Management
