@@ -90,8 +90,12 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                            var fitnessByDateGoal = new FitnessGoal(_goalDate, goalNumber, items);
-                            SaveGoalToList(fitnessByDateGoal);
+                        var fitnessByDateGoal = new FitnessGoal(_goalDate, goalNumber, items);
+                        var successfulSave = SaveGoalToList(fitnessByDateGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -163,7 +167,11 @@ namespace Zadify.Activities
                         }
 
                         var fitnessPerTimespanGoal = new FitnessGoal(_goalDate, goalNumber, items, timespan);
-                        SaveGoalToList(fitnessPerTimespanGoal);
+                        var successfulSave = SaveGoalToList(fitnessPerTimespanGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -216,8 +224,12 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                            var dietGainWeightGoal = new DietGoal(_goalDate, goalNumber, items);
-                            SaveGoalToList(dietGainWeightGoal);
+                        var dietGainWeightGoal = new DietGoal(_goalDate, goalNumber, items);
+                        var successfulSave = SaveGoalToList(dietGainWeightGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -260,8 +272,12 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                            var dietLoseWeightGoal = new DietGoal(_goalDate, goalNumber, items, timespan);
-                            SaveGoalToList(dietLoseWeightGoal);
+                        var dietLoseWeightGoal = new DietGoal(_goalDate, goalNumber, items, timespan);
+                        var successfulSave = SaveGoalToList(dietLoseWeightGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -298,8 +314,12 @@ namespace Zadify.Activities
                     {
                         var goalNumber = int.Parse(financeSaveByDateNumber.Text);
 
-                            var financeSaveByDateGoal = new FinanceGoal(_goalDate, goalNumber);
-                            SaveGoalToList(financeSaveByDateGoal);
+                        var financeSaveByDateGoal = new FinanceGoal(_goalDate, goalNumber);
+                        var successfulSave = SaveGoalToList(financeSaveByDateGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -346,8 +366,12 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                            var financeSavePerTimespanGoal = new FinanceGoal(_goalDate, goalNumber, timespan);
-                            SaveGoalToList(financeSavePerTimespanGoal);
+                        var financeSavePerTimespanGoal = new FinanceGoal(_goalDate, goalNumber, timespan);
+                        var successfulSave = SaveGoalToList(financeSavePerTimespanGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -373,8 +397,12 @@ namespace Zadify.Activities
                     {
                         var goalNumber = int.Parse(financePayByDateNumber.Text);
 
-                            var financePayByDateGoal = new FinanceGoal(_goalDate, 0 - goalNumber);
-                            SaveGoalToList(financePayByDateGoal);
+                        var financePayByDateGoal = new FinanceGoal(_goalDate, 0 - goalNumber);
+                        var successfulSave = SaveGoalToList(financePayByDateGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -420,8 +448,12 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                            var financePayPerTimespanGoal = new FinanceGoal(_goalDate, 0 - goalNumber, timespan);
-                            SaveGoalToList(financePayPerTimespanGoal);
+                        var financePayPerTimespanGoal = new FinanceGoal(_goalDate, 0 - goalNumber, timespan);
+                        var successfulSave = SaveGoalToList(financePayPerTimespanGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -482,8 +514,12 @@ namespace Zadify.Activities
                     }
                     if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
-                            var readingByDateGoal = new ReadingGoal(_goalDate, goalNumber, items);
-                            SaveGoalToList(readingByDateGoal);
+                        var readingByDateGoal = new ReadingGoal(_goalDate, goalNumber, items);
+                        var successfulSave = SaveGoalToList(readingByDateGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -554,8 +590,12 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                            var readingPerTimespanGoal = new ReadingGoal(_goalDate, goalNumber, items, timespan);
-                            SaveGoalToList(readingPerTimespanGoal);
+                        var readingPerTimespanGoal = new ReadingGoal(_goalDate, goalNumber, items, timespan);
+                        var successfulSave = SaveGoalToList(readingPerTimespanGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -613,8 +653,12 @@ namespace Zadify.Activities
                     }
                     if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
-                            var writingByDateGoal = new WritingGoal(_goalDate, goalNumber, items);
-                            SaveGoalToList(writingByDateGoal);
+                        var writingByDateGoal = new WritingGoal(_goalDate, goalNumber, items);
+                        var successfulSave = SaveGoalToList(writingByDateGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -682,8 +726,12 @@ namespace Zadify.Activities
                                 break;
                         }
 
-                            var writingPerTimespanGoal = new WritingGoal(_goalDate, goalNumber, items, timespan);
-                            SaveGoalToList(writingPerTimespanGoal);
+                        var writingPerTimespanGoal = new WritingGoal(_goalDate, goalNumber, items, timespan);
+                        var successfulSave = SaveGoalToList(writingPerTimespanGoal);
+                        if (successfulSave)
+                        {
+                            Finish();
+                        }
                     }
                     else
                     {
@@ -753,26 +801,28 @@ namespace Zadify.Activities
             #endregion
         }
 
-        private void SaveGoalToList(Goal fitnessPerTimespanGoal)
+        private bool SaveGoalToList(Goal fitnessPerTimespanGoal)
         {
             try
             {
                 var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                 goalsList.Add(fitnessPerTimespanGoal);
-                bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                var successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
                 if (successfulSave)
                 {
                     Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                    Finish();
                 }
                 else
                 {
                     Toast.MakeText(this, "Error saving goal", ToastLength.Long).Show();
                 }
+
+                return successfulSave;
             }
             catch (Exception e)
             {
                 Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
+                return false;
             }
         }
 
