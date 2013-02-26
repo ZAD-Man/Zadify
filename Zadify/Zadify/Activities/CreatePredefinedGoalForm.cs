@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Zadify.Enums;
 
 namespace Zadify.Activities
 {
@@ -34,6 +36,15 @@ namespace Zadify.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.CreatePredefinedGoalForm);
+
+            var preferences = GetPreferences(FileCreationMode.Private);
+            var rank = preferences.GetInt("Rank", -1);
+
+            if (rank == -1)
+            {
+                var preferencesEditor = preferences.Edit();
+                preferencesEditor.PutInt("Rank", 1).Commit();
+            }
 
             var predefinedGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.PredefinedGoalTypeSpinner);
             var predefinedGoalTypeAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.predefinedGoalTypes, Android.Resource.Layout.SimpleSpinnerItem);
@@ -91,9 +102,11 @@ namespace Zadify.Activities
                         }
 
                         var fitnessByDateGoal = new FitnessGoal(_goalDate, goalNumber, items);
+                        fitnessByDateGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(fitnessByDateGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(fitnessByDateGoal);
                             Finish();
                         }
                     }
@@ -167,9 +180,11 @@ namespace Zadify.Activities
                         }
 
                         var fitnessPerTimespanGoal = new FitnessGoal(_goalDate, goalNumber, items, timespan);
+                        fitnessPerTimespanGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(fitnessPerTimespanGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(fitnessPerTimespanGoal);
                             Finish();
                         }
                     }
@@ -225,9 +240,11 @@ namespace Zadify.Activities
                         }
 
                         var dietGainWeightGoal = new DietGoal(_goalDate, goalNumber, items);
+                        dietGainWeightGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(dietGainWeightGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(dietGainWeightGoal);
                             Finish();
                         }
                     }
@@ -273,9 +290,11 @@ namespace Zadify.Activities
                         }
 
                         var dietLoseWeightGoal = new DietGoal(_goalDate, goalNumber, items, timespan);
+                        dietLoseWeightGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(dietLoseWeightGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(dietLoseWeightGoal);
                             Finish();
                         }
                     }
@@ -315,9 +334,11 @@ namespace Zadify.Activities
                         var goalNumber = int.Parse(financeSaveByDateNumber.Text);
 
                         var financeSaveByDateGoal = new FinanceGoal(_goalDate, goalNumber);
+                        financeSaveByDateGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(financeSaveByDateGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(financeSaveByDateGoal);
                             Finish();
                         }
                     }
@@ -367,9 +388,11 @@ namespace Zadify.Activities
                         }
 
                         var financeSavePerTimespanGoal = new FinanceGoal(_goalDate, goalNumber, timespan);
+                        financeSavePerTimespanGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(financeSavePerTimespanGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(financeSavePerTimespanGoal);
                             Finish();
                         }
                     }
@@ -398,9 +421,11 @@ namespace Zadify.Activities
                         var goalNumber = int.Parse(financePayByDateNumber.Text);
 
                         var financePayByDateGoal = new FinanceGoal(_goalDate, 0 - goalNumber);
+                        financePayByDateGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(financePayByDateGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(financePayByDateGoal);
                             Finish();
                         }
                     }
@@ -449,9 +474,11 @@ namespace Zadify.Activities
                         }
 
                         var financePayPerTimespanGoal = new FinanceGoal(_goalDate, 0 - goalNumber, timespan);
+                        financePayPerTimespanGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(financePayPerTimespanGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(financePayPerTimespanGoal);
                             Finish();
                         }
                     }
@@ -515,9 +542,11 @@ namespace Zadify.Activities
                     if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var readingByDateGoal = new ReadingGoal(_goalDate, goalNumber, items);
+                        readingByDateGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(readingByDateGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(readingByDateGoal);
                             Finish();
                         }
                     }
@@ -591,9 +620,11 @@ namespace Zadify.Activities
                         }
 
                         var readingPerTimespanGoal = new ReadingGoal(_goalDate, goalNumber, items, timespan);
+                        readingPerTimespanGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(readingPerTimespanGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(readingPerTimespanGoal);
                             Finish();
                         }
                     }
@@ -654,9 +685,11 @@ namespace Zadify.Activities
                     if (_goalDate.CompareTo(DateTime.Today) > 0)
                     {
                         var writingByDateGoal = new WritingGoal(_goalDate, goalNumber, items);
+                        writingByDateGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(writingByDateGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(writingByDateGoal);
                             Finish();
                         }
                     }
@@ -727,9 +760,11 @@ namespace Zadify.Activities
                         }
 
                         var writingPerTimespanGoal = new WritingGoal(_goalDate, goalNumber, items, timespan);
+                        writingPerTimespanGoal.AssignMonsterData(rank);
                         var successfulSave = SaveGoalToList(writingPerTimespanGoal);
                         if (successfulSave)
                         {
+                            MakeMonsterDialog(writingPerTimespanGoal);
                             Finish();
                         }
                     }
@@ -801,12 +836,12 @@ namespace Zadify.Activities
             #endregion
         }
 
-        private bool SaveGoalToList(Goal fitnessPerTimespanGoal)
+        private bool SaveGoalToList(Goal goal)
         {
             try
             {
                 var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
-                goalsList.Add(fitnessPerTimespanGoal);
+                goalsList.Add(goal);
                 var successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
                 if (successfulSave)
                 {
@@ -824,6 +859,18 @@ namespace Zadify.Activities
                 Toast.MakeText(this, "Error: " + e.Message, ToastLength.Long).Show();
                 return false;
             }
+        }
+
+        private void MakeMonsterDialog(Goal goal)
+        {
+            var monsterDisplay = new Intent(this, typeof (MonsterDisplay));
+            monsterDisplay.PutExtra("DisplayType", "Create");
+            monsterDisplay.PutExtra("PercentDone", (int) (goal.Progress*100));
+            monsterDisplay.PutExtra("Monster", goal.Monster);
+            monsterDisplay.PutExtra("Food", goal.Food);
+            monsterDisplay.PutExtra("Defense", goal.Defense);
+            monsterDisplay.PutExtra("Weapon", goal.Weapon);
+            StartActivity(monsterDisplay);
         }
 
         #region Date Management

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Views;
@@ -24,7 +25,14 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.CreateCustomGoalForm);
 
-            var customGoalLayout = FindViewById<RelativeLayout>(Resource.Id.CustomGoalLayout);
+            var preferences = GetPreferences(FileCreationMode.Private);
+            var rank = preferences.GetInt("Rank", -1);
+
+            if (rank == -1)
+            {
+                var preferencesEditor = preferences.Edit();
+                preferencesEditor.PutInt("Rank", 1).Commit();
+            }
 
             var customGoalNumber = FindViewById<EditText>(Resource.Id.CustomGoalNumber);
 
@@ -72,9 +80,10 @@ namespace Zadify.Activities
                         try
                         {
                             var customGoal = new CustomGoal(_goalDate, goalNumber, items, timespan);
+                            customGoal.AssignMonsterData(rank);
                             var goalsList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                             goalsList.Add(customGoal);
-                            bool successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
+                            var successfulSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
