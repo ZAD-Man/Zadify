@@ -19,7 +19,6 @@ namespace Zadify
 
         public WritingGoal()
         {
-
         }
 
         public WritingGoal(DateTime dueDate, int goalAmount, WritingItems measuredItems, int repeatingDays = 0)

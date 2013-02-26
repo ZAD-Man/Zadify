@@ -49,7 +49,7 @@ namespace Zadify.Activities
 
             _customGoalSelectDate = FindViewById<Button>(Resource.Id.CustomGoalSelectDate);
             _customGoalSelectDate.Click += delegate { ShowDialog(DATE_DIALOG_ID); };
-            
+
             customGoalRepeatCheckbox.Click += delegate
                 {
                     if (customGoalRepeatCheckbox.Checked)

@@ -19,7 +19,7 @@ namespace Zadify.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.MainMenu);
-
+            
             var preferences = GetPreferences(FileCreationMode.Private);
             var rank = preferences.GetInt("Rank", -1);
 
@@ -72,10 +72,7 @@ namespace Zadify.Activities
                 };
 
             var monsterDemoButton = FindViewById<Button>(Resource.Id.MonsterDemoButton);
-            monsterDemoButton.Click += delegate
-                {
-                    StartActivity(typeof(MonsterDisplay));
-                };
+            monsterDemoButton.Click += delegate { StartActivity(typeof (MonsterDisplay)); };
         }
     }
 }

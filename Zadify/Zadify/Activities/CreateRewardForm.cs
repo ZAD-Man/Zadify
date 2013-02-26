@@ -21,9 +21,9 @@ namespace Zadify.Activities
 
             var submitCustomRewardButton = FindViewById<Button>(Resource.Id.SubmitCustomRewardButton);
             submitCustomRewardButton.Click += delegate
-            {
-                //TODO: Go back to Custom Rewards Menu. Look into FinishActivity().
-            };
+                {
+                    //TODO: Go back to Custom Rewards Menu. Look into FinishActivity().
+                };
         }
     }
 }

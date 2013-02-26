@@ -19,7 +19,6 @@ namespace Zadify
 
         public FitnessGoal()
         {
-            
         }
 
         public FitnessGoal(DateTime dueDate, int goalAmount, FitnessItems measuredItems, int repeatingDays = 0)

@@ -19,7 +19,6 @@ namespace Zadify
 
         public ReadingGoal()
         {
-            
         }
 
         public ReadingGoal(DateTime dueDate, int goalAmount, ReadingItems measuredItems, int repeatingDays = 0)

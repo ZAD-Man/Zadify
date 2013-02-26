@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -41,7 +40,7 @@ namespace ZadifyTests
             var readingByDateGoal = new ReadingGoal(date, itemsGoalNumber, readingItems);
             readingByDateGoal.UpdateProgress(42);
             Assert.AreEqual(42, readingByDateGoal.GoalCompletedAmount);
-            Assert.AreEqual((double)42/108, readingByDateGoal.Progress);
+            Assert.AreEqual((double) 42/108, readingByDateGoal.Progress);
         }
     }
 }

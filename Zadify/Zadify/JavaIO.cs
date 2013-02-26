@@ -36,7 +36,7 @@ namespace Zadify
             }
         }
 
-        public static T LoadData<T>(Context context, string fileName) 
+        public static T LoadData<T>(Context context, string fileName)
         {
             var file = context.GetFileStreamPath(fileName);
 
@@ -68,7 +68,5 @@ namespace Zadify
                 throw new FileNotFoundException("Could not find file " + fileName);
             }
         }
-
-
     }
 }

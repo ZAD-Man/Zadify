@@ -16,7 +16,6 @@ namespace Zadify
     {
         public FinanceGoal()
         {
-            
         }
 
         public FinanceGoal(DateTime dueDate, int goalAmount, int repeatingDays = 0)

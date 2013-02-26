@@ -19,7 +19,6 @@ namespace Zadify
 
         public DietGoal()
         {
-            
         }
 
         public DietGoal(DateTime dueDate, int goalAmount, DietItems measuredItems, int repeatingDays = 0)

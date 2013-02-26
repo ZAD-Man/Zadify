@@ -16,10 +16,10 @@ namespace Zadify.Activities
             SetContentView(Resource.Layout.ZadifyRewardsMenu);
 
             var RanksButton = FindViewById<Button>(Resource.Id.RanksButton);
-            RanksButton.Click += delegate { StartActivity(typeof(RanksMenu)); };
+            RanksButton.Click += delegate { StartActivity(typeof (RanksMenu)); };
 
             var UnlockedItemsButton = FindViewById<Button>(Resource.Id.UnlockedItemsButton);
-            UnlockedItemsButton.Click += delegate { StartActivity(typeof(UnlockedItemsScreen)); };
+            UnlockedItemsButton.Click += delegate { StartActivity(typeof (UnlockedItemsScreen)); };
         }
     }
 }

@@ -17,10 +17,10 @@ namespace Zadify.Activities
             SetContentView(Resource.Layout.SocialMenu);
 
             var newsFeedButton = FindViewById<Button>(Resource.Id.NewsFeedButton);
-            newsFeedButton.Click += delegate { StartActivity(typeof(NewsFeedScreen)); };
+            newsFeedButton.Click += delegate { StartActivity(typeof (NewsFeedScreen)); };
 
             var competitionsButton = FindViewById<Button>(Resource.Id.CompetitionsButton);
-            competitionsButton.Click += delegate { StartActivity(typeof(CompetitionsMenu)); };
+            competitionsButton.Click += delegate { StartActivity(typeof (CompetitionsMenu)); };
         }
     }
 }

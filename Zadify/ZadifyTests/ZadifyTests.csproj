@@ -68,6 +68,18 @@
     <Compile Include="..\Zadify\Enums\FitnessWeights.cs">
       <Link>FitnessWeights.cs</Link>
     </Compile>
+    <Compile Include="..\Zadify\Enums\MonsterDefenses.cs">
+      <Link>MonsterDefenses.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\Enums\MonsterFoods.cs">
+      <Link>MonsterFoods.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\Enums\Monsters.cs">
+      <Link>Monsters.cs</Link>
+    </Compile>
+    <Compile Include="..\Zadify\Enums\MonsterWeapons.cs">
+      <Link>MonsterWeapons.cs</Link>
+    </Compile>
     <Compile Include="..\Zadify\Enums\ReadingItems.cs">
       <Link>ReadingItems.cs</Link>
     </Compile>

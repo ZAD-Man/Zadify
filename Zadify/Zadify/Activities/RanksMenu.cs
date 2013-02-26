@@ -56,7 +56,6 @@ namespace Zadify.Activities
             if (finishedGoalCount > 100)
             {
                 rank = "General";
-                
             }
             else if (finishedGoalCount > 50)
             {

@@ -38,10 +38,10 @@ namespace ZadifyTests
             var readingItems = ReadingItems.Words;
             var itemsGoalNumber = 108;
             var readingGoal = new ReadingGoal(date, itemsGoalNumber, readingItems);
-            var goalList = new List<Goal> { readingGoal };
+            var goalList = new List<Goal> {readingGoal};
             JavaIO.SaveData(Application.Context, "TestGoals.zad", goalList);
             var loadedGoalList = JavaIO.LoadData<List<Goal>>(Application.Context, "TestGoals.zad");
-            var loadedReadingGoal = (ReadingGoal)loadedGoalList[0];
+            var loadedReadingGoal = (ReadingGoal) loadedGoalList[0];
             readingGoal.UpdateProgress(42);
             Assert.AreNotEqual(readingGoal.GoalCompletedAmount, loadedReadingGoal.GoalCompletedAmount);
             Assert.AreNotEqual(readingGoal.Progress, loadedReadingGoal.Progress);

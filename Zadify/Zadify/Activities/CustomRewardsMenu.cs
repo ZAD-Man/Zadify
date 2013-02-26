@@ -17,7 +17,7 @@ namespace Zadify.Activities
             SetContentView(Resource.Layout.CustomRewardsMenu);
 
             var createRewardButton = FindViewById<Button>(Resource.Id.CreateRewardButton);
-            createRewardButton.Click += delegate { StartActivity(typeof(CreateRewardForm)); };
+            createRewardButton.Click += delegate { StartActivity(typeof (CreateRewardForm)); };
 
             var customRewardsList = FindViewById<ListView>(Resource.Id.CustomRewardsList);
         }

@@ -18,7 +18,6 @@ namespace Zadify
 
         public CustomGoal()
         {
-
         }
 
         public CustomGoal(DateTime dueDate, int goalAmount, string measuredItems, int repeatingDays = 0)

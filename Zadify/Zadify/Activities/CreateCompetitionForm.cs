@@ -21,9 +21,9 @@ namespace Zadify.Activities
 
             var submitCompetitionButton = FindViewById<Button>(Resource.Id.SubmitCompetitionButton);
             submitCompetitionButton.Click += delegate
-            {
-                //TODO: Go back to Goals Menu. Look into FinishActivity().
-            };
+                {
+                    //TODO: Go back to Goals Menu. Look into FinishActivity().
+                };
         }
     }
 }
