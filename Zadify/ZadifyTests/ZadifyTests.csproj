@@ -124,7 +124,7 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Desktop\Skool 2.0\Capstone\MonoDroid\MonoDroidUnitTesting\MonoDroidUnitTesting.csproj">
+    <ProjectReference Include="..\MonoDroidUnitTesting\MonoDroidUnitTesting.csproj">
       <Project>{A5F8FB02-00E0-4335-91EF-AEAA2C2F3C48}</Project>
       <Name>MonoDroidUnitTesting</Name>
     </ProjectReference>
