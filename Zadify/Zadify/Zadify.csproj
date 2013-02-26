@@ -64,6 +64,7 @@
     <Compile Include="Activities\GoalDetailsScreen.cs" />
     <Compile Include="Activities\GoalsMenu.cs" />
     <Compile Include="Activities\MainMenu.cs" />
+    <Compile Include="Activities\MonsterDisplay.cs" />
     <Compile Include="Activities\NewsFeedScreen.cs" />
     <Compile Include="Activities\RankDetailsScreen.cs" />
     <Compile Include="Activities\RanksMenu.cs" />
@@ -76,6 +77,10 @@
     <Compile Include="CustomGoal.cs" />
     <Compile Include="DietGoal.cs" />
     <Compile Include="Enums\DietItems.cs" />
+    <Compile Include="Enums\MonsterDefenses.cs" />
+    <Compile Include="Enums\MonsterFoods.cs" />
+    <Compile Include="Enums\Monsters.cs" />
+    <Compile Include="Enums\MonsterWeapons.cs" />
     <Compile Include="FinanceGoal.cs" />
     <Compile Include="Enums\FinanceItems.cs" />
     <Compile Include="FitnessGoal.cs" />
@@ -154,6 +159,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\CreateCompetitionForm.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\MonsterDisplay.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

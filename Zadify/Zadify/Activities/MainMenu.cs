@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Widget;
+using Zadify.Enums;
 
 namespace Zadify.Activities
 {
@@ -17,6 +19,15 @@ namespace Zadify.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.MainMenu);
+
+            var preferences = GetPreferences(FileCreationMode.Private);
+            var rank = preferences.GetInt("Rank", -1);
+
+            if (rank == -1)
+            {
+                var preferencesEditor = preferences.Edit();
+                preferencesEditor.PutInt("Rank", 1).Commit();
+            }
 
             try
             {
@@ -58,6 +69,12 @@ namespace Zadify.Activities
                     JavaIO.SaveData(this, "Goals.zad", goalsList);
 
                     Toast.MakeText(this, "Setup Complete", ToastLength.Short).Show();
+                };
+
+            var monsterDemoButton = FindViewById<Button>(Resource.Id.MonsterDemoButton);
+            monsterDemoButton.Click += delegate
+                {
+                    StartActivity(typeof(MonsterDisplay));
                 };
         }
     }

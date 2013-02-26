@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Widget;
@@ -17,6 +18,15 @@ namespace Zadify.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.RanksMenu);
+
+            var preferences = GetPreferences(FileCreationMode.Private);
+            var storedRank = preferences.GetInt("Rank", -1);
+
+            if (storedRank == -1)
+            {
+                var preferencesEditor = preferences.Edit();
+                preferencesEditor.PutInt("Rank", 1).Commit();
+            }
 
             var CurrentRank = FindViewById<TextView>(Resource.Id.CurrentRank);
             int finishedGoalCount = 0;

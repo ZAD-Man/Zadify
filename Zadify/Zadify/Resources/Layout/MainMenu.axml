@@ -28,4 +28,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Setup Test Info" />
+    <Button
+        android:id="@+id/MonsterDemoButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Monster Demo" />
 </LinearLayout>
