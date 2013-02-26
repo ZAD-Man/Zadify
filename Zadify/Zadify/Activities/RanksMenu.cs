@@ -25,10 +25,11 @@ namespace Zadify.Activities
             if (storedRank == -1)
             {
                 var preferencesEditor = preferences.Edit();
-                preferencesEditor.PutInt("Rank", 1).Commit();
+                preferencesEditor.PutInt("Rank", 0).Commit();
+                storedRank = 0;
             }
 
-            var CurrentRank = FindViewById<TextView>(Resource.Id.CurrentRank);
+            var currentRank = FindViewById<TextView>(Resource.Id.CurrentRank);
             int finishedGoalCount = 0;
             int amountToNextRank = 1;
             var rank = "Noob";
@@ -78,7 +79,7 @@ namespace Zadify.Activities
                 amountToNextRank = 5 - finishedGoalCount;
             }
 
-            CurrentRank.Text = "You are currently ranked " + rank + ".\nKeep completing goals!\n(" + amountToNextRank + " goals to the next rank!)";
+            currentRank.Text = "You are currently ranked " + rank + ".\nKeep completing goals!\n(" + amountToNextRank + " goals to the next rank!)";
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Zadify
             var random = new Random();
 
             var monsterTypeValues = Enum.GetValues(typeof (Monsters));
-            var monster = (Monsters) monsterTypeValues.GetValue(random.Next(rank - 1));
+            var monster = (Monsters) monsterTypeValues.GetValue(random.Next(rank));
 
             Monster = monster.ToString();
 

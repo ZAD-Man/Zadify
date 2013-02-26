@@ -31,7 +31,8 @@ namespace Zadify.Activities
             if (rank == -1)
             {
                 var preferencesEditor = preferences.Edit();
-                preferencesEditor.PutInt("Rank", 1).Commit();
+                preferencesEditor.PutInt("Rank", 0).Commit();
+                rank = 0;
             }
 
             var customGoalNumber = FindViewById<EditText>(Resource.Id.CustomGoalNumber);

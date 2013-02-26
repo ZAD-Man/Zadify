@@ -19,14 +19,15 @@ namespace Zadify.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.MainMenu);
-            
+
             var preferences = GetPreferences(FileCreationMode.Private);
             var rank = preferences.GetInt("Rank", -1);
 
             if (rank == -1)
             {
                 var preferencesEditor = preferences.Edit();
-                preferencesEditor.PutInt("Rank", 1).Commit();
+                preferencesEditor.PutInt("Rank", 0).Commit();
+                rank = 0;
             }
 
             try
@@ -64,6 +65,11 @@ namespace Zadify.Activities
                     var dietGoal = new DietGoal(idesOfMarch2020, -15, DietItems.Pounds, 7);
                     var customGoal = new CustomGoal(DateTime.Today, 8, "good deeds", 8);
                     var futureCustomGoal = new CustomGoal(idesOfMarch2020, 42, "paintings");
+
+                    fitnessGoal.AssignMonsterData(rank);
+                    dietGoal.AssignMonsterData(rank);
+                    customGoal.AssignMonsterData(rank);
+                    futureCustomGoal.AssignMonsterData(rank);
 
                     var goalsList = new List<Goal> {fitnessGoal, dietGoal, customGoal, futureCustomGoal};
                     JavaIO.SaveData(this, "Goals.zad", goalsList);
