@@ -88,6 +88,7 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
+                                MakeMonsterDialog(customGoal);
                                 Finish();
                             }
                             else
@@ -105,6 +106,18 @@ namespace Zadify.Activities
                         Toast.MakeText(this, "Error: Date must be in future", ToastLength.Long).Show();
                     }
                 };
+        }
+
+        private void MakeMonsterDialog(Goal goal)
+        {
+            var monsterDisplay = new Intent(this, typeof(MonsterDisplay));
+            monsterDisplay.PutExtra("DisplayType", "Create");
+            monsterDisplay.PutExtra("PercentDone", (int)(goal.Progress * 100));
+            monsterDisplay.PutExtra("Monster", goal.Monster);
+            monsterDisplay.PutExtra("Food", goal.Food);
+            monsterDisplay.PutExtra("Defense", goal.Defense);
+            monsterDisplay.PutExtra("Weapon", goal.Weapon);
+            StartActivity(monsterDisplay);
         }
 
         private void CustomGoalDate()
