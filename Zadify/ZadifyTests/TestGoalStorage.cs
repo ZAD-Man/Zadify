@@ -4,6 +4,7 @@ using System.Text;
 using Android.App;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Zadify;
+using Zadify.Enums;
 
 namespace ZadifyTests
 {

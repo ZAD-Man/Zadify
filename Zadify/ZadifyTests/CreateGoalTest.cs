@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Zadify;
+using Zadify.Enums;
 
 namespace ZadifyTests
 {
