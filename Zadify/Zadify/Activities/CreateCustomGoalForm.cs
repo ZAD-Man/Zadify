@@ -27,6 +27,7 @@ namespace Zadify.Activities
 
             var preferences = GetPreferences(FileCreationMode.Private);
             var rank = preferences.GetInt("Rank", -1);
+            var monsterMode = preferences.GetBoolean("MonsterMode", false);
 
             if (rank == -1)
             {
@@ -88,7 +89,8 @@ namespace Zadify.Activities
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Saved", ToastLength.Long).Show();
-                                MakeMonsterDialog(customGoal);
+                                if (monsterMode)
+                                    MakeMonsterDialog(customGoal);
                                 Finish();
                             }
                             else
@@ -110,9 +112,9 @@ namespace Zadify.Activities
 
         private void MakeMonsterDialog(Goal goal)
         {
-            var monsterDisplay = new Intent(this, typeof(MonsterDisplay));
+            var monsterDisplay = new Intent(this, typeof (MonsterDisplay));
             monsterDisplay.PutExtra("DisplayType", "Create");
-            monsterDisplay.PutExtra("PercentDone", (int)(goal.Progress * 100));
+            monsterDisplay.PutExtra("PercentDone", (int) (goal.Progress*100));
             monsterDisplay.PutExtra("Monster", goal.Monster);
             monsterDisplay.PutExtra("Food", goal.Food);
             monsterDisplay.PutExtra("Defense", goal.Defense);

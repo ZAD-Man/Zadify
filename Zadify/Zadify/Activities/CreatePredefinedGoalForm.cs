@@ -38,14 +38,21 @@ namespace Zadify.Activities
             SetContentView(Resource.Layout.CreatePredefinedGoalForm);
 
             var preferences = GetPreferences(FileCreationMode.Private);
-            var rank = preferences.GetInt("Rank", -1);
 
-            if (rank == -1)
+            if (!preferences.Contains("Rank"))
             {
                 var preferencesEditor = preferences.Edit();
                 preferencesEditor.PutInt("Rank", 0).Commit();
-                rank = 0;
             }
+
+            if (!preferences.Contains("MonsterMode"))
+            {
+                var preferencesEditor = preferences.Edit();
+                preferencesEditor.PutBoolean("MonsterMode", true).Commit();
+            }
+
+            var rank = preferences.GetInt("Rank", -1);
+            var monsterMode = preferences.GetBoolean("MonsterMode", false);
 
             var predefinedGoalTypeSpinner = FindViewById<Spinner>(Resource.Id.PredefinedGoalTypeSpinner);
             var predefinedGoalTypeAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.predefinedGoalTypes, Android.Resource.Layout.SimpleSpinnerItem);
@@ -107,7 +114,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(fitnessByDateGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(fitnessByDateGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(fitnessByDateGoal);
                             Finish();
                         }
                     }
@@ -185,7 +193,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(fitnessPerTimespanGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(fitnessPerTimespanGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(fitnessPerTimespanGoal);
                             Finish();
                         }
                     }
@@ -245,7 +254,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(dietGainWeightGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(dietGainWeightGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(dietGainWeightGoal);
                             Finish();
                         }
                     }
@@ -295,7 +305,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(dietLoseWeightGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(dietLoseWeightGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(dietLoseWeightGoal);
                             Finish();
                         }
                     }
@@ -339,7 +350,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(financeSaveByDateGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(financeSaveByDateGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(financeSaveByDateGoal);
                             Finish();
                         }
                     }
@@ -393,7 +405,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(financeSavePerTimespanGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(financeSavePerTimespanGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(financeSavePerTimespanGoal);
                             Finish();
                         }
                     }
@@ -426,7 +439,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(financePayByDateGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(financePayByDateGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(financePayByDateGoal);
                             Finish();
                         }
                     }
@@ -479,7 +493,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(financePayPerTimespanGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(financePayPerTimespanGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(financePayPerTimespanGoal);
                             Finish();
                         }
                     }
@@ -547,7 +562,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(readingByDateGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(readingByDateGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(readingByDateGoal);
                             Finish();
                         }
                     }
@@ -625,7 +641,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(readingPerTimespanGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(readingPerTimespanGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(readingPerTimespanGoal);
                             Finish();
                         }
                     }
@@ -690,7 +707,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(writingByDateGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(writingByDateGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(writingByDateGoal);
                             Finish();
                         }
                     }
@@ -765,7 +783,8 @@ namespace Zadify.Activities
                         var successfulSave = SaveGoalToList(writingPerTimespanGoal);
                         if (successfulSave)
                         {
-                            MakeMonsterDialog(writingPerTimespanGoal);
+                            if (monsterMode)
+                                MakeMonsterDialog(writingPerTimespanGoal);
                             Finish();
                         }
                     }

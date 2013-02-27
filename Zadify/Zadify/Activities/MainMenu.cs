@@ -21,14 +21,20 @@ namespace Zadify.Activities
             SetContentView(Resource.Layout.MainMenu);
 
             var preferences = GetPreferences(FileCreationMode.Private);
-            var rank = preferences.GetInt("Rank", -1);
 
-            if (rank == -1)
+            if (!preferences.Contains("Rank"))
             {
                 var preferencesEditor = preferences.Edit();
                 preferencesEditor.PutInt("Rank", 0).Commit();
-                rank = 0;
             }
+
+            if (!preferences.Contains("MonsterMode"))
+            {
+                var preferencesEditor = preferences.Edit();
+                preferencesEditor.PutBoolean("MonsterMode", true).Commit();
+            }
+
+            var rank = preferences.GetInt("Rank", 0);
 
             try
             {

@@ -20,14 +20,14 @@ namespace Zadify.Activities
             SetContentView(Resource.Layout.RanksMenu);
 
             var preferences = GetPreferences(FileCreationMode.Private);
-            var storedRank = preferences.GetInt("Rank", -1);
 
-            if (storedRank == -1)
+            if (!preferences.Contains("Rank"))
             {
                 var preferencesEditor = preferences.Edit();
                 preferencesEditor.PutInt("Rank", 0).Commit();
-                storedRank = 0;
             }
+
+            var storedRank = preferences.GetInt("Rank", 0);
 
             var currentRank = FindViewById<TextView>(Resource.Id.CurrentRank);
             int finishedGoalCount = 0;
