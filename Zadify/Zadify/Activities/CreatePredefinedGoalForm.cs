@@ -37,18 +37,20 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.CreatePredefinedGoalForm);
 
-            var preferences = GetPreferences(FileCreationMode.Private);
+            var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
 
             if (!preferences.Contains("Rank"))
             {
                 var preferencesEditor = preferences.Edit();
-                preferencesEditor.PutInt("Rank", 0).Commit();
+                preferencesEditor.PutInt("Rank", 0);
+                preferencesEditor.Apply();
             }
 
             if (!preferences.Contains("MonsterMode"))
             {
                 var preferencesEditor = preferences.Edit();
-                preferencesEditor.PutBoolean("MonsterMode", true).Commit();
+                preferencesEditor.PutBoolean("MonsterMode", true);
+                preferencesEditor.Apply();
             }
 
             var rank = preferences.GetInt("Rank", -1);

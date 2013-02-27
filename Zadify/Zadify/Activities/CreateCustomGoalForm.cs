@@ -25,16 +25,17 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.CreateCustomGoalForm);
 
-            var preferences = GetPreferences(FileCreationMode.Private);
-            var rank = preferences.GetInt("Rank", -1);
+            var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
             var monsterMode = preferences.GetBoolean("MonsterMode", false);
 
-            if (rank == -1)
+            if (!preferences.Contains("Rank"))
             {
                 var preferencesEditor = preferences.Edit();
-                preferencesEditor.PutInt("Rank", 0).Commit();
-                rank = 0;
+                preferencesEditor.PutInt("Rank", 0);
+                preferencesEditor.Apply();
             }
+
+            var rank = preferences.GetInt("Rank", -1);
 
             var customGoalNumber = FindViewById<EditText>(Resource.Id.CustomGoalNumber);
 

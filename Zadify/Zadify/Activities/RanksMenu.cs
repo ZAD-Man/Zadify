@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -19,15 +20,16 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.RanksMenu);
 
-            var preferences = GetPreferences(FileCreationMode.Private);
+            var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
 
             if (!preferences.Contains("Rank"))
             {
                 var preferencesEditor = preferences.Edit();
-                preferencesEditor.PutInt("Rank", 0).Commit();
+                preferencesEditor.PutInt("Rank", 0);
+                preferencesEditor.Apply();
             }
 
-            var storedRank = preferences.GetInt("Rank", 0);
+            var storedRank = preferences.GetInt("Rank", -1);
 
             var currentRank = FindViewById<TextView>(Resource.Id.CurrentRank);
             int finishedGoalCount = 0;
@@ -38,13 +40,7 @@ namespace Zadify.Activities
                 var goalList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                 if (goalList != null)
                 {
-                    foreach (var goal in goalList)
-                    {
-                        if (goal.GoalCompletedAmount == goal.GoalAmount)
-                        {
-                            finishedGoalCount++;
-                        }
-                    }
+                    finishedGoalCount += goalList.Count(goal => goal.GoalCompletedAmount == goal.GoalAmount);
                 }
             }
 

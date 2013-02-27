@@ -20,16 +20,17 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.SettingsMenu);
 
-            var preferences = GetPreferences(FileCreationMode.Private);
+            var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
 
             var monsterModeCheckbox = FindViewById<CheckBox>(Resource.Id.MonsterModeCheckbox);
-            monsterModeCheckbox.Checked = preferences.GetBoolean("Monster Mode", true);
+            monsterModeCheckbox.Checked = preferences.GetBoolean("MonsterMode", true);
 
             var saveSettingsButton = FindViewById<Button>(Resource.Id.SaveSettingsButton);
             saveSettingsButton.Click += delegate
                 {
                     var preferencesEditor = preferences.Edit();
-                    preferencesEditor.PutBoolean("Monster Mode", monsterModeCheckbox.Checked).Commit();
+                    preferencesEditor.PutBoolean("MonsterMode", monsterModeCheckbox.Checked);
+                    preferencesEditor.Apply();
                     Toast.MakeText(this, "Settings Saved", ToastLength.Long).Show();
                     Finish();
                 };

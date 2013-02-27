@@ -51,9 +51,9 @@ namespace Zadify.Activities
                     }
                     else if (percentDone >= 90 && percentDone < 100)
                     {
-                        monsterText.Text = string.Format("You find a safe in the far corner of the room. The door is cracked open, so you pull it open and look inside. There's a {0} in there! You eagerly take it. You feel a lot better with the {0}at your side.", weapon);
+                        monsterText.Text = string.Format("You find a safe in the far corner of the room. The door is cracked open, so you pull it open and look inside. There's a {0} in there! You eagerly take it. You feel a lot better with the {0} at your side.", weapon);
                     }
-                    else if (percentDone > 100)
+                    else if (percentDone >= 100)
                     {
                         monsterText.Text = string.Format("You set up debris in front of the door. You adjust your {0} and ready your {1}. When that {2} comes through the door, you'll be ready.", defense, weapon, monster);
                     }

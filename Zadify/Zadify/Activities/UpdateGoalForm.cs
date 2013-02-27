@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Widget;
@@ -18,6 +19,10 @@ namespace Zadify.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.UpdateGoalForm);
+
+            var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
+
+            var monsterMode = preferences.GetBoolean("MonsterMode", false);
 
             var position = Intent.GetIntExtra("Position", -1);
 
@@ -96,6 +101,8 @@ namespace Zadify.Activities
                             var updateGoalNumber = FindViewById<EditText>(Resource.Id.UpdateGoalNumber);
                             var updateNumber = int.Parse(updateGoalNumber.Text);
                             var goalAmount = updateGoal.GoalAmount;
+                            var goalOriginalProgress = (int) (updateGoal.Progress*100);
+
                             if (goalAmount > 0)
                             {
                                 updateNumber += updateGoal.GoalCompletedAmount;
@@ -107,11 +114,45 @@ namespace Zadify.Activities
                                 updateNumber += updateGoal.GoalCompletedAmount;
                                 updateGoal.UpdateProgress(updateNumber);
                             }
+
+                            var goalNewProgress = (int) (updateGoal.Progress*100);
                             storedGoals[position] = updateGoal;
                             bool successfulSave = JavaIO.SaveData(this, "Goals.zad", storedGoals);
                             if (successfulSave)
                             {
                                 Toast.MakeText(this, "Goal Updated", ToastLength.Long).Show();
+                                if (monsterMode)
+                                {
+                                    var milestonePassed = false;
+                                    if (goalNewProgress >= 100)
+                                    {
+                                        MakeMonsterDialog(updateGoal, 100, "Progress");
+                                        milestonePassed = true;
+                                    }
+
+                                    if (goalOriginalProgress < 90 && goalNewProgress >= 90)
+                                    {
+                                        MakeMonsterDialog(updateGoal, 90, "Progress");
+                                        milestonePassed = true;
+                                    }
+
+                                    if (goalOriginalProgress < 60 && goalNewProgress >= 60)
+                                    {
+                                        MakeMonsterDialog(updateGoal, 60, "Progress");
+                                        milestonePassed = true;
+                                    }
+
+                                    if (goalOriginalProgress < 30 && goalNewProgress >= 30)
+                                    {
+                                        MakeMonsterDialog(updateGoal, 30, "Progress");
+                                        milestonePassed = true;
+                                    }
+
+                                    if (!milestonePassed)
+                                    {
+                                        MakeMonsterDialog(updateGoal, 0);
+                                    }
+                                }
                                 Finish();
                             }
                             else
@@ -129,6 +170,18 @@ namespace Zadify.Activities
             {
                 Log.Error("UpdateGoalForm:IntentError", "Position is -1, intent not found");
             }
+        }
+
+        private void MakeMonsterDialog(Goal goal, int percentDone, string displayType = "Nothing")
+        {
+            var monsterDisplay = new Intent(this, typeof (MonsterDisplay));
+            monsterDisplay.PutExtra("DisplayType", displayType);
+            monsterDisplay.PutExtra("PercentDone", percentDone);
+            monsterDisplay.PutExtra("Monster", goal.Monster);
+            monsterDisplay.PutExtra("Food", goal.Food);
+            monsterDisplay.PutExtra("Defense", goal.Defense);
+            monsterDisplay.PutExtra("Weapon", goal.Weapon);
+            StartActivity(monsterDisplay);
         }
     }
 }

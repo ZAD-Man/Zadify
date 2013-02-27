@@ -12,7 +12,7 @@
             android:id="@+id/MonsterText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Do you really want to hurt me? Do you really want to make me cry? I want a coconut milk in my left hand and a big bronze medal in my right please. Thank you so much! Good night."
+            android:text="You look around, but don&apos;t find anything."
             android:gravity="center_vertical" />
     </LinearLayout>
     <LinearLayout
