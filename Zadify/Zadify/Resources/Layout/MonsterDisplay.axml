@@ -12,7 +12,7 @@
             android:id="@+id/MonsterText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="You look around, but don&apos;t find anything."
+            android:text="You poke around, but don&apos;t find anything."
             android:gravity="center_vertical" />
     </LinearLayout>
     <LinearLayout

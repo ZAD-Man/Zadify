@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Zadify.Activities
 {
-    [Activity(Label = "My Activity")]
+    [Activity(Label = "Monsters!")]
     public class MonsterDisplay : Activity
     {
         protected override void OnCreate(Bundle bundle)

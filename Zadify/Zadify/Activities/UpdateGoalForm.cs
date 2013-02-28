@@ -116,7 +116,7 @@ namespace Zadify.Activities
                             }
 
                             var goalNewProgress = (int) (updateGoal.Progress*100);
-                            storedGoals[position] = updateGoal;
+                            storedGoals[storedGoals.IndexOf(updateGoal)] = updateGoal;
                             bool successfulSave = JavaIO.SaveData(this, "Goals.zad", storedGoals);
                             if (successfulSave)
                             {

@@ -30,7 +30,7 @@ namespace Zadify.Activities
 
             var position = Intent.GetIntExtra("Position", -1);
             var isCompleted = Intent.GetBooleanExtra("IsCompleted", false);
-
+            
             if (position != -1)
             {
                 var storedGoals = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
@@ -53,13 +53,6 @@ namespace Zadify.Activities
                     var goalDetailsTimespanText = FindViewById<TextView>(Resource.Id.GoalDetailsTimespanText);
                     var goalDetailsDueDateText = FindViewById<TextView>(Resource.Id.GoalDetailsDueDateText);
                     var goalDetailsAmountCompletedText = FindViewById<TextView>(Resource.Id.GoalDetailsAmountCompletedText);
-
-                    if (displayGoal.DueDate.CompareTo(DateTime.Today) <= 0)
-                    {
-                        displayGoal.Viewed();
-                        storedGoals[storedGoals.IndexOf(displayGoal)] = displayGoal;
-                        JavaIO.SaveData(this, "Goals.zad", storedGoals);
-                    }
 
                     switch (goalType)
                     {
@@ -163,7 +156,7 @@ namespace Zadify.Activities
 
                     var updateGoalButton = FindViewById<Button>(Resource.Id.UpdateGoalButton);
 
-                    if (!displayGoal.ViewedPostDueDate)
+                    if (displayGoal.DueDate.CompareTo(DateTime.Today) > 0)
                     {
                         updateGoalButton.Click += delegate
                             {
@@ -194,6 +187,40 @@ namespace Zadify.Activities
             else
             {
                 Log.Error("GoalDetailsScreen:IntentError", "Position is -1, intent not found");
+            }
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+
+            var position = Intent.GetIntExtra("Position", -1);
+            var isCompleted = Intent.GetBooleanExtra("IsCompleted", false);
+
+            if (position != -1)
+            {
+                var storedGoals = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+                if (storedGoals != null)
+                {
+                    var sortedGoals = new List<Goal>();
+                    if (isCompleted)
+                    {
+                        sortedGoals.AddRange(storedGoals.Where(goal => goal.ViewedPostDueDate));
+                    }
+                    else
+                    {
+                        sortedGoals.AddRange(storedGoals.Where(goal => !goal.ViewedPostDueDate));
+                    }
+
+                    var displayGoal = sortedGoals[position];
+
+                    if (displayGoal.DueDate.CompareTo(DateTime.Today) <= 0)
+                    {
+                        displayGoal.Viewed();
+                        storedGoals[storedGoals.IndexOf(displayGoal)] = displayGoal;
+                        JavaIO.SaveData(this, "Goals.zad", storedGoals);
+                    }
+                }
             }
         }
     }
