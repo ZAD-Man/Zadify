@@ -83,6 +83,8 @@ namespace Zadify.Activities
                     customGoal.AssignMonsterData(rank);
                     futureCustomGoal.AssignMonsterData(rank);
 
+                    customGoal.UpdateProgress(15);
+
                     var goalsList = new List<Goal> {fitnessGoal, dietGoal, customGoal, futureCustomGoal};
                     JavaIO.SaveData(this, "Goals.zad", goalsList);
 

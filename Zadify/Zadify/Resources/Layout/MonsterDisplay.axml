@@ -4,6 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <LinearLayout
+        android:id="@+id/MonsterLayout1"
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -16,10 +17,11 @@
             android:gravity="center_vertical" />
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/MonsterLayout2"
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1.0">
+        android:layout_weight="8.0">
         <Button
             android:id="@+id/MonsterOKButton"
             android:layout_width="fill_parent"
