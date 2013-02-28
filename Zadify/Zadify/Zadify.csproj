@@ -93,6 +93,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\WritingItems.cs" />
+    <Compile Include="Reward.cs" />
     <Compile Include="WritingGoal.cs" />
   </ItemGroup>
   <ItemGroup>

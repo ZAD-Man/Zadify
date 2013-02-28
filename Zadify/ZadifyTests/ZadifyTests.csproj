@@ -101,6 +101,9 @@
     <Compile Include="..\Zadify\ReadingGoal.cs">
       <Link>ReadingGoal.cs</Link>
     </Compile>
+    <Compile Include="..\Zadify\Reward.cs">
+      <Link>Reward.cs</Link>
+    </Compile>
     <Compile Include="..\Zadify\WritingGoal.cs">
       <Link>WritingGoal.cs</Link>
     </Compile>
