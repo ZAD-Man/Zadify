@@ -12,7 +12,7 @@ using Android.Widget;
 namespace Zadify
 {
     [Serializable]
-    class Reward
+    public class Reward
     {
         public Reward()
         {

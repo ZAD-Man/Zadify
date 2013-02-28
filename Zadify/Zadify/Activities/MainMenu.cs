@@ -101,9 +101,26 @@ namespace Zadify.Activities
                     customGoal.UpdateProgress(15);
 
                     var goalsList = new List<Goal> {fitnessGoal, dietGoal, customGoal, futureCustomGoal};
-                    JavaIO.SaveData(this, "Goals.zad", goalsList);
+                    var successfulGoalSave = JavaIO.SaveData(this, "Goals.zad", goalsList);
 
-                    Toast.MakeText(this, "Setup Complete", ToastLength.Short).Show();
+                    var completeLongDietReward = new Reward("Long Diet", "You are awesome", new List<Goal> {dietGoal});
+                    var doGoodDeedsReward = new Reward("Good Deeds Game", "Psychonauts: 5e728-vvd79-6hwx2", new List<Goal> {customGoal});
+
+                    var rewardsList = new List<Reward> {completeLongDietReward, doGoodDeedsReward};
+                    var successfulRewardSave = JavaIO.SaveData(this, "Rewards.zad", rewardsList);
+
+                    if (successfulRewardSave && successfulGoalSave)
+                    {
+                        Toast.MakeText(this, "Setup Complete", ToastLength.Short).Show();
+                    }
+                    else if (!successfulGoalSave)
+                    {
+                        Toast.MakeText(this, "Goal Setup Failed", ToastLength.Short).Show();
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Reward Setup Failed", ToastLength.Short).Show();
+                    }
                 };
 
             var monsterDemoButton = FindViewById<Button>(Resource.Id.MonsterDemoButton);
