@@ -6,7 +6,6 @@ using Android.Widget;
 
 namespace Zadify.Activities
 {
-    //TODO: Make this into a pop-up confirmation instead?
     [Activity(Label = "Delete Goal")]
     public class DeleteGoalForm : Activity
     {
@@ -37,17 +36,17 @@ namespace Zadify.Activities
                             }
                             else
                             {
-                                Toast.MakeText(this, "Error updating goal", ToastLength.Long).Show();
+                                Toast.MakeText(this, "Error deleting goal", ToastLength.Long).Show();
                             }
                         }
                         else
                         {
-                            Log.Error("GoalDetailsScreen:loadError", "Goals not loaded");
+                            Log.Error("DeleteGoalScreen:loadError", "Goals not loaded");
                         }
                     }
                     else
                     {
-                        Log.Error("GoalDetailsScreen:IntentError", "Position is -1, intent not found");
+                        Log.Error("DeleteGoalScreen:IntentError", "Position is -1, intent not found");
                     }
                 };
         }
