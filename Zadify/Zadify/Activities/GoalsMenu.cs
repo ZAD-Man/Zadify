@@ -45,61 +45,8 @@ namespace Zadify.Activities
                 var storedGoalList = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
                 if (storedGoalList != null)
                 {
-                    foreach (var goal in storedGoalList.Where(goal => !goal.ViewedPostDueDate))
-                    {
-                        if (goal is DietGoal)
-                        {
-                            var dietGoal = (DietGoal) goal;
+                    storedGoalStrings.AddRange(from goal in storedGoalList.Where(goal => !goal.ViewedPostDueDate) let displayString = goal.Summary() select AddDoneIfDone(goal, displayString));
 
-                            var displayString = dietGoal.Summary();
-                            displayString = AddDoneIfDone(dietGoal, displayString);
-                            storedGoalStrings.Add(displayString);
-                        }
-                        else if (goal is FinanceGoal)
-                        {
-                            var financeGoal = (FinanceGoal) goal;
-
-                            var displayString = financeGoal.Summary();
-                            displayString = AddDoneIfDone(financeGoal, displayString);
-                            storedGoalStrings.Add(displayString);
-                        }
-                        else if (goal is FitnessGoal)
-                        {
-                            var fitnessGoal = (FitnessGoal) goal;
-
-                            var displayString = fitnessGoal.Summary();
-                            displayString = AddDoneIfDone(fitnessGoal, displayString);
-                            storedGoalStrings.Add(displayString);
-                        }
-                        else if (goal is ReadingGoal)
-                        {
-                            var readingGoal = (ReadingGoal) goal;
-
-                            var displayString = readingGoal.Summary();
-                            displayString = AddDoneIfDone(readingGoal, displayString);
-                            storedGoalStrings.Add(displayString);
-                        }
-                        else if (goal is WritingGoal)
-                        {
-                            var writingGoal = (WritingGoal) goal;
-
-                            var displayString = writingGoal.Summary();
-                            displayString = AddDoneIfDone(writingGoal, displayString);
-                            storedGoalStrings.Add(displayString);
-                        }
-                        else if (goal is CustomGoal)
-                        {
-                            var customGoal = (CustomGoal) goal;
-
-                            var displayString = customGoal.Summary();
-                            displayString = AddDoneIfDone(customGoal, displayString);
-                            storedGoalStrings.Add(displayString);
-                        }
-                        else
-                        {
-                            Log.Error("GoalsMenu", "Can't cast goal " + goal);
-                        }
-                    }
                     var goalsAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, storedGoalStrings);
                     goalsList.Adapter = goalsAdapter;
 
