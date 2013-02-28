@@ -60,6 +60,7 @@
     <Compile Include="Activities\CreateRewardForm.cs" />
     <Compile Include="Activities\CustomRewardDetailsScreen.cs" />
     <Compile Include="Activities\CustomRewardsMenu.cs" />
+    <Compile Include="Activities\DeleteCustomRewardForm.cs" />
     <Compile Include="Activities\DeleteGoalForm.cs" />
     <Compile Include="Activities\GoalDetailsScreen.cs" />
     <Compile Include="Activities\GoalsMenu.cs" />
@@ -163,6 +164,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\MonsterDisplay.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\DeleteCustomRewardForm.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

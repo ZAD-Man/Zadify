@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Views;
@@ -50,11 +51,17 @@ namespace Zadify.Activities
             }
             else
             {
-                Toast.MakeText(this, "Problem loading reward", ToastLength.Long);
+                Toast.MakeText(this, "Problem loading reward", ToastLength.Long).Show();
             }
 
             var deleteCustomRewardButton = FindViewById<Button>(Resource.Id.DeleteCustomRewardButton);
-            deleteCustomRewardButton.Click += delegate { };
+            deleteCustomRewardButton.Click += delegate
+                {
+                    var deleteCustomRewardForm = new Intent(this, typeof(DeleteCustomRewardForm));
+                    deleteCustomRewardForm.PutExtra("Position", position);
+                    StartActivity(deleteCustomRewardForm);
+                    Finish();
+                };
         }
     }
 }
