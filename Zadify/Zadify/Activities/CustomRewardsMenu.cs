@@ -17,6 +17,13 @@ namespace Zadify.Activities
             Log.Info("CustomRewardsMenu", "Custom Rewards Menu Created");
 
             base.OnCreate(bundle);
+        }
+
+        protected override void OnStart()
+        {
+            Log.Info("CustomRewardsMenu", "Custom Rewards Menu Started");
+
+            base.OnStart();
 
             SetContentView(Resource.Layout.CustomRewardsMenu);
 
@@ -24,7 +31,7 @@ namespace Zadify.Activities
             createRewardButton.Click += delegate { StartActivity(typeof (CreateRewardForm)); };
             try
             {
-                var rewardsList = FindViewById<ListView>(Resource.Id.CustomRewardsList);
+                var customRewardsList = FindViewById<ListView>(Resource.Id.CustomRewardsList);
                 var storedRewardStrings = new List<string>();
                 var storedRewardList = JavaIO.LoadData<List<Reward>>(this, "Rewards.zad");
                 if (storedRewardList != null)
@@ -32,15 +39,15 @@ namespace Zadify.Activities
                     storedRewardStrings.AddRange(storedRewardList.Select(reward => reward.Name));
 
                     var rewardsAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, storedRewardStrings);
-                    rewardsList.Adapter = rewardsAdapter;
+                    customRewardsList.Adapter = rewardsAdapter;
 
-                    rewardsList.ItemClick += (sender, args) =>
-                    {
-                        var position = args.Position;
-                        var customRewardDetailsScreen = new Intent(this, typeof(CustomRewardDetailsScreen));
-                        customRewardDetailsScreen.PutExtra("Position", position);
-                        StartActivity(customRewardDetailsScreen);
-                    };
+                    customRewardsList.ItemClick += (sender, args) =>
+                        {
+                            var position = args.Position;
+                            var customRewardDetailsScreen = new Intent(this, typeof (CustomRewardDetailsScreen));
+                            customRewardDetailsScreen.PutExtra("Position", position);
+                            StartActivity(customRewardDetailsScreen);
+                        };
                 }
             }
             catch (Java.IO.FileNotFoundException e)
@@ -53,8 +60,6 @@ namespace Zadify.Activities
                 Log.Error("CustomRewardsMenu:GeneralException", e.Message + e.StackTrace);
                 Toast.MakeText(this, "Rewards could not be displayed", ToastLength.Long).Show();
             }
-
-            var customRewardsList = FindViewById<ListView>(Resource.Id.CustomRewardsList);
         }
     }
 }
