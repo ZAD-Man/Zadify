@@ -35,6 +35,8 @@ namespace Zadify
             ViewedPostDueDate = true;
         }
 
+        public abstract string Summary();
+
         public void AssignMonsterData(int rank)
         {
             var random = new Random();

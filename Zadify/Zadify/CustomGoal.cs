@@ -29,5 +29,11 @@ namespace Zadify
             GoalCompletedAmount = 0;
             Progress = 0;
         }
+
+        public override string Summary()
+        {
+            var displayString = "Do " + GoalAmount + " " + MeasuredItems.ToLower() + " - " + (int)(Progress * 100) + "%";
+            return displayString;
+        }
     }
 }

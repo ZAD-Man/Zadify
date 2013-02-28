@@ -26,5 +26,20 @@ namespace Zadify
             GoalCompletedAmount = 0;
             Progress = 0;
         }
+
+        public override string Summary()
+        {
+            string displayString;
+            if (GoalAmount > 0)
+            {
+                displayString = "Save $" + GoalAmount + " - " + (int) (Progress*100) + "%";
+            }
+            else
+            {
+                displayString = "Pay $" + Math.Abs(GoalAmount) + " - " + (int) (Progress*100) + "%";
+            }
+
+            return displayString;
+        }
     }
 }
