@@ -4,10 +4,19 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <TextView
-        android:id="@+id/CustomRewardDetails"
+        android:id="@+id/CustomRewardDisplayTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Custom Reward Details will go here (RelativeLayout)" />
+        android:text="Title" />
+    <TextView
+        android:id="@+id/CustomRewardDisplayContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content" />
+    <ListView
+        android:id="@+id/CustomRewardDisplayGoalList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <Button
         android:id="@+id/DeleteCustomRewardButton"
         android:layout_width="wrap_content"
