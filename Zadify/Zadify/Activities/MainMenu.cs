@@ -57,6 +57,21 @@ namespace Zadify.Activities
                 JavaIO.SaveData(this, "Goals.zad", goalsList);
             }
 
+            try
+            {
+                var rewardsList = JavaIO.LoadData<List<Goal>>(this, "Rewards.zad");
+                if (rewardsList == null)
+                {
+                    rewardsList = new List<Goal>();
+                    JavaIO.SaveData(this, "Rewards.zad", rewardsList);
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                var rewardsList = new List<Goal>();
+                JavaIO.SaveData(this, "Rewards.zad", rewardsList);
+            }
+
             var goalsButton = FindViewById<Button>(Resource.Id.GoalsButton);
             goalsButton.Click += delegate { StartActivity(typeof (GoalsMenu)); };
 

@@ -3,14 +3,73 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:id="@+id/CustomRewardForm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The Custom Reward Form will go here (RelativeLayout)" />
-    <Button
-        android:id="@+id/SubmitCustomRewardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit" />
+    <RelativeLayout
+        android:id="@+id/CustomRewardLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/CustomRewardInnerLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/CustomRewardText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:" />
+            <EditText
+                android:id="@+id/CustomRewardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/CustomRewardInnerLayout2"
+            android:layout_below="@id/CustomRewardInnerLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top">
+            <TextView
+                android:id="@+id/CustomRewardText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Content:" />
+            <EditText
+                android:id="@+id/CustomRewardContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:singleLine="false"
+                android:lines="5"
+                android:layout_toRightOf="@id/CustomRewardText2" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/CustomRewardInnerLayout3"
+            android:layout_below="@id/CustomRewardInnerLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/CustomRewardText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Goals:" />
+            <ListView
+                android:id="@+id/CustomRewardGoalsList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CustomRewardText3" />
+            <Button
+                android:id="@+id/CustomRewardAddGoalButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CustomRewardGoalsList"
+                android:text="Add Goal" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/SubmitCustomRewardButton"
+            android:layout_below="@id/CustomRewardInnerLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
+    </RelativeLayout>
 </LinearLayout>
