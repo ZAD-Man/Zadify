@@ -156,7 +156,7 @@ namespace Zadify.Activities
 
                     var updateGoalButton = FindViewById<Button>(Resource.Id.UpdateGoalButton);
 
-                    if (displayGoal.DueDate.CompareTo(DateTime.Today) > 0)
+                    if (!displayGoal.IsPastDue())
                     {
                         updateGoalButton.Click += delegate
                             {
@@ -214,7 +214,7 @@ namespace Zadify.Activities
 
                     var displayGoal = sortedGoals[position];
 
-                    if (displayGoal.DueDate.CompareTo(DateTime.Today) <= 0)
+                    if (displayGoal.IsPastDue())
                     {
                         displayGoal.Viewed();
                         storedGoals[storedGoals.IndexOf(displayGoal)] = displayGoal;

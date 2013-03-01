@@ -30,6 +30,18 @@ namespace Zadify
             Progress = Math.Abs((double) GoalCompletedAmount/GoalAmount);
         }
 
+        public bool IsCompleted()
+        {
+            var isCompleted = GoalCompletedAmount < Math.Abs(GoalAmount);
+            return isCompleted;
+        }
+
+        public bool IsPastDue()
+        {
+            var isPastDue = DueDate.CompareTo(DateTime.Today) <= 0;
+            return isPastDue;
+        }
+
         public void Viewed()
         {
             ViewedPostDueDate = true;

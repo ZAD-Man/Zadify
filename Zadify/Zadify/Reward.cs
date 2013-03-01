@@ -64,12 +64,9 @@ namespace Zadify
             bool isUnlocked = true;
             if (RequiredGoals != null)
             {
-                foreach (var requiredGoal in RequiredGoals)
+                foreach (var requiredGoal in RequiredGoals.Where(requiredGoal => requiredGoal.IsCompleted()))
                 {
-                    if (requiredGoal.GoalCompletedAmount < Math.Abs(requiredGoal.GoalAmount))
-                    {
-                        isUnlocked = false;
-                    }
+                    isUnlocked = false;
                 }
             }
             else

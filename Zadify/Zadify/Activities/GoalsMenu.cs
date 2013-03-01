@@ -63,7 +63,7 @@ namespace Zadify.Activities
 
                             var displayGoal = sortedGoals[position];
 
-                            if (displayGoal.DueDate.CompareTo(DateTime.Today) <= 0 && monsterMode)
+                            if (displayGoal.IsPastDue() && monsterMode)
                             {
                                 MakeMonsterDialog(displayGoal);
                             }
@@ -97,7 +97,7 @@ namespace Zadify.Activities
         private string AddDoneIfDone(Goal goal, string displayString)
         {
             var doneString = displayString;
-            if (goal.DueDate.CompareTo(DateTime.Today) <= 0)
+            if (goal.IsPastDue())
             {
                 doneString = "(Done)" + displayString;
             }

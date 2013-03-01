@@ -21,8 +21,14 @@ namespace Zadify.Activities
 
             var customRewardContent = FindViewById<EditText>(Resource.Id.CustomRewardContent);
 
-            var customRewardsGoalsList = FindViewById<ListView>(Resource.Id.CustomRewardGoalsList);
+            var customRewardGoalsList = FindViewById<ListView>(Resource.Id.CustomRewardGoalsList);
             var goalsList = new List<Goal>(); //TODO: Fill this list whenever a new goal is added
+
+            var customRewardAddGoalButton = FindViewById<Button>(Resource.Id.CustomRewardAddGoalButton);
+            customRewardAddGoalButton.Click += delegate
+                {
+
+                };
 
             var submitCustomRewardButton = FindViewById<Button>(Resource.Id.SubmitCustomRewardButton);
             submitCustomRewardButton.Click += delegate
@@ -32,7 +38,7 @@ namespace Zadify.Activities
                     if (goalsList.Count != 0)
                     {
                         var reward = new Reward(title, content, goalsList);
-                        //TODO: Save reward in Reward.zad
+                        //TODO: Save reward in Rewards.zad
                     }
                     else
                     {
