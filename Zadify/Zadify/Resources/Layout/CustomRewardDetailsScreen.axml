@@ -13,6 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Content" />
+    <TextView
+        android:id="@+id/CustomRewardDisplayGoalsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Required Goals:" />
     <ListView
         android:id="@+id/CustomRewardDisplayGoalList"
         android:layout_width="wrap_content"

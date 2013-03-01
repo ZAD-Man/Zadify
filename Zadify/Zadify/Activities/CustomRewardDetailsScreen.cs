@@ -57,7 +57,7 @@ namespace Zadify.Activities
             var deleteCustomRewardButton = FindViewById<Button>(Resource.Id.DeleteCustomRewardButton);
             deleteCustomRewardButton.Click += delegate
                 {
-                    var deleteCustomRewardForm = new Intent(this, typeof(DeleteCustomRewardForm));
+                    var deleteCustomRewardForm = new Intent(this, typeof (DeleteCustomRewardForm));
                     deleteCustomRewardForm.PutExtra("Position", position);
                     StartActivity(deleteCustomRewardForm);
                     Finish();
