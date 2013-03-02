@@ -70,6 +70,7 @@
     <Compile Include="Activities\RankDetailsScreen.cs" />
     <Compile Include="Activities\RanksMenu.cs" />
     <Compile Include="Activities\RewardsMenu.cs" />
+    <Compile Include="Activities\SelectCustomRewardGoal.cs" />
     <Compile Include="Activities\SettingsMenu.cs" />
     <Compile Include="Activities\SocialMenu.cs" />
     <Compile Include="Activities\UnlockedItemsScreen.cs" />

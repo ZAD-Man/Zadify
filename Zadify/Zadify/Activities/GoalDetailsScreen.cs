@@ -30,7 +30,7 @@ namespace Zadify.Activities
 
             var position = Intent.GetIntExtra("Position", -1);
             var isCompleted = Intent.GetBooleanExtra("IsCompleted", false);
-            
+
             if (position != -1)
             {
                 var storedGoals = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
