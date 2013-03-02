@@ -1,0 +1,21 @@
+3/1-3/7
+	3/1-3/3
+	Finish ability to make custom rewards
+	Polish existing functionality, make everything work and look right
+	Spend mornings learning about Facebook API & push notifications
+		
+	3/4-3/7
+	Check in with Matt about above on 3/4
+	1.Implement Push Notifications
+	2.Implement Facebook sharing
+	
+	Deliver:
+	All tasks from 2 weeks ago completed
+	Push Notifications displayed 1 day before due
+	Facebook sharing working for static messages
+	
+3/7-3/14
+	Let push notifications' time be customized
+	Facebook sharing changes depending on situation
+	Make everything for Defense. PRACTICE 108 TIMES.
+	
