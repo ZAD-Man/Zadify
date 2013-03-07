@@ -1,0 +1,6 @@
+Daily Plan - 3/2
+
+1. Work on UI customization
+2. Go through bug/suggestion list, fix.
+X. Get a haircut.
+-. Watch PushSharp video, test out.

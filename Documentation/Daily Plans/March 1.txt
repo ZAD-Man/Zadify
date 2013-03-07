@@ -1,7 +1,7 @@
 Daily Plan - 3/1
 
-1. Finish Custom Goal creation - Goal Selection activity and populate associated goals button
-2. Start on Discrete A10, go as far as learned
+X. Finish Custom Goal creation - Goal Selection activity and populate associated goals button
+X. Start on Discrete A10, go as far as learned
 3. Work on UI customization
 4. Go through bug/suggestion list, fix.
 5. If time, watch PushSharp video, test out.
