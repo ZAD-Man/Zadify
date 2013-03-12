@@ -15,9 +15,14 @@ namespace ZadifyTests
 {
 	
 	
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("Novell.MonoDroid.Build.Tasks", "1.0.0.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
 	public partial class Resource
 	{
+		
+		Resource()
+		{
+			global::Android.Runtime.ResourceIdManager.UpdateIdValues ();
+		}
 		
 		public static void UpdateIdValues()
 		{
@@ -37,6 +42,9 @@ namespace ZadifyTests
 			// aapt resource value: 0x7f020000
 			public const int Icon = 2130837504;
 			
+			// aapt resource value: 0x7f020001
+			public const int monoandroidsplash = 2130837505;
+			
 			private Drawable()
 			{
 			}
@@ -45,8 +53,8 @@ namespace ZadifyTests
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int MyButton = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int MyButton = 2131099648;
 			
 			private Id()
 			{
@@ -58,6 +66,9 @@ namespace ZadifyTests
 			
 			// aapt resource value: 0x7f030000
 			public const int Main = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int monoandroidsplash = 2130903041;
 			
 			private Layout()
 			{
@@ -74,6 +85,17 @@ namespace ZadifyTests
 			public const int Hello = 2130968576;
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int Mono_Android_Theme_Splash = 2131034112;
+			
+			private Style()
 			{
 			}
 		}

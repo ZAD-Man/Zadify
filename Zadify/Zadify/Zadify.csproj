@@ -67,6 +67,7 @@
     <Compile Include="Activities\MainMenu.cs" />
     <Compile Include="Activities\MonsterDisplay.cs" />
     <Compile Include="Activities\NewsFeedScreen.cs" />
+    <Compile Include="Activities\PushActivity.cs" />
     <Compile Include="Activities\RankDetailsScreen.cs" />
     <Compile Include="Activities\RanksMenu.cs" />
     <Compile Include="Activities\RewardsMenu.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Enums\FitnessItems.cs" />
     <Compile Include="Enums\FitnessWeights.cs" />
     <Compile Include="Goal.cs" />
+    <Compile Include="PushService.cs" />
     <Compile Include="ReadingGoal.cs" />
     <Compile Include="JavaIO.cs" />
     <Compile Include="Enums\ReadingItems.cs" />
@@ -170,6 +172,9 @@
     <AndroidResource Include="Resources\Layout\DeleteCustomRewardForm.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\Layout\PushActivity.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\MainMenu.axml" />
@@ -184,6 +189,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PushSharp.Client.MonoForAndroid.Gcm\PushSharp.Client.MonoForAndroid.Gcm.csproj">
+      <Project>{1466D096-69FA-4B75-BBB6-533FFAF5D4EB}</Project>
+      <Name>PushSharp.Client.MonoForAndroid.Gcm</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

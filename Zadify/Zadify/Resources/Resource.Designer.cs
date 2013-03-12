@@ -15,9 +15,14 @@ namespace Zadify
 {
 	
 	
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("Novell.MonoDroid.Build.Tasks", "1.0.0.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
 	public partial class Resource
 	{
+		
+		Resource()
+		{
+			global::Android.Runtime.ResourceIdManager.UpdateIdValues ();
+		}
 		
 		public static void UpdateIdValues()
 		{
@@ -81,6 +86,9 @@ namespace Zadify
 			// aapt resource value: 0x7f020000
 			public const int Icon = 2130837504;
 			
+			// aapt resource value: 0x7f020001
+			public const int monoandroidsplash = 2130837505;
+			
 			private Drawable()
 			{
 			}
@@ -89,641 +97,659 @@ namespace Zadify
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060002
-			public const int CompetitionForm = 2131099650;
+			// aapt resource value: 0x7f070002
+			public const int CompetitionForm = 2131165186;
 			
-			// aapt resource value: 0x7f0600cc
-			public const int CompetitionsButton = 2131099852;
+			// aapt resource value: 0x7f0700d2
+			public const int CompetitionsButton = 2131165394;
 			
-			// aapt resource value: 0x7f0600bb
-			public const int CompletedGoalsButton = 2131099835;
+			// aapt resource value: 0x7f0700bb
+			public const int CompletedGoalsButton = 2131165371;
 			
-			// aapt resource value: 0x7f060001
-			public const int CompletedGoalsList = 2131099649;
+			// aapt resource value: 0x7f070001
+			public const int CompletedGoalsList = 2131165185;
 			
-			// aapt resource value: 0x7f0600af
-			public const int ConfirmDeleteCustomRewardButton = 2131099823;
+			// aapt resource value: 0x7f0700af
+			public const int ConfirmDeleteCustomRewardButton = 2131165359;
 			
-			// aapt resource value: 0x7f0600b1
-			public const int ConfirmDeleteGoalButton = 2131099825;
+			// aapt resource value: 0x7f0700b1
+			public const int ConfirmDeleteGoalButton = 2131165361;
 			
-			// aapt resource value: 0x7f0600b0
-			public const int ConfirmDeleteGoalText = 2131099824;
+			// aapt resource value: 0x7f0700b0
+			public const int ConfirmDeleteGoalText = 2131165360;
 			
-			// aapt resource value: 0x7f060014
-			public const int CreateCompetitionButton = 2131099668;
+			// aapt resource value: 0x7f070014
+			public const int CreateCompetitionButton = 2131165204;
 			
-			// aapt resource value: 0x7f060013
-			public const int CreateCustomGoalButton = 2131099667;
+			// aapt resource value: 0x7f070013
+			public const int CreateCustomGoalButton = 2131165203;
 			
-			// aapt resource value: 0x7f0600b9
-			public const int CreateGoalButton = 2131099833;
+			// aapt resource value: 0x7f0700b9
+			public const int CreateGoalButton = 2131165369;
 			
-			// aapt resource value: 0x7f060012
-			public const int CreatePredefinedGoalButton = 2131099666;
+			// aapt resource value: 0x7f070012
+			public const int CreatePredefinedGoalButton = 2131165202;
 			
-			// aapt resource value: 0x7f0600ac
-			public const int CreateRewardButton = 2131099820;
+			// aapt resource value: 0x7f0700ac
+			public const int CreateRewardButton = 2131165356;
 			
-			// aapt resource value: 0x7f0600c6
-			public const int CurrentRank = 2131099846;
+			// aapt resource value: 0x7f0700cc
+			public const int CurrentRank = 2131165388;
 			
-			// aapt resource value: 0x7f06000c
-			public const int CustomGoalDaysNumber = 2131099660;
+			// aapt resource value: 0x7f07000c
+			public const int CustomGoalDaysNumber = 2131165196;
 			
-			// aapt resource value: 0x7f060005
-			public const int CustomGoalInnerLayout1 = 2131099653;
+			// aapt resource value: 0x7f070005
+			public const int CustomGoalInnerLayout1 = 2131165189;
 			
-			// aapt resource value: 0x7f06000a
-			public const int CustomGoalInnerLayout2 = 2131099658;
+			// aapt resource value: 0x7f07000a
+			public const int CustomGoalInnerLayout2 = 2131165194;
 			
-			// aapt resource value: 0x7f06000e
-			public const int CustomGoalInnerLayout3 = 2131099662;
+			// aapt resource value: 0x7f07000e
+			public const int CustomGoalInnerLayout3 = 2131165198;
 			
-			// aapt resource value: 0x7f060008
-			public const int CustomGoalItems = 2131099656;
+			// aapt resource value: 0x7f070008
+			public const int CustomGoalItems = 2131165192;
 			
-			// aapt resource value: 0x7f060004
-			public const int CustomGoalLayout = 2131099652;
+			// aapt resource value: 0x7f070004
+			public const int CustomGoalLayout = 2131165188;
 			
-			// aapt resource value: 0x7f060007
-			public const int CustomGoalNumber = 2131099655;
+			// aapt resource value: 0x7f070007
+			public const int CustomGoalNumber = 2131165191;
 			
-			// aapt resource value: 0x7f060009
-			public const int CustomGoalRepeatCheckbox = 2131099657;
+			// aapt resource value: 0x7f070009
+			public const int CustomGoalRepeatCheckbox = 2131165193;
 			
-			// aapt resource value: 0x7f060010
-			public const int CustomGoalSelectDate = 2131099664;
+			// aapt resource value: 0x7f070010
+			public const int CustomGoalSelectDate = 2131165200;
 			
-			// aapt resource value: 0x7f060006
-			public const int CustomGoalText1 = 2131099654;
+			// aapt resource value: 0x7f070006
+			public const int CustomGoalText1 = 2131165190;
 			
-			// aapt resource value: 0x7f06000b
-			public const int CustomGoalText2 = 2131099659;
+			// aapt resource value: 0x7f07000b
+			public const int CustomGoalText2 = 2131165195;
 			
-			// aapt resource value: 0x7f06000d
-			public const int CustomGoalText3 = 2131099661;
+			// aapt resource value: 0x7f07000d
+			public const int CustomGoalText3 = 2131165197;
 			
-			// aapt resource value: 0x7f06000f
-			public const int CustomGoalText4 = 2131099663;
+			// aapt resource value: 0x7f07000f
+			public const int CustomGoalText4 = 2131165199;
 			
-			// aapt resource value: 0x7f0600a5
-			public const int CustomRewardAddGoalButton = 2131099813;
+			// aapt resource value: 0x7f0700a5
+			public const int CustomRewardAddGoalButton = 2131165349;
 			
-			// aapt resource value: 0x7f0600a1
-			public const int CustomRewardContent = 2131099809;
+			// aapt resource value: 0x7f0700a1
+			public const int CustomRewardContent = 2131165345;
 			
-			// aapt resource value: 0x7f0600a8
-			public const int CustomRewardDisplayContent = 2131099816;
+			// aapt resource value: 0x7f0700a8
+			public const int CustomRewardDisplayContent = 2131165352;
 			
-			// aapt resource value: 0x7f0600aa
-			public const int CustomRewardDisplayGoalList = 2131099818;
+			// aapt resource value: 0x7f0700aa
+			public const int CustomRewardDisplayGoalList = 2131165354;
 			
-			// aapt resource value: 0x7f0600a9
-			public const int CustomRewardDisplayGoalsText = 2131099817;
+			// aapt resource value: 0x7f0700a9
+			public const int CustomRewardDisplayGoalsText = 2131165353;
 			
-			// aapt resource value: 0x7f0600a7
-			public const int CustomRewardDisplayTitle = 2131099815;
+			// aapt resource value: 0x7f0700a7
+			public const int CustomRewardDisplayTitle = 2131165351;
 			
-			// aapt resource value: 0x7f0600a4
-			public const int CustomRewardGoalsList = 2131099812;
+			// aapt resource value: 0x7f0700a4
+			public const int CustomRewardGoalsList = 2131165348;
 			
-			// aapt resource value: 0x7f06009c
-			public const int CustomRewardInnerLayout1 = 2131099804;
+			// aapt resource value: 0x7f07009c
+			public const int CustomRewardInnerLayout1 = 2131165340;
 			
-			// aapt resource value: 0x7f06009f
-			public const int CustomRewardInnerLayout2 = 2131099807;
+			// aapt resource value: 0x7f07009f
+			public const int CustomRewardInnerLayout2 = 2131165343;
 			
-			// aapt resource value: 0x7f0600a2
-			public const int CustomRewardInnerLayout3 = 2131099810;
+			// aapt resource value: 0x7f0700a2
+			public const int CustomRewardInnerLayout3 = 2131165346;
 			
-			// aapt resource value: 0x7f06009b
-			public const int CustomRewardLayout = 2131099803;
+			// aapt resource value: 0x7f07009b
+			public const int CustomRewardLayout = 2131165339;
 			
-			// aapt resource value: 0x7f06009d
-			public const int CustomRewardText1 = 2131099805;
+			// aapt resource value: 0x7f07009d
+			public const int CustomRewardText1 = 2131165341;
 			
-			// aapt resource value: 0x7f0600a0
-			public const int CustomRewardText2 = 2131099808;
+			// aapt resource value: 0x7f0700a0
+			public const int CustomRewardText2 = 2131165344;
 			
-			// aapt resource value: 0x7f0600a3
-			public const int CustomRewardText3 = 2131099811;
+			// aapt resource value: 0x7f0700a3
+			public const int CustomRewardText3 = 2131165347;
 			
-			// aapt resource value: 0x7f06009e
-			public const int CustomRewardTitle = 2131099806;
+			// aapt resource value: 0x7f07009e
+			public const int CustomRewardTitle = 2131165342;
 			
-			// aapt resource value: 0x7f0600c8
-			public const int CustomRewardsButton = 2131099848;
+			// aapt resource value: 0x7f0700ce
+			public const int CustomRewardsButton = 2131165390;
 			
-			// aapt resource value: 0x7f0600ad
-			public const int CustomRewardsList = 2131099821;
+			// aapt resource value: 0x7f0700ad
+			public const int CustomRewardsList = 2131165357;
 			
-			// aapt resource value: 0x7f0600ab
-			public const int DeleteCustomRewardButton = 2131099819;
+			// aapt resource value: 0x7f0700ab
+			public const int DeleteCustomRewardButton = 2131165355;
 			
-			// aapt resource value: 0x7f0600ae
-			public const int DeleteCustomRewardText = 2131099822;
+			// aapt resource value: 0x7f0700ae
+			public const int DeleteCustomRewardText = 2131165358;
 			
-			// aapt resource value: 0x7f0600b8
-			public const int DeleteGoalButton = 2131099832;
+			// aapt resource value: 0x7f0700b8
+			public const int DeleteGoalButton = 2131165368;
 			
-			// aapt resource value: 0x7f06008a
-			public const int DietGainWeightInnerLayout1 = 2131099786;
+			// aapt resource value: 0x7f07008a
+			public const int DietGainWeightInnerLayout1 = 2131165322;
 			
-			// aapt resource value: 0x7f06008e
-			public const int DietGainWeightInnerLayout2 = 2131099790;
+			// aapt resource value: 0x7f07008e
+			public const int DietGainWeightInnerLayout2 = 2131165326;
 			
-			// aapt resource value: 0x7f06008d
-			public const int DietGainWeightItemsSpinner = 2131099789;
+			// aapt resource value: 0x7f07008d
+			public const int DietGainWeightItemsSpinner = 2131165325;
 			
-			// aapt resource value: 0x7f060089
-			public const int DietGainWeightLayout = 2131099785;
+			// aapt resource value: 0x7f070089
+			public const int DietGainWeightLayout = 2131165321;
 			
-			// aapt resource value: 0x7f06008c
-			public const int DietGainWeightNumber = 2131099788;
+			// aapt resource value: 0x7f07008c
+			public const int DietGainWeightNumber = 2131165324;
 			
-			// aapt resource value: 0x7f060090
-			public const int DietGainWeightSelectDate = 2131099792;
+			// aapt resource value: 0x7f070090
+			public const int DietGainWeightSelectDate = 2131165328;
 			
-			// aapt resource value: 0x7f06008b
-			public const int DietGainWeightText1 = 2131099787;
+			// aapt resource value: 0x7f07008b
+			public const int DietGainWeightText1 = 2131165323;
 			
-			// aapt resource value: 0x7f06008f
-			public const int DietGainWeightText2 = 2131099791;
+			// aapt resource value: 0x7f07008f
+			public const int DietGainWeightText2 = 2131165327;
 			
-			// aapt resource value: 0x7f060087
-			public const int DietGoalLayout = 2131099783;
+			// aapt resource value: 0x7f070087
+			public const int DietGoalLayout = 2131165319;
 			
-			// aapt resource value: 0x7f060088
-			public const int DietGoalTypeSpinner = 2131099784;
+			// aapt resource value: 0x7f070088
+			public const int DietGoalTypeSpinner = 2131165320;
 			
-			// aapt resource value: 0x7f060093
-			public const int DietLoseWeightInnerLayout1 = 2131099795;
+			// aapt resource value: 0x7f070093
+			public const int DietLoseWeightInnerLayout1 = 2131165331;
 			
-			// aapt resource value: 0x7f060097
-			public const int DietLoseWeightInnerLayout2 = 2131099799;
+			// aapt resource value: 0x7f070097
+			public const int DietLoseWeightInnerLayout2 = 2131165335;
 			
-			// aapt resource value: 0x7f060096
-			public const int DietLoseWeightItemsSpinner = 2131099798;
+			// aapt resource value: 0x7f070096
+			public const int DietLoseWeightItemsSpinner = 2131165334;
 			
-			// aapt resource value: 0x7f060092
-			public const int DietLoseWeightLayout = 2131099794;
+			// aapt resource value: 0x7f070092
+			public const int DietLoseWeightLayout = 2131165330;
 			
-			// aapt resource value: 0x7f060095
-			public const int DietLoseWeightNumber = 2131099797;
+			// aapt resource value: 0x7f070095
+			public const int DietLoseWeightNumber = 2131165333;
 			
-			// aapt resource value: 0x7f060099
-			public const int DietLoseWeightSelectDate = 2131099801;
+			// aapt resource value: 0x7f070099
+			public const int DietLoseWeightSelectDate = 2131165337;
 			
-			// aapt resource value: 0x7f060094
-			public const int DietLoseWeightText1 = 2131099796;
+			// aapt resource value: 0x7f070094
+			public const int DietLoseWeightText1 = 2131165332;
 			
-			// aapt resource value: 0x7f060098
-			public const int DietLoseWeightText2 = 2131099800;
+			// aapt resource value: 0x7f070098
+			public const int DietLoseWeightText2 = 2131165336;
 			
-			// aapt resource value: 0x7f06002d
-			public const int FinanceGoalLayout = 2131099693;
+			// aapt resource value: 0x7f07002d
+			public const int FinanceGoalLayout = 2131165229;
 			
-			// aapt resource value: 0x7f06002e
-			public const int FinanceGoalTypeSpinner = 2131099694;
+			// aapt resource value: 0x7f07002e
+			public const int FinanceGoalTypeSpinner = 2131165230;
 			
-			// aapt resource value: 0x7f060045
-			public const int FinancePayByDateInnerLayout1 = 2131099717;
+			// aapt resource value: 0x7f070045
+			public const int FinancePayByDateInnerLayout1 = 2131165253;
 			
-			// aapt resource value: 0x7f060049
-			public const int FinancePayByDateInnerLayout2 = 2131099721;
+			// aapt resource value: 0x7f070049
+			public const int FinancePayByDateInnerLayout2 = 2131165257;
 			
-			// aapt resource value: 0x7f060048
-			public const int FinancePayByDateItemsSpinner = 2131099720;
+			// aapt resource value: 0x7f070048
+			public const int FinancePayByDateItemsSpinner = 2131165256;
 			
-			// aapt resource value: 0x7f060044
-			public const int FinancePayByDateLayout = 2131099716;
+			// aapt resource value: 0x7f070044
+			public const int FinancePayByDateLayout = 2131165252;
 			
-			// aapt resource value: 0x7f060047
-			public const int FinancePayByDateNumber = 2131099719;
+			// aapt resource value: 0x7f070047
+			public const int FinancePayByDateNumber = 2131165255;
 			
-			// aapt resource value: 0x7f06004b
-			public const int FinancePayByDateSelectDate = 2131099723;
+			// aapt resource value: 0x7f07004b
+			public const int FinancePayByDateSelectDate = 2131165259;
 			
-			// aapt resource value: 0x7f060046
-			public const int FinancePayByDateText1 = 2131099718;
+			// aapt resource value: 0x7f070046
+			public const int FinancePayByDateText1 = 2131165254;
 			
-			// aapt resource value: 0x7f06004a
-			public const int FinancePayByDateText2 = 2131099722;
+			// aapt resource value: 0x7f07004a
+			public const int FinancePayByDateText2 = 2131165258;
 			
-			// aapt resource value: 0x7f06004e
-			public const int FinancePayPerTimespanInnerLayout1 = 2131099726;
+			// aapt resource value: 0x7f07004e
+			public const int FinancePayPerTimespanInnerLayout1 = 2131165262;
 			
-			// aapt resource value: 0x7f060052
-			public const int FinancePayPerTimespanInnerLayout2 = 2131099730;
+			// aapt resource value: 0x7f070052
+			public const int FinancePayPerTimespanInnerLayout2 = 2131165266;
 			
-			// aapt resource value: 0x7f060055
-			public const int FinancePayPerTimespanInnerLayout3 = 2131099733;
+			// aapt resource value: 0x7f070055
+			public const int FinancePayPerTimespanInnerLayout3 = 2131165269;
 			
-			// aapt resource value: 0x7f060051
-			public const int FinancePayPerTimespanItemsSpinner = 2131099729;
+			// aapt resource value: 0x7f070051
+			public const int FinancePayPerTimespanItemsSpinner = 2131165265;
 			
-			// aapt resource value: 0x7f06004d
-			public const int FinancePayPerTimespanLayout = 2131099725;
+			// aapt resource value: 0x7f07004d
+			public const int FinancePayPerTimespanLayout = 2131165261;
 			
-			// aapt resource value: 0x7f060050
-			public const int FinancePayPerTimespanNumber = 2131099728;
+			// aapt resource value: 0x7f070050
+			public const int FinancePayPerTimespanNumber = 2131165264;
 			
-			// aapt resource value: 0x7f060057
-			public const int FinancePayPerTimespanSelectDate = 2131099735;
+			// aapt resource value: 0x7f070057
+			public const int FinancePayPerTimespanSelectDate = 2131165271;
 			
-			// aapt resource value: 0x7f06004f
-			public const int FinancePayPerTimespanText1 = 2131099727;
+			// aapt resource value: 0x7f07004f
+			public const int FinancePayPerTimespanText1 = 2131165263;
 			
-			// aapt resource value: 0x7f060053
-			public const int FinancePayPerTimespanText2 = 2131099731;
+			// aapt resource value: 0x7f070053
+			public const int FinancePayPerTimespanText2 = 2131165267;
 			
-			// aapt resource value: 0x7f060056
-			public const int FinancePayPerTimespanText3 = 2131099734;
+			// aapt resource value: 0x7f070056
+			public const int FinancePayPerTimespanText3 = 2131165270;
 			
-			// aapt resource value: 0x7f060054
-			public const int FinancePayPerTimespanTimespanSpinner = 2131099732;
+			// aapt resource value: 0x7f070054
+			public const int FinancePayPerTimespanTimespanSpinner = 2131165268;
 			
-			// aapt resource value: 0x7f060030
-			public const int FinanceSaveByDateInnerLayout1 = 2131099696;
+			// aapt resource value: 0x7f070030
+			public const int FinanceSaveByDateInnerLayout1 = 2131165232;
 			
-			// aapt resource value: 0x7f060034
-			public const int FinanceSaveByDateInnerLayout2 = 2131099700;
+			// aapt resource value: 0x7f070034
+			public const int FinanceSaveByDateInnerLayout2 = 2131165236;
 			
-			// aapt resource value: 0x7f060033
-			public const int FinanceSaveByDateItemsSpinner = 2131099699;
+			// aapt resource value: 0x7f070033
+			public const int FinanceSaveByDateItemsSpinner = 2131165235;
 			
-			// aapt resource value: 0x7f06002f
-			public const int FinanceSaveByDateLayout = 2131099695;
+			// aapt resource value: 0x7f07002f
+			public const int FinanceSaveByDateLayout = 2131165231;
 			
-			// aapt resource value: 0x7f060032
-			public const int FinanceSaveByDateNumber = 2131099698;
+			// aapt resource value: 0x7f070032
+			public const int FinanceSaveByDateNumber = 2131165234;
 			
-			// aapt resource value: 0x7f060036
-			public const int FinanceSaveByDateSelectDate = 2131099702;
+			// aapt resource value: 0x7f070036
+			public const int FinanceSaveByDateSelectDate = 2131165238;
 			
-			// aapt resource value: 0x7f060031
-			public const int FinanceSaveByDateText1 = 2131099697;
+			// aapt resource value: 0x7f070031
+			public const int FinanceSaveByDateText1 = 2131165233;
 			
-			// aapt resource value: 0x7f060035
-			public const int FinanceSaveByDateText2 = 2131099701;
+			// aapt resource value: 0x7f070035
+			public const int FinanceSaveByDateText2 = 2131165237;
 			
-			// aapt resource value: 0x7f060039
-			public const int FinanceSavePerTimespanInnerLayout1 = 2131099705;
+			// aapt resource value: 0x7f070039
+			public const int FinanceSavePerTimespanInnerLayout1 = 2131165241;
 			
-			// aapt resource value: 0x7f06003d
-			public const int FinanceSavePerTimespanInnerLayout2 = 2131099709;
+			// aapt resource value: 0x7f07003d
+			public const int FinanceSavePerTimespanInnerLayout2 = 2131165245;
 			
-			// aapt resource value: 0x7f060040
-			public const int FinanceSavePerTimespanInnerLayout3 = 2131099712;
+			// aapt resource value: 0x7f070040
+			public const int FinanceSavePerTimespanInnerLayout3 = 2131165248;
 			
-			// aapt resource value: 0x7f06003c
-			public const int FinanceSavePerTimespanItemsSpinner = 2131099708;
+			// aapt resource value: 0x7f07003c
+			public const int FinanceSavePerTimespanItemsSpinner = 2131165244;
 			
-			// aapt resource value: 0x7f060038
-			public const int FinanceSavePerTimespanLayout = 2131099704;
+			// aapt resource value: 0x7f070038
+			public const int FinanceSavePerTimespanLayout = 2131165240;
 			
-			// aapt resource value: 0x7f06003b
-			public const int FinanceSavePerTimespanNumber = 2131099707;
+			// aapt resource value: 0x7f07003b
+			public const int FinanceSavePerTimespanNumber = 2131165243;
 			
-			// aapt resource value: 0x7f060042
-			public const int FinanceSavePerTimespanSelectDate = 2131099714;
+			// aapt resource value: 0x7f070042
+			public const int FinanceSavePerTimespanSelectDate = 2131165250;
 			
-			// aapt resource value: 0x7f06003a
-			public const int FinanceSavePerTimespanText1 = 2131099706;
+			// aapt resource value: 0x7f07003a
+			public const int FinanceSavePerTimespanText1 = 2131165242;
 			
-			// aapt resource value: 0x7f06003e
-			public const int FinanceSavePerTimespanText2 = 2131099710;
+			// aapt resource value: 0x7f07003e
+			public const int FinanceSavePerTimespanText2 = 2131165246;
 			
-			// aapt resource value: 0x7f060041
-			public const int FinanceSavePerTimespanText3 = 2131099713;
+			// aapt resource value: 0x7f070041
+			public const int FinanceSavePerTimespanText3 = 2131165249;
 			
-			// aapt resource value: 0x7f06003f
-			public const int FinanceSavePerTimespanTimespanSpinner = 2131099711;
+			// aapt resource value: 0x7f07003f
+			public const int FinanceSavePerTimespanTimespanSpinner = 2131165247;
 			
-			// aapt resource value: 0x7f060019
-			public const int FitnessByDateInnerLayout1 = 2131099673;
+			// aapt resource value: 0x7f070019
+			public const int FitnessByDateInnerLayout1 = 2131165209;
 			
-			// aapt resource value: 0x7f06001d
-			public const int FitnessByDateInnerLayout2 = 2131099677;
+			// aapt resource value: 0x7f07001d
+			public const int FitnessByDateInnerLayout2 = 2131165213;
 			
-			// aapt resource value: 0x7f06001c
-			public const int FitnessByDateItemsSpinner = 2131099676;
+			// aapt resource value: 0x7f07001c
+			public const int FitnessByDateItemsSpinner = 2131165212;
 			
-			// aapt resource value: 0x7f060018
-			public const int FitnessByDateLayout = 2131099672;
+			// aapt resource value: 0x7f070018
+			public const int FitnessByDateLayout = 2131165208;
 			
-			// aapt resource value: 0x7f06001b
-			public const int FitnessByDateNumber = 2131099675;
+			// aapt resource value: 0x7f07001b
+			public const int FitnessByDateNumber = 2131165211;
 			
-			// aapt resource value: 0x7f06001f
-			public const int FitnessByDateSelectDate = 2131099679;
+			// aapt resource value: 0x7f07001f
+			public const int FitnessByDateSelectDate = 2131165215;
 			
-			// aapt resource value: 0x7f06001a
-			public const int FitnessByDateText1 = 2131099674;
+			// aapt resource value: 0x7f07001a
+			public const int FitnessByDateText1 = 2131165210;
 			
-			// aapt resource value: 0x7f06001e
-			public const int FitnessByDateText2 = 2131099678;
+			// aapt resource value: 0x7f07001e
+			public const int FitnessByDateText2 = 2131165214;
 			
-			// aapt resource value: 0x7f060016
-			public const int FitnessGoalLayout = 2131099670;
+			// aapt resource value: 0x7f070016
+			public const int FitnessGoalLayout = 2131165206;
 			
-			// aapt resource value: 0x7f060017
-			public const int FitnessGoalTypeSpinner = 2131099671;
+			// aapt resource value: 0x7f070017
+			public const int FitnessGoalTypeSpinner = 2131165207;
 			
-			// aapt resource value: 0x7f060022
-			public const int FitnessPerTimespanInnerLayout1 = 2131099682;
+			// aapt resource value: 0x7f070022
+			public const int FitnessPerTimespanInnerLayout1 = 2131165218;
 			
-			// aapt resource value: 0x7f060026
-			public const int FitnessPerTimespanInnerLayout2 = 2131099686;
+			// aapt resource value: 0x7f070026
+			public const int FitnessPerTimespanInnerLayout2 = 2131165222;
 			
-			// aapt resource value: 0x7f060029
-			public const int FitnessPerTimespanInnerLayout3 = 2131099689;
+			// aapt resource value: 0x7f070029
+			public const int FitnessPerTimespanInnerLayout3 = 2131165225;
 			
-			// aapt resource value: 0x7f060025
-			public const int FitnessPerTimespanItemsSpinner = 2131099685;
+			// aapt resource value: 0x7f070025
+			public const int FitnessPerTimespanItemsSpinner = 2131165221;
 			
-			// aapt resource value: 0x7f060021
-			public const int FitnessPerTimespanLayout = 2131099681;
+			// aapt resource value: 0x7f070021
+			public const int FitnessPerTimespanLayout = 2131165217;
 			
-			// aapt resource value: 0x7f060024
-			public const int FitnessPerTimespanNumber = 2131099684;
+			// aapt resource value: 0x7f070024
+			public const int FitnessPerTimespanNumber = 2131165220;
 			
-			// aapt resource value: 0x7f06002b
-			public const int FitnessPerTimespanSelectDate = 2131099691;
+			// aapt resource value: 0x7f07002b
+			public const int FitnessPerTimespanSelectDate = 2131165227;
 			
-			// aapt resource value: 0x7f060023
-			public const int FitnessPerTimespanText1 = 2131099683;
+			// aapt resource value: 0x7f070023
+			public const int FitnessPerTimespanText1 = 2131165219;
 			
-			// aapt resource value: 0x7f060027
-			public const int FitnessPerTimespanText2 = 2131099687;
+			// aapt resource value: 0x7f070027
+			public const int FitnessPerTimespanText2 = 2131165223;
 			
-			// aapt resource value: 0x7f06002a
-			public const int FitnessPerTimespanText3 = 2131099690;
+			// aapt resource value: 0x7f07002a
+			public const int FitnessPerTimespanText3 = 2131165226;
 			
-			// aapt resource value: 0x7f060028
-			public const int FitnessPerTimespanTimespanSpinner = 2131099688;
+			// aapt resource value: 0x7f070028
+			public const int FitnessPerTimespanTimespanSpinner = 2131165224;
 			
-			// aapt resource value: 0x7f0600b3
-			public const int GoalDetailsActionText = 2131099827;
+			// aapt resource value: 0x7f0700b3
+			public const int GoalDetailsActionText = 2131165363;
 			
-			// aapt resource value: 0x7f0600b6
-			public const int GoalDetailsAmountCompletedText = 2131099830;
+			// aapt resource value: 0x7f0700b6
+			public const int GoalDetailsAmountCompletedText = 2131165366;
 			
-			// aapt resource value: 0x7f0600b5
-			public const int GoalDetailsDueDateText = 2131099829;
+			// aapt resource value: 0x7f0700b5
+			public const int GoalDetailsDueDateText = 2131165365;
 			
-			// aapt resource value: 0x7f0600b4
-			public const int GoalDetailsTimespanText = 2131099828;
+			// aapt resource value: 0x7f0700b4
+			public const int GoalDetailsTimespanText = 2131165364;
 			
-			// aapt resource value: 0x7f0600b2
-			public const int GoalDetailsTitle = 2131099826;
+			// aapt resource value: 0x7f0700b2
+			public const int GoalDetailsTitle = 2131165362;
 			
-			// aapt resource value: 0x7f0600bc
-			public const int GoalsButton = 2131099836;
+			// aapt resource value: 0x7f0700bc
+			public const int GoalsButton = 2131165372;
 			
-			// aapt resource value: 0x7f0600ba
-			public const int GoalsList = 2131099834;
+			// aapt resource value: 0x7f0700ba
+			public const int GoalsList = 2131165370;
 			
-			// aapt resource value: 0x7f0600c1
-			public const int MonsterDemoButton = 2131099841;
+			// aapt resource value: 0x7f0700c1
+			public const int MonsterDemoButton = 2131165377;
 			
-			// aapt resource value: 0x7f0600c2
-			public const int MonsterLayout1 = 2131099842;
+			// aapt resource value: 0x7f0700c3
+			public const int MonsterLayout1 = 2131165379;
 			
-			// aapt resource value: 0x7f0600c4
-			public const int MonsterLayout2 = 2131099844;
+			// aapt resource value: 0x7f0700c5
+			public const int MonsterLayout2 = 2131165381;
 			
-			// aapt resource value: 0x7f0600c9
-			public const int MonsterModeCheckbox = 2131099849;
+			// aapt resource value: 0x7f0700cf
+			public const int MonsterModeCheckbox = 2131165391;
 			
-			// aapt resource value: 0x7f0600c5
-			public const int MonsterOKButton = 2131099845;
+			// aapt resource value: 0x7f0700c6
+			public const int MonsterOKButton = 2131165382;
 			
-			// aapt resource value: 0x7f0600c3
-			public const int MonsterText = 2131099843;
+			// aapt resource value: 0x7f0700c4
+			public const int MonsterText = 2131165380;
 			
-			// aapt resource value: 0x7f060000
-			public const int NewCompetitionButton = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int NewCompetitionButton = 2131165184;
 			
-			// aapt resource value: 0x7f0600cb
-			public const int NewsFeedButton = 2131099851;
+			// aapt resource value: 0x7f0700d1
+			public const int NewsFeedButton = 2131165393;
 			
-			// aapt resource value: 0x7f060015
-			public const int PredefinedGoalTypeSpinner = 2131099669;
+			// aapt resource value: 0x7f070015
+			public const int PredefinedGoalTypeSpinner = 2131165205;
 			
-			// aapt resource value: 0x7f0600d2
-			public const int RanksButton = 2131099858;
+			// aapt resource value: 0x7f0700c2
+			public const int PushActivityButton = 2131165378;
 			
-			// aapt resource value: 0x7f06005c
-			public const int ReadingByDateInnerLayout1 = 2131099740;
+			// aapt resource value: 0x7f0700d8
+			public const int RanksButton = 2131165400;
 			
-			// aapt resource value: 0x7f060060
-			public const int ReadingByDateInnerLayout2 = 2131099744;
+			// aapt resource value: 0x7f07005c
+			public const int ReadingByDateInnerLayout1 = 2131165276;
 			
-			// aapt resource value: 0x7f06005f
-			public const int ReadingByDateItemsSpinner = 2131099743;
+			// aapt resource value: 0x7f070060
+			public const int ReadingByDateInnerLayout2 = 2131165280;
 			
-			// aapt resource value: 0x7f06005b
-			public const int ReadingByDateLayout = 2131099739;
+			// aapt resource value: 0x7f07005f
+			public const int ReadingByDateItemsSpinner = 2131165279;
 			
-			// aapt resource value: 0x7f06005e
-			public const int ReadingByDateNumber = 2131099742;
+			// aapt resource value: 0x7f07005b
+			public const int ReadingByDateLayout = 2131165275;
 			
-			// aapt resource value: 0x7f060062
-			public const int ReadingByDateSelectDate = 2131099746;
+			// aapt resource value: 0x7f07005e
+			public const int ReadingByDateNumber = 2131165278;
 			
-			// aapt resource value: 0x7f06005d
-			public const int ReadingByDateText1 = 2131099741;
+			// aapt resource value: 0x7f070062
+			public const int ReadingByDateSelectDate = 2131165282;
 			
-			// aapt resource value: 0x7f060061
-			public const int ReadingByDateText2 = 2131099745;
+			// aapt resource value: 0x7f07005d
+			public const int ReadingByDateText1 = 2131165277;
 			
-			// aapt resource value: 0x7f060059
-			public const int ReadingGoalLayout = 2131099737;
+			// aapt resource value: 0x7f070061
+			public const int ReadingByDateText2 = 2131165281;
 			
-			// aapt resource value: 0x7f06005a
-			public const int ReadingGoalTypeSpinner = 2131099738;
+			// aapt resource value: 0x7f070059
+			public const int ReadingGoalLayout = 2131165273;
 			
-			// aapt resource value: 0x7f060065
-			public const int ReadingPerTimespanInnerLayout1 = 2131099749;
+			// aapt resource value: 0x7f07005a
+			public const int ReadingGoalTypeSpinner = 2131165274;
 			
-			// aapt resource value: 0x7f060069
-			public const int ReadingPerTimespanInnerLayout2 = 2131099753;
+			// aapt resource value: 0x7f070065
+			public const int ReadingPerTimespanInnerLayout1 = 2131165285;
 			
-			// aapt resource value: 0x7f06006c
-			public const int ReadingPerTimespanInnerLayout3 = 2131099756;
+			// aapt resource value: 0x7f070069
+			public const int ReadingPerTimespanInnerLayout2 = 2131165289;
 			
-			// aapt resource value: 0x7f060068
-			public const int ReadingPerTimespanItemsSpinner = 2131099752;
+			// aapt resource value: 0x7f07006c
+			public const int ReadingPerTimespanInnerLayout3 = 2131165292;
 			
-			// aapt resource value: 0x7f060064
-			public const int ReadingPerTimespanLayout = 2131099748;
+			// aapt resource value: 0x7f070068
+			public const int ReadingPerTimespanItemsSpinner = 2131165288;
 			
-			// aapt resource value: 0x7f060067
-			public const int ReadingPerTimespanNumber = 2131099751;
+			// aapt resource value: 0x7f070064
+			public const int ReadingPerTimespanLayout = 2131165284;
 			
-			// aapt resource value: 0x7f06006e
-			public const int ReadingPerTimespanSelectDate = 2131099758;
+			// aapt resource value: 0x7f070067
+			public const int ReadingPerTimespanNumber = 2131165287;
 			
-			// aapt resource value: 0x7f060066
-			public const int ReadingPerTimespanText1 = 2131099750;
+			// aapt resource value: 0x7f07006e
+			public const int ReadingPerTimespanSelectDate = 2131165294;
 			
-			// aapt resource value: 0x7f06006a
-			public const int ReadingPerTimespanText2 = 2131099754;
+			// aapt resource value: 0x7f070066
+			public const int ReadingPerTimespanText1 = 2131165286;
 			
-			// aapt resource value: 0x7f06006d
-			public const int ReadingPerTimespanText3 = 2131099757;
+			// aapt resource value: 0x7f07006a
+			public const int ReadingPerTimespanText2 = 2131165290;
 			
-			// aapt resource value: 0x7f06006b
-			public const int ReadingPerTimespanTimespanSpinner = 2131099755;
+			// aapt resource value: 0x7f07006d
+			public const int ReadingPerTimespanText3 = 2131165293;
 			
-			// aapt resource value: 0x7f0600bd
-			public const int RewardsButton = 2131099837;
+			// aapt resource value: 0x7f07006b
+			public const int ReadingPerTimespanTimespanSpinner = 2131165291;
 			
-			// aapt resource value: 0x7f0600ca
-			public const int SaveSettingsButton = 2131099850;
+			// aapt resource value: 0x7f0700bd
+			public const int RewardsButton = 2131165373;
 			
-			// aapt resource value: 0x7f0600bf
-			public const int SettingsButton = 2131099839;
+			// aapt resource value: 0x7f0700d0
+			public const int SaveSettingsButton = 2131165392;
 			
-			// aapt resource value: 0x7f0600c0
-			public const int SetupButton = 2131099840;
+			// aapt resource value: 0x7f0700bf
+			public const int SettingsButton = 2131165375;
 			
-			// aapt resource value: 0x7f0600be
-			public const int SocialButton = 2131099838;
+			// aapt resource value: 0x7f0700c0
+			public const int SetupButton = 2131165376;
 			
-			// aapt resource value: 0x7f060003
-			public const int SubmitCompetitionButton = 2131099651;
+			// aapt resource value: 0x7f0700be
+			public const int SocialButton = 2131165374;
 			
-			// aapt resource value: 0x7f060011
-			public const int SubmitCustomGoalButton = 2131099665;
+			// aapt resource value: 0x7f070003
+			public const int SubmitCompetitionButton = 2131165187;
 			
-			// aapt resource value: 0x7f0600a6
-			public const int SubmitCustomRewardButton = 2131099814;
+			// aapt resource value: 0x7f070011
+			public const int SubmitCustomGoalButton = 2131165201;
 			
-			// aapt resource value: 0x7f060091
-			public const int SubmitDietGainWeightGoalButton = 2131099793;
+			// aapt resource value: 0x7f0700a6
+			public const int SubmitCustomRewardButton = 2131165350;
 			
-			// aapt resource value: 0x7f06009a
-			public const int SubmitDietLoseWeightGoalButton = 2131099802;
+			// aapt resource value: 0x7f070091
+			public const int SubmitDietGainWeightGoalButton = 2131165329;
 			
-			// aapt resource value: 0x7f06004c
-			public const int SubmitFinancePayByDateGoalButton = 2131099724;
+			// aapt resource value: 0x7f07009a
+			public const int SubmitDietLoseWeightGoalButton = 2131165338;
 			
-			// aapt resource value: 0x7f060058
-			public const int SubmitFinancePayPerTimespanGoalButton = 2131099736;
+			// aapt resource value: 0x7f07004c
+			public const int SubmitFinancePayByDateGoalButton = 2131165260;
 			
-			// aapt resource value: 0x7f060037
-			public const int SubmitFinanceSaveByDateGoalButton = 2131099703;
+			// aapt resource value: 0x7f070058
+			public const int SubmitFinancePayPerTimespanGoalButton = 2131165272;
 			
-			// aapt resource value: 0x7f060043
-			public const int SubmitFinanceSavePerTimespanGoalButton = 2131099715;
+			// aapt resource value: 0x7f070037
+			public const int SubmitFinanceSaveByDateGoalButton = 2131165239;
 			
-			// aapt resource value: 0x7f060020
-			public const int SubmitFitnessByDateGoalButton = 2131099680;
+			// aapt resource value: 0x7f070043
+			public const int SubmitFinanceSavePerTimespanGoalButton = 2131165251;
 			
-			// aapt resource value: 0x7f06002c
-			public const int SubmitFitnessPerTimespanGoalButton = 2131099692;
+			// aapt resource value: 0x7f070020
+			public const int SubmitFitnessByDateGoalButton = 2131165216;
 			
-			// aapt resource value: 0x7f060063
-			public const int SubmitReadingByDateGoalButton = 2131099747;
+			// aapt resource value: 0x7f07002c
+			public const int SubmitFitnessPerTimespanGoalButton = 2131165228;
 			
-			// aapt resource value: 0x7f06006f
-			public const int SubmitReadingPerTimespanGoalButton = 2131099759;
+			// aapt resource value: 0x7f070063
+			public const int SubmitReadingByDateGoalButton = 2131165283;
 			
-			// aapt resource value: 0x7f06007a
-			public const int SubmitWritingByDateGoalButton = 2131099770;
+			// aapt resource value: 0x7f07006f
+			public const int SubmitReadingPerTimespanGoalButton = 2131165295;
 			
-			// aapt resource value: 0x7f060086
-			public const int SubmitWritingPerTimespanGoalButton = 2131099782;
+			// aapt resource value: 0x7f07007a
+			public const int SubmitWritingByDateGoalButton = 2131165306;
 			
-			// aapt resource value: 0x7f0600d3
-			public const int UnlockedItemsButton = 2131099859;
+			// aapt resource value: 0x7f070086
+			public const int SubmitWritingPerTimespanGoalButton = 2131165318;
 			
-			// aapt resource value: 0x7f0600cd
-			public const int UnlockedItemsList = 2131099853;
+			// aapt resource value: 0x7f0700d9
+			public const int UnlockedItemsButton = 2131165401;
 			
-			// aapt resource value: 0x7f0600b7
-			public const int UpdateGoalButton = 2131099831;
+			// aapt resource value: 0x7f0700d3
+			public const int UnlockedItemsList = 2131165395;
 			
-			// aapt resource value: 0x7f0600ce
-			public const int UpdateGoalLayout = 2131099854;
+			// aapt resource value: 0x7f0700b7
+			public const int UpdateGoalButton = 2131165367;
 			
-			// aapt resource value: 0x7f0600d0
-			public const int UpdateGoalNumber = 2131099856;
+			// aapt resource value: 0x7f0700d4
+			public const int UpdateGoalLayout = 2131165396;
 			
-			// aapt resource value: 0x7f0600d1
-			public const int UpdateGoalSubmitButton = 2131099857;
+			// aapt resource value: 0x7f0700d6
+			public const int UpdateGoalNumber = 2131165398;
 			
-			// aapt resource value: 0x7f0600cf
-			public const int UpdateGoalText = 2131099855;
+			// aapt resource value: 0x7f0700d7
+			public const int UpdateGoalSubmitButton = 2131165399;
 			
-			// aapt resource value: 0x7f060073
-			public const int WritingByDateInnerLayout1 = 2131099763;
+			// aapt resource value: 0x7f0700d5
+			public const int UpdateGoalText = 2131165397;
 			
-			// aapt resource value: 0x7f060077
-			public const int WritingByDateInnerLayout2 = 2131099767;
+			// aapt resource value: 0x7f070073
+			public const int WritingByDateInnerLayout1 = 2131165299;
 			
-			// aapt resource value: 0x7f060076
-			public const int WritingByDateItemsSpinner = 2131099766;
+			// aapt resource value: 0x7f070077
+			public const int WritingByDateInnerLayout2 = 2131165303;
 			
-			// aapt resource value: 0x7f060072
-			public const int WritingByDateLayout = 2131099762;
+			// aapt resource value: 0x7f070076
+			public const int WritingByDateItemsSpinner = 2131165302;
 			
-			// aapt resource value: 0x7f060075
-			public const int WritingByDateNumber = 2131099765;
+			// aapt resource value: 0x7f070072
+			public const int WritingByDateLayout = 2131165298;
 			
-			// aapt resource value: 0x7f060079
-			public const int WritingByDateSelectDate = 2131099769;
+			// aapt resource value: 0x7f070075
+			public const int WritingByDateNumber = 2131165301;
 			
-			// aapt resource value: 0x7f060074
-			public const int WritingByDateText1 = 2131099764;
+			// aapt resource value: 0x7f070079
+			public const int WritingByDateSelectDate = 2131165305;
 			
-			// aapt resource value: 0x7f060078
-			public const int WritingByDateText2 = 2131099768;
+			// aapt resource value: 0x7f070074
+			public const int WritingByDateText1 = 2131165300;
 			
-			// aapt resource value: 0x7f060070
-			public const int WritingGoalLayout = 2131099760;
+			// aapt resource value: 0x7f070078
+			public const int WritingByDateText2 = 2131165304;
 			
-			// aapt resource value: 0x7f060071
-			public const int WritingGoalTypeSpinner = 2131099761;
+			// aapt resource value: 0x7f070070
+			public const int WritingGoalLayout = 2131165296;
 			
-			// aapt resource value: 0x7f06007c
-			public const int WritingPerTimespanInnerLayout1 = 2131099772;
+			// aapt resource value: 0x7f070071
+			public const int WritingGoalTypeSpinner = 2131165297;
 			
-			// aapt resource value: 0x7f060080
-			public const int WritingPerTimespanInnerLayout2 = 2131099776;
+			// aapt resource value: 0x7f07007c
+			public const int WritingPerTimespanInnerLayout1 = 2131165308;
 			
-			// aapt resource value: 0x7f060083
-			public const int WritingPerTimespanInnerLayout3 = 2131099779;
+			// aapt resource value: 0x7f070080
+			public const int WritingPerTimespanInnerLayout2 = 2131165312;
 			
-			// aapt resource value: 0x7f06007f
-			public const int WritingPerTimespanItemsSpinner = 2131099775;
+			// aapt resource value: 0x7f070083
+			public const int WritingPerTimespanInnerLayout3 = 2131165315;
 			
-			// aapt resource value: 0x7f06007b
-			public const int WritingPerTimespanLayout = 2131099771;
+			// aapt resource value: 0x7f07007f
+			public const int WritingPerTimespanItemsSpinner = 2131165311;
 			
-			// aapt resource value: 0x7f06007e
-			public const int WritingPerTimespanNumber = 2131099774;
+			// aapt resource value: 0x7f07007b
+			public const int WritingPerTimespanLayout = 2131165307;
 			
-			// aapt resource value: 0x7f060085
-			public const int WritingPerTimespanSelectDate = 2131099781;
+			// aapt resource value: 0x7f07007e
+			public const int WritingPerTimespanNumber = 2131165310;
 			
-			// aapt resource value: 0x7f06007d
-			public const int WritingPerTimespanText1 = 2131099773;
+			// aapt resource value: 0x7f070085
+			public const int WritingPerTimespanSelectDate = 2131165317;
 			
-			// aapt resource value: 0x7f060081
-			public const int WritingPerTimespanText2 = 2131099777;
+			// aapt resource value: 0x7f07007d
+			public const int WritingPerTimespanText1 = 2131165309;
 			
-			// aapt resource value: 0x7f060084
-			public const int WritingPerTimespanText3 = 2131099780;
+			// aapt resource value: 0x7f070081
+			public const int WritingPerTimespanText2 = 2131165313;
 			
-			// aapt resource value: 0x7f060082
-			public const int WritingPerTimespanTimespanSpinner = 2131099778;
+			// aapt resource value: 0x7f070084
+			public const int WritingPerTimespanText3 = 2131165316;
 			
-			// aapt resource value: 0x7f0600c7
-			public const int ZadifyRewardsButton = 2131099847;
+			// aapt resource value: 0x7f070082
+			public const int WritingPerTimespanTimespanSpinner = 2131165314;
+			
+			// aapt resource value: 0x7f0700cd
+			public const int ZadifyRewardsButton = 2131165389;
+			
+			// aapt resource value: 0x7f0700ca
+			public const int buttonRegister = 2131165386;
+			
+			// aapt resource value: 0x7f0700cb
+			public const int textHints = 2131165387;
+			
+			// aapt resource value: 0x7f0700c9
+			public const int textLastMessage = 2131165385;
+			
+			// aapt resource value: 0x7f0700c8
+			public const int textRegistrationId = 2131165384;
+			
+			// aapt resource value: 0x7f0700c7
+			public const int textRegistrationStatus = 2131165383;
 			
 			private Id()
 			{
@@ -776,34 +802,40 @@ namespace Zadify
 			public const int MainMenu = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int MonsterDisplay = 2130903054;
+			public const int monoandroidsplash = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int NewsFeedScreen = 2130903055;
+			public const int MonsterDisplay = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int RankDetailsScreen = 2130903056;
+			public const int NewsFeedScreen = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int RanksMenu = 2130903057;
+			public const int PushActivity = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int RewardsMenu = 2130903058;
+			public const int RankDetailsScreen = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int SettingsMenu = 2130903059;
+			public const int RanksMenu = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int SocialMenu = 2130903060;
+			public const int RewardsMenu = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int UnlockedItemsScreen = 2130903061;
+			public const int SettingsMenu = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int UpdateGoalForm = 2130903062;
+			public const int SocialMenu = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int ZadifyRewardsMenu = 2130903063;
+			public const int UnlockedItemsScreen = 2130903063;
+			
+			// aapt resource value: 0x7f030018
+			public const int UpdateGoalForm = 2130903064;
+			
+			// aapt resource value: 0x7f030019
+			public const int ZadifyRewardsMenu = 2130903065;
 			
 			private Layout()
 			{
@@ -823,6 +855,17 @@ namespace Zadify
 			public const int numberHint = 2130968577;
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int Mono_Android_Theme_Splash = 2131099648;
+			
+			private Style()
 			{
 			}
 		}
