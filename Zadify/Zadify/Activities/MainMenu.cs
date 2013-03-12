@@ -125,6 +125,9 @@ namespace Zadify.Activities
 
             var monsterDemoButton = FindViewById<Button>(Resource.Id.MonsterDemoButton);
             monsterDemoButton.Click += delegate { StartActivity(typeof (MonsterDisplay)); };
+            
+            var pushActivityButton = FindViewById<Button>(Resource.Id.PushActivityButton);
+            pushActivityButton.Click += delegate { StartActivity(typeof (PushActivity)); };
         }
     }
 }

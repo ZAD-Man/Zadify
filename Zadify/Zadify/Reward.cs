@@ -54,7 +54,13 @@ namespace Zadify
             {
                 for (int i = 0; i < RequiredGoals.Count; i++)
                 {
-                    RequiredGoals[i] = storedGoals[storedGoals.IndexOf(RequiredGoals[i])];
+                    foreach (Goal goal in storedGoals)
+                    {
+                        if (RequiredGoals[i].Summary() == goal.Summary())
+                        {
+                            RequiredGoals[i] = goal;
+                        }
+                    }
                 }
             }
         }

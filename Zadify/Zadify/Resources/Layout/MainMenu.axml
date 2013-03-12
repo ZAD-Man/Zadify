@@ -33,4 +33,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Monster Demo" />
+  <Button
+        android:id="@+id/PushActivityButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Push Activity" />
 </LinearLayout>

@@ -21,13 +21,17 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.CustomRewardDetailsScreen);
 
+            var storedGoals = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
+
             var storedRewards = JavaIO.LoadData<List<Reward>>(this, "Rewards.zad");
 
             var position = Intent.GetIntExtra("Position", -1);
 
-            if (storedRewards != null && position != -1)
+            if (storedGoals != null && storedRewards != null && position != -1)
             {
                 var displayReward = storedRewards[position];
+
+                displayReward.UpdateGoals(storedGoals);
 
                 var customRewardDisplayTitle = FindViewById<TextView>(Resource.Id.CustomRewardDisplayTitle);
                 customRewardDisplayTitle.Text = displayReward.Name;
