@@ -47,7 +47,6 @@
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Json" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -96,9 +95,9 @@
     <Compile Include="ReadingGoal.cs" />
     <Compile Include="JavaIO.cs" />
     <Compile Include="Enums\ReadingItems.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\WritingItems.cs" />
-    <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Reward.cs" />
     <Compile Include="WritingGoal.cs" />
   </ItemGroup>
@@ -198,7 +197,6 @@
       <Name>PushSharp.Client.MonoForAndroid.Gcm</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
