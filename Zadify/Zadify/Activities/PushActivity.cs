@@ -11,62 +11,54 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using PushSharp.Client;
-using PushSharp.ClientSample.MonoForAndroid;
+using Zadify.Push;
 
 namespace Zadify.Activities
 {
-    [Activity(Label = "My Activity")]
+    [Activity(Label = "Push Registration")]
     public class PushActivity : Activity
     {
-        //NOTE: You need to put your own email here!
-        // Whichever one you registered as the 'Role' email with google
         const string TAG = "PushSharp-GCM";
 
-        TextView textRegistrationStatus = null;
-        TextView textRegistrationId = null;
-        TextView textLastMsg = null;
-        Button buttonRegister = null;
-        bool registered = false;
+        TextView _textRegistrationStatus;
+        TextView _textRegistrationId;
+        TextView _textLastMsg;
+        Button _buttonRegister;
+        bool _isRegistered;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.PushActivity);
 
-            textRegistrationStatus = FindViewById<TextView>(Resource.Id.textRegistrationStatus);
-            textRegistrationId = FindViewById<TextView>(Resource.Id.textRegistrationId);
-            textLastMsg = FindViewById<TextView>(Resource.Id.textLastMessage);
-            buttonRegister = FindViewById<Button>(Resource.Id.buttonRegister);
+            _textRegistrationStatus = FindViewById<TextView>(Resource.Id.textRegistrationStatus);
+            _textRegistrationId = FindViewById<TextView>(Resource.Id.textRegistrationId);
+            _textLastMsg = FindViewById<TextView>(Resource.Id.textLastMessage);
+            _buttonRegister = FindViewById<Button>(Resource.Id.buttonRegister);
 
-            //Check to ensure everything's setup right
             PushClient.CheckDevice(this);
             PushClient.CheckManifest(this);
 
 
-            this.buttonRegister.Click += delegate
+            _buttonRegister.Click += delegate
             {
-                if (!registered)
+                if (!_isRegistered)
                 {
                     Log.Info(TAG, "Registering...");
 
-                    //Call to register
                     PushClient.Register(this, PushHandlerBroadcastReceiver.SENDER_IDS);
                 }
                 else
                 {
                     Log.Info(TAG, "Unregistering...");
 
-                    //Call to unregister
                     PushClient.UnRegister(this);
                 }
 
                 RunOnUiThread(() =>
                 {
-                    //Disable the button so that we can't click it again
-                    //until we get back to the activity from a notification
-                    this.buttonRegister.Enabled = false;
+                    _buttonRegister.Enabled = false;
                 });
             };
         }
@@ -75,39 +67,36 @@ namespace Zadify.Activities
         {
             base.OnResume();
 
-            updateView();
+            UpdateView();
         }
 
-        void updateView()
+        void UpdateView()
         {
-            //Get the stored latest registration id
             var registrationId = PushClient.GetRegistrationId(this);
 
-            //If it's empty, we need to register
             if (string.IsNullOrEmpty(registrationId))
             {
-                registered = false;
-                this.textRegistrationStatus.Text = "Registered: No";
-                this.textRegistrationId.Text = "Id: N/A";
-                this.buttonRegister.Text = "Register...";
+                _isRegistered = false;
+                _textRegistrationStatus.Text = "Registered: No";
+                _textRegistrationId.Text = "Id: N/A";
+                _buttonRegister.Text = "Register...";
 
                 Log.Info(TAG, "Not registered...");
             }
             else
             {
-                registered = true;
-                this.textRegistrationStatus.Text = "Registered: Yes";
-                this.textRegistrationId.Text = "Id: " + registrationId;
-                this.buttonRegister.Text = "Unregister...";
+                _isRegistered = true;
+                _textRegistrationStatus.Text = "Registered: Yes";
+                _textRegistrationId.Text = "Id: " + registrationId;
+                _buttonRegister.Text = "Unregister...";
 
                 Log.Info(TAG, "Already Registered: " + registrationId);
             }
 
-            var prefs = GetSharedPreferences(this.PackageName, FileCreationMode.Private);
-            this.textLastMsg.Text = "Last Msg: " + prefs.GetString("last_msg", "N/A");
+            var prefs = GetSharedPreferences(PackageName, FileCreationMode.Private);
+            _textLastMsg.Text = "Last Msg: " + prefs.GetString("last_msg", "N/A");
 
-            //Enable the button as it was normally disabled
-            this.buttonRegister.Enabled = true;
+            _buttonRegister.Enabled = true;
         }
     }
 }

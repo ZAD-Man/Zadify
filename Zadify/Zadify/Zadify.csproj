@@ -90,7 +90,8 @@
     <Compile Include="Enums\FitnessItems.cs" />
     <Compile Include="Enums\FitnessWeights.cs" />
     <Compile Include="Goal.cs" />
-    <Compile Include="PushService.cs" />
+    <Compile Include="Push\PushHandlerBroadcastReceiver.cs" />
+    <Compile Include="Push\PushHandlerService.cs" />
     <Compile Include="ReadingGoal.cs" />
     <Compile Include="JavaIO.cs" />
     <Compile Include="Enums\ReadingItems.cs" />
