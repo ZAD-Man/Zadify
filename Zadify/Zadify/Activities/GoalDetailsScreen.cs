@@ -28,6 +28,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.GoalDetailsScreen);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.GoalDetailsScreenLayout);
+            layout.SetBackgroundResource(Resource.Color.darkred);
+
             var position = Intent.GetIntExtra("Position", -1);
             var isCompleted = Intent.GetBooleanExtra("IsCompleted", false);
 

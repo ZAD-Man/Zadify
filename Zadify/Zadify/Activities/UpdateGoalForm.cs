@@ -20,6 +20,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.UpdateGoalForm);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.UpdateGoalFormLayout);
+            layout.SetBackgroundResource(Resource.Color.darkred);
+
             var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
 
             var monsterMode = preferences.GetBoolean("MonsterMode", false);

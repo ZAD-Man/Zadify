@@ -16,6 +16,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.MonsterDisplay);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.MonsterDisplayLayout);
+            layout.SetBackgroundResource(Resource.Color.darkred);
+
             var monsterText = FindViewById<TextView>(Resource.Id.MonsterText);
 
             var displayType = Intent.GetStringExtra("DisplayType");

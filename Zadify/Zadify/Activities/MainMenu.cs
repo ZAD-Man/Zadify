@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Util;
 using Android.Views;
@@ -22,21 +23,16 @@ namespace Zadify.Activities
             SetContentView(Resource.Layout.MainMenu);
 
             var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
-
-            var preferencesEditor2 = preferences.Edit();
-            preferencesEditor2.PutInt("Rank", 0);
-            preferencesEditor2.Apply();
+            var preferencesEditor = preferences.Edit();
             
             if (!preferences.Contains("Rank"))
             {
-                var preferencesEditor = preferences.Edit();
                 preferencesEditor.PutInt("Rank", 0);
                 preferencesEditor.Apply();
             }
 
             if (!preferences.Contains("MonsterMode"))
             {
-                var preferencesEditor = preferences.Edit();
                 preferencesEditor.PutBoolean("MonsterMode", true);
                 preferencesEditor.Apply();
             }
@@ -85,6 +81,7 @@ namespace Zadify.Activities
 
             var settingsButton = FindViewById<Button>(Resource.Id.SettingsButton);
             settingsButton.Click += delegate { StartActivity(typeof (SettingsMenu)); };
+            //settingsButton.SetBackgroundColor();
 
             var setupButton = FindViewById<Button>(Resource.Id.SetupButton);
             setupButton.Click += delegate

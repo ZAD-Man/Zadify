@@ -16,6 +16,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.RewardsMenu);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.RewardsMenuLayout);
+            layout.SetBackgroundResource(Resource.Color.darkblue);
+
             var RanksButton = FindViewById<Button>(Resource.Id.RanksButton);
             RanksButton.Click += delegate { StartActivity(typeof (RanksMenu)); };
 

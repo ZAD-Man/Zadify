@@ -186,6 +186,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\Values\colors.xml" />
+    <AndroidResource Include="Resources\Drawable\redButton.xml" />
+    <AndroidResource Include="Resources\Drawable\blueButton.xml" />
+    <AndroidResource Include="Resources\Drawable\grayButton.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PushSharp.Client.MonoForAndroid.Gcm\PushSharp.Client.MonoForAndroid.Gcm.csproj">

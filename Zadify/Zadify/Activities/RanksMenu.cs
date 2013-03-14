@@ -20,6 +20,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.RanksMenu);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.RanksMenuLayout);
+            layout.SetBackgroundResource(Resource.Color.darkblue);
+
             var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
             var preferencesEditor = preferences.Edit();
 

@@ -20,6 +20,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.CompletedGoalsMenu);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.CompletedGoalsMenuLayout);
+            layout.SetBackgroundResource(Resource.Color.darkred);
+
             try
             {
                 var completedGoalsList = FindViewById<ListView>(Resource.Id.CompletedGoalsList);

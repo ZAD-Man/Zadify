@@ -12,5 +12,6 @@
         android:id="@+id/SaveSettingsButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/grayButton"
         android:text="Save Settings" />
 </LinearLayout>

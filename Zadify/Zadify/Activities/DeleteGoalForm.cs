@@ -17,6 +17,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.DeleteGoalForm);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.DeleteGoalFormLayout);
+            layout.SetBackgroundResource(Resource.Color.darkred);
+
             var confirmDeleteButton = FindViewById<Button>(Resource.Id.ConfirmDeleteGoalButton);
             confirmDeleteButton.Click += delegate
                 {

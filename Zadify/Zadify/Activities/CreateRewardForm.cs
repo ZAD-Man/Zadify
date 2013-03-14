@@ -21,6 +21,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.CreateRewardForm);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.CreateRewardFormLayout);
+            layout.SetBackgroundResource(Resource.Color.darkblue);
+
             var customRewardTitle = FindViewById<EditText>(Resource.Id.CustomRewardTitle);
 
             var customRewardContent = FindViewById<EditText>(Resource.Id.CustomRewardContent);

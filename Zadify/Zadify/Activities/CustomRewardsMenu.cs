@@ -27,6 +27,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.CustomRewardsMenu);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.CustomRewardsMenuLayout);
+            layout.SetBackgroundResource(Resource.Color.darkblue);
+
             var createRewardButton = FindViewById<Button>(Resource.Id.CreateRewardButton);
             createRewardButton.Click += delegate { StartActivity(typeof (CreateRewardForm)); };
             try

@@ -18,6 +18,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.UnlockedItemsScreen);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.UnlockedItemsScreenLayout);
+            layout.SetBackgroundResource(Resource.Color.darkblue);
+
             var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
             var preferencesEditor = preferences.Edit();
 

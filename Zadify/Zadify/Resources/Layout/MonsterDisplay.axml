@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MonsterDisplayLayout"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
@@ -13,7 +14,7 @@
             android:id="@+id/MonsterText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="You poke around, but don&apos;t find anything."
+            android:text="You poke around, but don't find anything."
             android:gravity="center_vertical" />
     </LinearLayout>
     <LinearLayout
@@ -26,6 +27,7 @@
             android:id="@+id/MonsterOKButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
             android:text="OK" />
     </LinearLayout>
 </LinearLayout>

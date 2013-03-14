@@ -37,6 +37,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.CreatePredefinedGoalForm);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.CreatePredefinedGoalFormLayout);
+            layout.SetBackgroundResource(Resource.Color.darkred);
+
             var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
 
             if (!preferences.Contains("Rank"))

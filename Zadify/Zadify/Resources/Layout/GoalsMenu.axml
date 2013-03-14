@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/GoalsMenuLayout"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
@@ -7,7 +8,8 @@
         android:id="@+id/CreateGoalButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Create Goal" />
+        android:text="Create Goal"
+        android:background="@drawable/redButton" />
     <ListView
         android:id="@+id/GoalsList"
         android:layout_width="fill_parent"
@@ -16,5 +18,6 @@
         android:id="@+id/CompletedGoalsButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Completed Goals" />
+        android:text="Completed Goals"
+        android:background="@drawable/redButton" />
 </LinearLayout>

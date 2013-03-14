@@ -21,6 +21,8 @@ namespace Zadify.Activities
 
             var storedGoals = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
 
+            ListView.SetBackgroundResource(Resource.Color.darkblue);
+
             if (storedGoals != null)
             {
                 var selectGoalStrings = (from storedGoal in storedGoals where !storedGoal.IsPastDue() select storedGoal.Summary()).ToList();

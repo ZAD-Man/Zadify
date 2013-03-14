@@ -22,6 +22,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.ItemDetailsScreen);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.ItemDetailsScreenLayout);
+            layout.SetBackgroundResource(Resource.Color.darkblue);
+
             var itemTypeName = FindViewById<TextView>(Resource.Id.ItemTypeName);
             var foodNames = FindViewById<TextView>(Resource.Id.FoodNames);
             var defenseNames = FindViewById<TextView>(Resource.Id.DefenseNames);

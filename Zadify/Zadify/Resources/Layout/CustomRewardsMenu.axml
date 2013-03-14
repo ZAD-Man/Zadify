@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/CustomRewardsMenuLayout"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
@@ -7,6 +8,7 @@
         android:id="@+id/CreateRewardButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/blueButton"
         android:text="Create Reward" />
     <ListView
         android:id="@+id/CustomRewardsList"

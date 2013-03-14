@@ -21,6 +21,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.CustomRewardDetailsScreen);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.CustomRewardDetailsScreenLayout);
+            layout.SetBackgroundResource(Resource.Color.darkblue);
+
             var storedGoals = JavaIO.LoadData<List<Goal>>(this, "Goals.zad");
 
             var storedRewards = JavaIO.LoadData<List<Reward>>(this, "Rewards.zad");

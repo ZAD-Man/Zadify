@@ -1,6 +1,7 @@
 using Android.App;
 using Android.OS;
 using Android.Util;
+using Android.Views;
 using Android.Widget;
 
 namespace Zadify.Activities
@@ -15,6 +16,8 @@ namespace Zadify.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.CreateGoalMenu);
+            var layout = FindViewById<LinearLayout>(Resource.Id.CreateGoalMenuLayout);
+            layout.SetBackgroundResource(Resource.Color.darkred);
 
             var createPredefinedGoalButton = FindViewById<Button>(Resource.Id.CreatePredefinedGoalButton);
             createPredefinedGoalButton.Click += delegate { StartActivity(typeof (CreatePredefinedGoalForm)); };
@@ -23,7 +26,8 @@ namespace Zadify.Activities
             createCustomGoalButton.Click += delegate { StartActivity(typeof (CreateCustomGoalForm)); };
 
             var createCompetitionButton = FindViewById<Button>(Resource.Id.CreateCompetitionButton);
-            createCompetitionButton.Click += delegate { StartActivity(typeof (CreateCompetitionForm)); };
+//            createCompetitionButton.Click += delegate { StartActivity(typeof (CreateCompetitionForm)); };
+            createCompetitionButton.Visibility = ViewStates.Invisible;
         }
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/GoalDetailsScreenLayout"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
@@ -37,10 +38,12 @@
         android:id="@+id/UpdateGoalButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
         android:text="Update" />
     <Button
         android:id="@+id/DeleteGoalButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
         android:text="Delete" />
 </LinearLayout>

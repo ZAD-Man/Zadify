@@ -7,12 +7,14 @@
         android:id="@+id/GoalsButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Goals" />
+        android:text="Goals"
+        android:background="@drawable/redButton" />
     <Button
         android:id="@+id/RewardsButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Rewards" />
+        android:text="Rewards"
+        android:background="@drawable/blueButton"/>
     <Button
         android:id="@+id/SocialButton"
         android:layout_width="fill_parent"
@@ -22,12 +24,14 @@
         android:id="@+id/SettingsButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Settings" />
+        android:text="Settings"
+        android:background="@drawable/grayButton"/>
     <Button
         android:id="@+id/SetupButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Demo Setup" />
+        android:text="Setup Demo"
+        android:background="@drawable/grayButton"/>
     <Button
         android:id="@+id/MonsterDemoButton"
         android:layout_width="fill_parent"

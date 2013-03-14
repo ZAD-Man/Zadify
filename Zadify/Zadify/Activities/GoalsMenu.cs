@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Util;
 using Android.Widget;
@@ -27,6 +28,9 @@ namespace Zadify.Activities
             base.OnStart();
 
             SetContentView(Resource.Layout.GoalsMenu);
+
+            var layout = FindViewById<LinearLayout>(Resource.Id.GoalsMenuLayout);
+            layout.SetBackgroundResource(Resource.Color.darkred);
 
             var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
 

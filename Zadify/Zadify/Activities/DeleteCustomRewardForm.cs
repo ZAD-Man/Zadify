@@ -15,6 +15,9 @@ namespace Zadify.Activities
 
             SetContentView(Resource.Layout.DeleteCustomRewardForm);
 
+            var layout = FindViewById<LinearLayout>(Resource.Id.DeleteCustomRewardFormLayout);
+            layout.SetBackgroundResource(Resource.Color.darkblue);
+
             var confirmDeleteButton = FindViewById<Button>(Resource.Id.ConfirmDeleteCustomRewardButton);
             confirmDeleteButton.Click += delegate
                 {

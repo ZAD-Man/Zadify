@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/CreatePredefinedGoalFormLayout"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
@@ -68,6 +69,7 @@
                 android:layout_below="@id/FitnessByDateInnerLayout2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
         <RelativeLayout
@@ -140,6 +142,7 @@
                 android:layout_below="@id/FitnessPerTimespanInnerLayout3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
     </RelativeLayout>
@@ -204,6 +207,7 @@
                 android:layout_below="@id/FinanceSaveByDateInnerLayout2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
         <RelativeLayout
@@ -276,6 +280,7 @@
                 android:layout_below="@id/FinanceSavePerTimespanInnerLayout3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
         <RelativeLayout
@@ -330,6 +335,7 @@
                 android:layout_below="@id/FinancePayByDateInnerLayout2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
         <RelativeLayout
@@ -402,6 +408,7 @@
                 android:layout_below="@id/FinancePayPerTimespanInnerLayout3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
     </RelativeLayout>
@@ -466,6 +473,7 @@
                 android:layout_below="@id/ReadingByDateInnerLayout2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
         <RelativeLayout
@@ -538,6 +546,7 @@
                 android:layout_below="@id/ReadingPerTimespanInnerLayout3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
     </RelativeLayout>
@@ -602,6 +611,7 @@
                 android:layout_below="@id/WritingByDateInnerLayout2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
         <RelativeLayout
@@ -674,6 +684,7 @@
                 android:layout_below="@id/WritingPerTimespanInnerLayout3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
     </RelativeLayout>
@@ -738,6 +749,7 @@
                 android:layout_below="@id/DietGainWeightInnerLayout2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
         <RelativeLayout
@@ -792,6 +804,7 @@
                 android:layout_below="@id/DietLoseWeightInnerLayout2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+        android:background="@drawable/redButton"
                 android:text="Submit" />
         </RelativeLayout>
     </RelativeLayout>
