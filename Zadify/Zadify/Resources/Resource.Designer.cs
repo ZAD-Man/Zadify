@@ -100,8 +100,8 @@ namespace Zadify
 			// aapt resource value: 0x7f070002
 			public const int CompetitionForm = 2131165186;
 			
-			// aapt resource value: 0x7f0700d5
-			public const int CompetitionsButton = 2131165397;
+			// aapt resource value: 0x7f0700d9
+			public const int CompetitionsButton = 2131165401;
 			
 			// aapt resource value: 0x7f0700bb
 			public const int CompletedGoalsButton = 2131165371;
@@ -133,8 +133,8 @@ namespace Zadify
 			// aapt resource value: 0x7f0700ac
 			public const int CreateRewardButton = 2131165356;
 			
-			// aapt resource value: 0x7f0700cc
-			public const int CurrentRank = 2131165388;
+			// aapt resource value: 0x7f0700d0
+			public const int CurrentRank = 2131165392;
 			
 			// aapt resource value: 0x7f07000c
 			public const int CustomGoalDaysNumber = 2131165196;
@@ -220,11 +220,14 @@ namespace Zadify
 			// aapt resource value: 0x7f07009e
 			public const int CustomRewardTitle = 2131165342;
 			
-			// aapt resource value: 0x7f0700d1
-			public const int CustomRewardsButton = 2131165393;
+			// aapt resource value: 0x7f0700d5
+			public const int CustomRewardsButton = 2131165397;
 			
 			// aapt resource value: 0x7f0700ad
 			public const int CustomRewardsList = 2131165357;
+			
+			// aapt resource value: 0x7f0700be
+			public const int DefenseNames = 2131165374;
 			
 			// aapt resource value: 0x7f0700ab
 			public const int DeleteCustomRewardButton = 2131165355;
@@ -472,6 +475,9 @@ namespace Zadify
 			// aapt resource value: 0x7f070028
 			public const int FitnessPerTimespanTimespanSpinner = 2131165224;
 			
+			// aapt resource value: 0x7f0700bd
+			public const int FoodNames = 2131165373;
+			
 			// aapt resource value: 0x7f0700b3
 			public const int GoalDetailsActionText = 2131165363;
 			
@@ -487,47 +493,50 @@ namespace Zadify
 			// aapt resource value: 0x7f0700b2
 			public const int GoalDetailsTitle = 2131165362;
 			
-			// aapt resource value: 0x7f0700bc
-			public const int GoalsButton = 2131165372;
+			// aapt resource value: 0x7f0700c0
+			public const int GoalsButton = 2131165376;
 			
 			// aapt resource value: 0x7f0700ba
 			public const int GoalsList = 2131165370;
 			
-			// aapt resource value: 0x7f0700c1
-			public const int MonsterDemoButton = 2131165377;
-			
-			// aapt resource value: 0x7f0700c3
-			public const int MonsterLayout1 = 2131165379;
+			// aapt resource value: 0x7f0700bc
+			public const int ItemTypeName = 2131165372;
 			
 			// aapt resource value: 0x7f0700c5
-			public const int MonsterLayout2 = 2131165381;
+			public const int MonsterDemoButton = 2131165381;
 			
-			// aapt resource value: 0x7f0700d2
-			public const int MonsterModeCheckbox = 2131165394;
+			// aapt resource value: 0x7f0700c7
+			public const int MonsterLayout1 = 2131165383;
 			
-			// aapt resource value: 0x7f0700c6
-			public const int MonsterOKButton = 2131165382;
+			// aapt resource value: 0x7f0700c9
+			public const int MonsterLayout2 = 2131165385;
 			
-			// aapt resource value: 0x7f0700c4
-			public const int MonsterText = 2131165380;
+			// aapt resource value: 0x7f0700d6
+			public const int MonsterModeCheckbox = 2131165398;
+			
+			// aapt resource value: 0x7f0700ca
+			public const int MonsterOKButton = 2131165386;
+			
+			// aapt resource value: 0x7f0700c8
+			public const int MonsterText = 2131165384;
 			
 			// aapt resource value: 0x7f070000
 			public const int NewCompetitionButton = 2131165184;
 			
-			// aapt resource value: 0x7f0700d4
-			public const int NewsFeedButton = 2131165396;
+			// aapt resource value: 0x7f0700d8
+			public const int NewsFeedButton = 2131165400;
 			
 			// aapt resource value: 0x7f070015
 			public const int PredefinedGoalTypeSpinner = 2131165205;
 			
-			// aapt resource value: 0x7f0700c2
-			public const int PushActivityButton = 2131165378;
+			// aapt resource value: 0x7f0700c6
+			public const int PushActivityButton = 2131165382;
 			
-			// aapt resource value: 0x7f0700cd
-			public const int RankName = 2131165389;
+			// aapt resource value: 0x7f0700d1
+			public const int RankName = 2131165393;
 			
-			// aapt resource value: 0x7f0700cf
-			public const int RanksButton = 2131165391;
+			// aapt resource value: 0x7f0700d3
+			public const int RanksButton = 2131165395;
 			
 			// aapt resource value: 0x7f07005c
 			public const int ReadingByDateInnerLayout1 = 2131165276;
@@ -592,20 +601,20 @@ namespace Zadify
 			// aapt resource value: 0x7f07006b
 			public const int ReadingPerTimespanTimespanSpinner = 2131165291;
 			
-			// aapt resource value: 0x7f0700bd
-			public const int RewardsButton = 2131165373;
+			// aapt resource value: 0x7f0700c1
+			public const int RewardsButton = 2131165377;
 			
-			// aapt resource value: 0x7f0700d3
-			public const int SaveSettingsButton = 2131165395;
+			// aapt resource value: 0x7f0700d7
+			public const int SaveSettingsButton = 2131165399;
 			
-			// aapt resource value: 0x7f0700bf
-			public const int SettingsButton = 2131165375;
+			// aapt resource value: 0x7f0700c3
+			public const int SettingsButton = 2131165379;
 			
-			// aapt resource value: 0x7f0700c0
-			public const int SetupButton = 2131165376;
+			// aapt resource value: 0x7f0700c4
+			public const int SetupButton = 2131165380;
 			
-			// aapt resource value: 0x7f0700be
-			public const int SocialButton = 2131165374;
+			// aapt resource value: 0x7f0700c2
+			public const int SocialButton = 2131165378;
 			
 			// aapt resource value: 0x7f070003
 			public const int SubmitCompetitionButton = 2131165187;
@@ -652,29 +661,32 @@ namespace Zadify
 			// aapt resource value: 0x7f070086
 			public const int SubmitWritingPerTimespanGoalButton = 2131165318;
 			
-			// aapt resource value: 0x7f0700ce
-			public const int ToNextRank = 2131165390;
+			// aapt resource value: 0x7f0700d2
+			public const int ToNextRank = 2131165394;
 			
-			// aapt resource value: 0x7f0700d0
-			public const int UnlockedItemsButton = 2131165392;
+			// aapt resource value: 0x7f0700d4
+			public const int UnlockedItemsButton = 2131165396;
 			
-			// aapt resource value: 0x7f0700d6
-			public const int UnlockedItemsList = 2131165398;
+			// aapt resource value: 0x7f0700da
+			public const int UnlockedItemsList = 2131165402;
 			
 			// aapt resource value: 0x7f0700b7
 			public const int UpdateGoalButton = 2131165367;
 			
-			// aapt resource value: 0x7f0700d7
-			public const int UpdateGoalLayout = 2131165399;
+			// aapt resource value: 0x7f0700db
+			public const int UpdateGoalLayout = 2131165403;
 			
-			// aapt resource value: 0x7f0700d9
-			public const int UpdateGoalNumber = 2131165401;
+			// aapt resource value: 0x7f0700dd
+			public const int UpdateGoalNumber = 2131165405;
 			
-			// aapt resource value: 0x7f0700da
-			public const int UpdateGoalSubmitButton = 2131165402;
+			// aapt resource value: 0x7f0700de
+			public const int UpdateGoalSubmitButton = 2131165406;
 			
-			// aapt resource value: 0x7f0700d8
-			public const int UpdateGoalText = 2131165400;
+			// aapt resource value: 0x7f0700dc
+			public const int UpdateGoalText = 2131165404;
+			
+			// aapt resource value: 0x7f0700bf
+			public const int WeaponNames = 2131165375;
 			
 			// aapt resource value: 0x7f070073
 			public const int WritingByDateInnerLayout1 = 2131165299;
@@ -739,20 +751,20 @@ namespace Zadify
 			// aapt resource value: 0x7f070082
 			public const int WritingPerTimespanTimespanSpinner = 2131165314;
 			
-			// aapt resource value: 0x7f0700ca
-			public const int buttonRegister = 2131165386;
+			// aapt resource value: 0x7f0700ce
+			public const int buttonRegister = 2131165390;
+			
+			// aapt resource value: 0x7f0700cf
+			public const int textHints = 2131165391;
+			
+			// aapt resource value: 0x7f0700cd
+			public const int textLastMessage = 2131165389;
+			
+			// aapt resource value: 0x7f0700cc
+			public const int textRegistrationId = 2131165388;
 			
 			// aapt resource value: 0x7f0700cb
-			public const int textHints = 2131165387;
-			
-			// aapt resource value: 0x7f0700c9
-			public const int textLastMessage = 2131165385;
-			
-			// aapt resource value: 0x7f0700c8
-			public const int textRegistrationId = 2131165384;
-			
-			// aapt resource value: 0x7f0700c7
-			public const int textRegistrationStatus = 2131165383;
+			public const int textRegistrationStatus = 2131165387;
 			
 			private Id()
 			{
@@ -802,37 +814,40 @@ namespace Zadify
 			public const int GoalsMenu = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int MainMenu = 2130903053;
+			public const int ItemDetailsScreen = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int monoandroidsplash = 2130903054;
+			public const int MainMenu = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int MonsterDisplay = 2130903055;
+			public const int monoandroidsplash = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int NewsFeedScreen = 2130903056;
+			public const int MonsterDisplay = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int PushActivity = 2130903057;
+			public const int NewsFeedScreen = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int RanksMenu = 2130903058;
+			public const int PushActivity = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int RewardsMenu = 2130903059;
+			public const int RanksMenu = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int SettingsMenu = 2130903060;
+			public const int RewardsMenu = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int SocialMenu = 2130903061;
+			public const int SettingsMenu = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int UnlockedItemsScreen = 2130903062;
+			public const int SocialMenu = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int UpdateGoalForm = 2130903063;
+			public const int UnlockedItemsScreen = 2130903063;
+			
+			// aapt resource value: 0x7f030018
+			public const int UpdateGoalForm = 2130903064;
 			
 			private Layout()
 			{

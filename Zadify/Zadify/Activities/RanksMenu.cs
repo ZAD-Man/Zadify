@@ -21,7 +21,7 @@ namespace Zadify.Activities
             SetContentView(Resource.Layout.RanksMenu);
 
             var preferences = GetSharedPreferences("Preferences.zad", FileCreationMode.Private);
-                var preferencesEditor = preferences.Edit();
+            var preferencesEditor = preferences.Edit();
 
             if (!preferences.Contains("Rank"))
             {

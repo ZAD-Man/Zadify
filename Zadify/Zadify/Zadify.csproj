@@ -64,6 +64,7 @@
     <Compile Include="Activities\DeleteGoalForm.cs" />
     <Compile Include="Activities\GoalDetailsScreen.cs" />
     <Compile Include="Activities\GoalsMenu.cs" />
+    <Compile Include="Activities\ItemDetailsScreen.cs" />
     <Compile Include="Activities\MainMenu.cs" />
     <Compile Include="Activities\MonsterDisplay.cs" />
     <Compile Include="Activities\NewsFeedScreen.cs" />
@@ -166,6 +167,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\PushActivity.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\ItemDetailsScreen.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
