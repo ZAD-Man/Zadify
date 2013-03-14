@@ -27,13 +27,13 @@
         android:id="@+id/SetupButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Setup Test Info" />
+        android:text="Demo Setup" />
     <Button
         android:id="@+id/MonsterDemoButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Monster Demo" />
-  <Button
+    <Button
         android:id="@+id/PushActivityButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

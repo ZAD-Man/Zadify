@@ -5,6 +5,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Util;
+using Android.Views;
 using Android.Widget;
 using Zadify.Enums;
 
@@ -25,7 +26,7 @@ namespace Zadify.Activities
             var preferencesEditor2 = preferences.Edit();
             preferencesEditor2.PutInt("Rank", 0);
             preferencesEditor2.Apply();
-
+            
             if (!preferences.Contains("Rank"))
             {
                 var preferencesEditor = preferences.Edit();
@@ -79,7 +80,8 @@ namespace Zadify.Activities
             rewardsButton.Click += delegate { StartActivity(typeof (RewardsMenu)); };
 
             var socialButton = FindViewById<Button>(Resource.Id.SocialButton);
-            socialButton.Click += delegate { StartActivity(typeof (SocialMenu)); };
+//            socialButton.Click += delegate { StartActivity(typeof (SocialMenu)); };
+            socialButton.Visibility = ViewStates.Gone;
 
             var settingsButton = FindViewById<Button>(Resource.Id.SettingsButton);
             settingsButton.Click += delegate { StartActivity(typeof (SettingsMenu)); };
@@ -124,10 +126,12 @@ namespace Zadify.Activities
                 };
 
             var monsterDemoButton = FindViewById<Button>(Resource.Id.MonsterDemoButton);
-            monsterDemoButton.Click += delegate { StartActivity(typeof (MonsterDisplay)); };
+//            monsterDemoButton.Click += delegate { StartActivity(typeof (MonsterDisplay)); };
+            monsterDemoButton.Visibility = ViewStates.Invisible;
 
             var pushActivityButton = FindViewById<Button>(Resource.Id.PushActivityButton);
-            pushActivityButton.Click += delegate { StartActivity(typeof (PushActivity)); };
+//            pushActivityButton.Click += delegate { StartActivity(typeof (PushActivity)); };
+            pushActivityButton.Visibility = ViewStates.Invisible;
         }
     }
 }
