@@ -6,5 +6,18 @@
     <TextView
         android:id="@+id/CurrentRank"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Current Rank:" />
+    <TextView
+        android:id="@+id/RankName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="23sp" />
+    <TextView
+        android:id="@+id/ToNextRank"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
 </LinearLayout>

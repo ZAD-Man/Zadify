@@ -32,7 +32,7 @@ namespace Zadify
 
         public bool IsCompleted()
         {
-            var isCompleted = GoalCompletedAmount < Math.Abs(GoalAmount);
+            var isCompleted = GoalCompletedAmount >= Math.Abs(GoalAmount);
             return isCompleted;
         }
 

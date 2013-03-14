@@ -68,7 +68,6 @@
     <Compile Include="Activities\MonsterDisplay.cs" />
     <Compile Include="Activities\NewsFeedScreen.cs" />
     <Compile Include="Activities\PushActivity.cs" />
-    <Compile Include="Activities\RankDetailsScreen.cs" />
     <Compile Include="Activities\RanksMenu.cs" />
     <Compile Include="Activities\RewardsMenu.cs" />
     <Compile Include="Activities\SelectCustomRewardGoal.cs" />
@@ -76,7 +75,6 @@
     <Compile Include="Activities\SocialMenu.cs" />
     <Compile Include="Activities\UnlockedItemsScreen.cs" />
     <Compile Include="Activities\UpdateGoalForm.cs" />
-    <Compile Include="Activities\ZadifyRewardsMenu.cs" />
     <Compile Include="CustomGoal.cs" />
     <Compile Include="DietGoal.cs" />
     <Compile Include="Enums\DietItems.cs" />
@@ -140,9 +138,6 @@
     <AndroidResource Include="Resources\Layout\NewsFeedScreen.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Layout\RankDetailsScreen.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\Layout\RanksMenu.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -156,9 +151,6 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\UnlockedItemsScreen.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\Layout\ZadifyRewardsMenu.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\UpdateGoalForm.axml">
