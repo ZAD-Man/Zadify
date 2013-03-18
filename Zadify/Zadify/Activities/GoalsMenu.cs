@@ -103,7 +103,7 @@ namespace Zadify.Activities
             var doneString = displayString;
             if (goal.IsPastDue())
             {
-                doneString = "(Done)" + displayString;
+                doneString = "(Due)" + displayString;
             }
             return doneString;
         }

@@ -81,7 +81,6 @@ namespace Zadify.Activities
 
             var settingsButton = FindViewById<Button>(Resource.Id.SettingsButton);
             settingsButton.Click += delegate { StartActivity(typeof (SettingsMenu)); };
-            //settingsButton.SetBackgroundColor();
 
             var setupButton = FindViewById<Button>(Resource.Id.SetupButton);
             setupButton.Click += delegate
@@ -124,11 +123,11 @@ namespace Zadify.Activities
 
             var monsterDemoButton = FindViewById<Button>(Resource.Id.MonsterDemoButton);
 //            monsterDemoButton.Click += delegate { StartActivity(typeof (MonsterDisplay)); };
-            monsterDemoButton.Visibility = ViewStates.Invisible;
+            monsterDemoButton.Visibility = ViewStates.Gone;
 
             var pushActivityButton = FindViewById<Button>(Resource.Id.PushActivityButton);
-//            pushActivityButton.Click += delegate { StartActivity(typeof (PushActivity)); };
-            pushActivityButton.Visibility = ViewStates.Invisible;
+            pushActivityButton.Click += delegate { StartActivity(typeof (PushActivity)); };
+            pushActivityButton.Visibility = ViewStates.Gone;
         }
     }
 }

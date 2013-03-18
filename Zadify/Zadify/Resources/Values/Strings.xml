@@ -17,8 +17,8 @@
     <item>Writing</item>
   </string-array>
   <string-array name="fitnessGoalTypes">
-    <item>Per Timespan</item>
     <item>By Date</item>
+    <item>Per Timespan</item>
   </string-array>
   <string-array name="financeGoalTypes">
     <item>Save Money by Date</item>
@@ -31,12 +31,12 @@
     <item>Gain Weight</item>
   </string-array>
   <string-array name="readingGoalTypes">
-    <item>Per Timespan</item>
     <item>By Date</item>
+    <item>Per Timespan</item>
   </string-array>
   <string-array name="writingGoalTypes">
-    <item>Per Timespan</item>
     <item>By Date</item>
+    <item>Per Timespan</item>
   </string-array>
   <string-array name="fitnessActivities">
     <item>Pushup(s)</item>

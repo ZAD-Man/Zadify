@@ -36,6 +36,7 @@ namespace Zadify.Activities
 
             var rankName = FindViewById<TextView>(Resource.Id.RankName);
             var toNextRank = FindViewById<TextView>(Resource.Id.ToNextRank);
+            var completedGoalTotal = FindViewById<TextView>(Resource.Id.CompletedGoalTotal);
             int finishedGoalCount = 0;
             int amountToNextRank = -1;
             var rank = "Noob";
@@ -99,6 +100,8 @@ namespace Zadify.Activities
             {
                 toNextRank.Text = "Congratulations!\nYou're at the top!\nKeep completing goals though!";
             }
+
+            completedGoalTotal.Text = "Goals Completed: " + finishedGoalCount;
         }
     }
 }
